@@ -1,195 +1,544 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 
 <head>
 
+
 <meta charset="UTF-8">
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Áreas de Atuação | JR Ribeiro & Flores Advocacia</title>
+
+
+<title>
+Áreas de Atuação | JR Ribeiro & Flores Advocacia
+</title>
+
+
 
 <meta name="description" content="Conheça as áreas de atuação da JR Ribeiro & Flores Advocacia: Trabalhista, Previdenciário, Consumidor, Civil e Empresarial.">
 
+
+<meta name="keywords" content="advogado trabalhista Canoas, advogado previdenciário Canoas, advogado consumidor RS, advocacia empresarial">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+
 <style>
 
+
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',Arial,sans-serif;
+
 }
+
 
 
 body{
 
 background:#080808;
-color:white;
-
-}
-
-
-header{
-
-background:#050505;
-padding:25px 10%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-}
-
-
-.logo{
-
-font-size:25px;
-font-weight:bold;
-
-}
-
-
-.gold{
-
-color:#c9a227;
-
-}
-
-
-nav a{
 
 color:white;
+
+font-family:'Inter',sans-serif;
+
+}
+
+
+
+a{
+
 text-decoration:none;
-margin-left:25px;
 
 }
 
-
-nav a:hover{
-
-color:#c9a227;
-
-}
-
-
-
-/* HERO */
-
-.hero{
-
-padding:100px 10%;
-text-align:center;
-background:#111;
-
-}
-
-
-.hero h1{
-
-font-size:50px;
-margin-bottom:25px;
-
-}
-
-
-.hero p{
-
-font-size:20px;
-color:#ddd;
-max-width:800px;
-margin:auto;
-line-height:1.7;
-
-}
-
-
-
-/* CONTEÚDO */
 
 
 section{
 
-padding:80px 10%;
-
-}
-
-
-.title{
-
-text-align:center;
-font-size:38px;
-margin-bottom:50px;
+padding:100px 8%;
 
 }
 
 
 
-.cards{
 
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+
+/* HEADER */
+
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+
+padding:22px 8%;
+
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+
+background:#080808;
+
+
+z-index:999;
+
+}
+
+
+
+.logo{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:34px;
+
+font-weight:700;
+
+}
+
+
+
+.logo span{
+
+color:#C9A227;
+
+}
+
+
+
+.logo small{
+
+display:block;
+
+font-family:'Inter';
+
+font-size:12px;
+
+letter-spacing:4px;
+
+color:#aaa;
+
+}
+
+
+
+nav{
+
+display:flex;
+
 gap:30px;
 
 }
 
 
 
-.card{
+nav a{
 
-background:#111;
-border:1px solid #222;
-padding:35px;
-border-radius:20px;
-transition:.3s;
+color:white;
+
+font-size:15px;
 
 }
 
 
 
-.card:hover{
+nav a:hover{
 
-transform:translateY(-5px);
-border-color:#c9a227;
-
-}
-
-
-
-.icon{
-
-font-size:35px;
-margin-bottom:20px;
+color:#C9A227;
 
 }
 
 
 
-.card h2{
 
-color:#c9a227;
-margin-bottom:20px;
+
+
+
+/* HERO */
+
+
+.hero{
+
+
+height:70vh;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+text-align:center;
+
+
+
+background:
+
+
+linear-gradient(
+
+rgba(0,0,0,.55),
+
+rgba(0,0,0,.80)
+
+),
+
+
+url("assets/img/escritorio.jpg");
+
+
+
+background-size:cover;
+
+
+background-position:center;
+
 
 }
 
 
 
-.card p{
+.hero h1{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:65px;
+
+
+max-width:1000px;
+
+
+}
+
+
+
+.hero p{
+
+
+font-size:20px;
 
 color:#ddd;
-line-height:1.7;
+
+max-width:850px;
+
+margin:30px auto;
+
+
+line-height:1.8;
+
 
 }
 
+/* ==========================
+TÍTULOS
+========================== */
+
+
+.title{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:52px;
+
+text-align:center;
+
+margin-bottom:25px;
+
+}
+
+
+
+.subtitle{
+
+max-width:850px;
+
+margin:auto;
+
+text-align:center;
+
+font-size:19px;
+
+line-height:1.8;
+
+color:#ccc;
+
+}
+
+
+
+
+
+/* ==========================
+ÁREAS DE ATUAÇÃO
+========================== */
+
+
+.areas{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+margin-top:60px;
+
+}
+
+
+
+.area-card{
+
+
+background:#111;
+
+
+border:1px solid #222;
+
+
+border-radius:20px;
+
+
+padding:40px 30px;
+
+
+transition:.35s;
+
+
+position:relative;
+
+
+overflow:hidden;
+
+
+}
+
+
+
+.area-card::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+top:0;
+
+
+left:0;
+
+
+height:4px;
+
+
+width:0;
+
+
+background:#C9A227;
+
+
+transition:.35s;
+
+
+}
+
+
+
+.area-card:hover::before{
+
+
+width:100%;
+
+
+}
+
+
+
+.area-card:hover{
+
+
+transform:translateY(-10px);
+
+
+border-color:#C9A227;
+
+
+box-shadow:0 20px 40px rgba(201,162,39,.15);
+
+
+}
+
+
+
+.area-card i{
+
+
+font-size:45px;
+
+
+color:#C9A227;
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+.area-card h3{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:32px;
+
+
+margin-bottom:18px;
+
+
+}
+
+
+
+.area-card p{
+
+
+color:#ccc;
+
+
+line-height:1.8;
+
+
+margin-bottom:20px;
+
+
+}
+
+
+
+
+
+/* LISTA DE SERVIÇOS */
+
+
+.area-card ul{
+
+
+list-style:none;
+
+
+}
+
+
+
+.area-card ul li{
+
+
+color:#ddd;
+
+
+margin:12px 0;
+
+
+padding-left:20px;
+
+
+position:relative;
+
+
+}
+
+
+
+.area-card ul li::before{
+
+
+content:"✓";
+
+
+position:absolute;
+
+
+left:0;
+
+
+color:#C9A227;
+
+
+font-weight:bold;
+
+
+}
+
+
+
+
+
+/* BOTÃO */
 
 
 .btn{
 
+
 display:inline-block;
-margin-top:25px;
-background:#c9a227;
-color:#000;
-padding:12px 25px;
-border-radius:30px;
-text-decoration:none;
+
+
+background:#C9A227;
+
+
+color:#111;
+
+
+padding:15px 32px;
+
+
+border-radius:40px;
+
+
 font-weight:bold;
+
+
+margin-top:25px;
+
+
+transition:.3s;
+
 
 }
 
@@ -197,49 +546,168 @@ font-weight:bold;
 
 .btn:hover{
 
+
 background:white;
+
+
+transform:translateY(-3px);
+
 
 }
 
+
+
+
+
+
+/* DIFERENCIAL */
+
+
+.diferencial{
+
+
+background:#111;
+
+
+text-align:center;
+
+
+}
+
+
+
+.diferencial h2{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:50px;
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+.diferencial p{
+
+
+max-width:850px;
+
+
+margin:auto;
+
+
+font-size:19px;
+
+
+line-height:1.8;
+
+
+color:#ccc;
+
+
+}
+
+
+
+
+
+
+/* FOOTER */
 
 
 footer{
 
+
 background:#050505;
-padding:30px;
+
+
+padding:50px 8%;
+
+
 text-align:center;
-color:#aaa;
+
 
 }
 
 
 
-@media(max-width:800px){
+footer h3{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:35px;
+
+
+}
+
+
+
+footer p{
+
+
+color:#aaa;
+
+
+line-height:2;
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:900px){
+
+
 
 nav{
 
+
 display:none;
 
+
 }
+
 
 
 .hero h1{
 
-font-size:35px;
+
+font-size:45px;
+
 
 }
 
+
+
+.title{
+
+
+font-size:40px;
+
+
 }
 
 
+}
 </style>
-
 
 </head>
 
 
 <body>
 
+<!-- HEADER -->
 
 
 <header>
@@ -247,27 +715,69 @@ font-size:35px;
 
 <div class="logo">
 
-JR <span class="gold">Ribeiro & Flores</span>
+JR <span>Ribeiro & Flores</span>
 
-<br>
+<small>
 
-<small>Advocacia</small>
+ADVOCACIA
+
+</small>
 
 </div>
 
 
 
+
 <nav>
 
-<a href="index.html">Início</a>
 
-<a href="escritorio.html">Escritório</a>
+<a href="index.html">
 
-<a href="socios.html">Sócios</a>
+Início
 
-<a href="atuacao.html">Atuação</a>
+</a>
 
-<a href="contato.html">Contato</a>
+
+
+<a href="escritorio.html">
+
+Escritório
+
+</a>
+
+
+
+<a href="socios.html">
+
+Sócios
+
+</a>
+
+
+
+<a href="atuacao.html">
+
+Atuação
+
+</a>
+
+
+
+<a href="artigos.html">
+
+Artigos
+
+</a>
+
+
+
+<a href="contato.html">
+
+Contato
+
+</a>
+
+
 
 </nav>
 
@@ -278,21 +788,37 @@ JR <span class="gold">Ribeiro & Flores</span>
 
 
 
+
+
+
+
+<!-- HERO -->
+
+
 <section class="hero">
+
+
+<div>
 
 
 <h1>
 
-Áreas de Atuação
+Soluções jurídicas estratégicas para diferentes momentos da sua vida e do seu negócio.
 
 </h1>
 
 
+
 <p>
 
-Atuação jurídica estratégica e personalizada para pessoas e empresas.
+Cada situação exige uma análise técnica e uma estratégia personalizada.
+A JR Ribeiro & Flores Advocacia atua na defesa de pessoas e empresas
+com atendimento próximo e soluções jurídicas eficientes.
 
 </p>
+
+
+</div>
 
 
 </section>
@@ -301,46 +827,140 @@ Atuação jurídica estratégica e personalizada para pessoas e empresas.
 
 
 
+
+
+
+
+<!-- INTRODUÇÃO -->
+
+
 <section>
 
 
 <h2 class="title">
 
-Como podemos ajudar
+Áreas de Atuação
 
 </h2>
 
 
 
-<div class="cards">
+
+<p class="subtitle">
+
+
+Nossa atuação é baseada em conhecimento técnico,
+planejamento e compreensão das necessidades de cada cliente.
+
+
+<br><br>
+
+
+Buscamos não apenas solucionar conflitos, mas construir
+estratégias jurídicas seguras para proteger direitos,
+patrimônios e negócios.
+
+</p>
 
 
 
-<div class="card">
+</section>
 
 
-<div class="icon">
-⚖
-</div>
 
 
-<h2>
+
+
+
+
+
+<!-- ÁREAS -->
+
+
+<section>
+
+
+<div class="areas">
+
+
+
+
+
+
+
+
+<!-- TRABALHISTA -->
+
+
+<div class="area-card">
+
+
+<i class="fa-solid fa-briefcase"></i>
+
+
+
+<h3>
 
 Direito Trabalhista
 
-</h2>
+</h3>
+
 
 
 <p>
 
-Atuação na defesa dos direitos dos trabalhadores e empresas em demandas trabalhistas, incluindo verbas rescisórias, horas extras, adicionais, acidentes de trabalho e demais questões relacionadas ao contrato de trabalho.
+Atuação na defesa dos direitos de trabalhadores e empresas,
+com análise estratégica das relações de trabalho.
 
 </p>
 
 
-<a class="btn" href="direito-trabalhista.html">
 
-Saiba mais
+<ul>
+
+
+<li>
+
+Verbas rescisórias
+
+</li>
+
+
+<li>
+
+Horas extras
+
+</li>
+
+
+<li>
+
+Insalubridade e periculosidade
+
+</li>
+
+
+<li>
+
+Acidentes de trabalho
+
+</li>
+
+
+<li>
+
+Reconhecimento de direitos trabalhistas
+
+</li>
+
+
+</ul>
+
+
+
+<a href="contato.html" class="btn">
+
+Solicitar atendimento
 
 </a>
 
@@ -351,31 +971,82 @@ Saiba mais
 
 
 
-<div class="card">
 
 
-<div class="icon">
-🏛
-</div>
 
 
-<h2>
+<!-- PREVIDENCIÁRIO -->
+
+
+<div class="area-card">
+
+
+<i class="fa-solid fa-building-shield"></i>
+
+
+
+<h3>
 
 Direito Previdenciário
 
-</h2>
+</h3>
+
 
 
 <p>
 
-Planejamento previdenciário, aposentadorias, benefícios do INSS, auxílio-acidente, revisões e defesa dos segurados.
+Orientação e defesa em demandas relacionadas ao INSS
+e benefícios previdenciários.
 
 </p>
 
 
-<a class="btn" href="direito-previdenciario.html">
 
-Saiba mais
+<ul>
+
+
+<li>
+
+Aposentadorias
+
+</li>
+
+
+<li>
+
+Auxílio-acidente
+
+</li>
+
+
+<li>
+
+Benefícios negados pelo INSS
+
+</li>
+
+
+<li>
+
+Revisões previdenciárias
+
+</li>
+
+
+<li>
+
+Planejamento previdenciário
+
+</li>
+
+
+</ul>
+
+
+
+<a href="contato.html" class="btn">
+
+Solicitar atendimento
 
 </a>
 
@@ -386,154 +1057,456 @@ Saiba mais
 
 
 
-<div class="card">
-
-
-<div class="icon">
-🛡
-</div>
-
-
-<h2>
-
-Direito do Consumidor
-
-</h2>
-
-
-<p>
-
-Proteção dos consumidores diante de cobranças indevidas, contratos abusivos, problemas bancários e falhas na prestação de serviços.
-
-</p>
-
-
-<a class="btn" href="direito-consumidor.html">
-
-Saiba mais
-
-</a>
-
 
 </div>
 
 
-
-
-
-<div class="card">
-
-
-<div class="icon">
-📄
-</div>
-
-
-<h2>
-
-Direito Civil
-
-</h2>
-
-
-<p>
-
-Soluções jurídicas para contratos, indenizações, obrigações, conflitos patrimoniais e relações entre pessoas e empresas.
-
-</p>
-
-
-<a class="btn" href="direito-civil.html">
-
-Saiba mais
-
-</a>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<div class="icon">
-🏢
-</div>
-
-
-<h2>
-
-Direito Empresarial
-
-</h2>
-
-
-<p>
-
-Assessoria jurídica para empresas, contratos, prevenção de conflitos e estratégias para segurança dos negócios.
-
-</p>
-
-
-<a class="btn" href="direito-empresarial.html">
-
-Saiba mais
-
-</a>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
+</section>  
+  
+<!-- CONTINUAÇÃO DAS ÁREAS -->
 
 
 <section>
 
 
-<h2 class="title">
-
-Nossa forma de atuação
-
-</h2>
+<div class="areas">
 
 
-<p style="text-align:center; max-width:900px; margin:auto; color:#ddd; font-size:20px; line-height:1.8;">
 
 
-Cada caso é analisado individualmente, buscando compreender a realidade do cliente e desenvolver a estratégia jurídica mais adequada.
 
+
+
+
+<!-- CONSUMIDOR -->
+
+
+<div class="area-card">
+
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+
+
+<h3>
+
+Direito do Consumidor
+
+</h3>
+
+
+
+<p>
+
+Atuação na proteção dos consumidores diante de práticas
+abusivas, cobranças indevidas e falhas na prestação de serviços.
 
 </p>
+
+
+
+<ul>
+
+
+<li>
+
+Contratos abusivos
+
+</li>
+
+
+<li>
+
+Cobranças indevidas
+
+</li>
+
+
+<li>
+
+Fraudes bancárias
+
+</li>
+
+
+<li>
+
+Problemas com produtos e serviços
+
+</li>
+
+
+<li>
+
+Indenizações por danos
+
+</li>
+
+
+</ul>
+
+
+
+<a href="contato.html" class="btn">
+
+Solicitar atendimento
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- CIVIL -->
+
+
+<div class="area-card">
+
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+
+
+<h3>
+
+Direito Civil
+
+</h3>
+
+
+
+<p>
+
+Soluções jurídicas para conflitos pessoais,
+patrimoniais e relações contratuais.
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+Elaboração e análise de contratos
+
+</li>
+
+
+<li>
+
+Responsabilidade civil
+
+</li>
+
+
+<li>
+
+Ações indenizatórias
+
+</li>
+
+
+<li>
+
+Obrigações e cobranças
+
+</li>
+
+
+<li>
+
+Conflitos patrimoniais
+
+</li>
+
+
+</ul>
+
+
+
+<a href="contato.html" class="btn">
+
+Solicitar atendimento
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- EMPRESARIAL -->
+
+
+<div class="area-card">
+
+
+<i class="fa-solid fa-building"></i>
+
+
+
+<h3>
+
+Direito Empresarial
+
+</h3>
+
+
+
+<p>
+
+Assessoria jurídica para empresas que buscam segurança,
+prevenção de riscos e crescimento sustentável.
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+Contratos empresariais
+
+</li>
+
+
+<li>
+
+Consultoria preventiva
+
+</li>
+
+
+<li>
+
+Análise de riscos jurídicos
+
+</li>
+
+
+<li>
+
+Organização empresarial
+
+</li>
+
+
+<li>
+
+Soluções estratégicas para negócios
+
+</li>
+
+
+</ul>
+
+
+
+<a href="contato.html" class="btn">
+
+Solicitar atendimento
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
 
 
 </section>
 
 
 
+
+
+
+
+
+
+<!-- DIFERENCIAL DO ESCRITÓRIO -->
+
+
+<section class="diferencial">
+
+
+<h2>
+
+Por que escolher a JR Ribeiro & Flores?
+
+</h2>
+
+
+
+<p>
+
+
+Mais do que atuar em processos, buscamos compreender
+cada situação e desenvolver estratégias jurídicas alinhadas
+aos objetivos dos nossos clientes.
+
+
+<br><br>
+
+
+Nossa advocacia une conhecimento técnico, atendimento
+humanizado e tecnologia para oferecer uma experiência
+mais eficiente, transparente e segura.
+
+</p>
+
+
+
+</section>
+
+<!-- RODAPÉ -->
 
 
 <footer>
 
 
-© 2026 JR Ribeiro & Flores Advocacia
+<h3>
+
+JR Ribeiro & Flores Advocacia
+
+</h3>
+
+
+
+<p>
+
+Advocacia estratégica para pessoas físicas e empresas.
+
+</p>
+
+
 
 <br>
 
-Canoas - Rio Grande do Sul
+
+
+<p>
+
+📍 Canoas - Rio Grande do Sul
+
+</p>
+
+
+
+<p>
+
+📱 (51) 99999-9999
+
+</p>
+
+
+
+<p>
+
+✉ contato@jrribeiroeflores.com.br
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+© 2026 JR Ribeiro & Flores Advocacia.
+
+<br>
+
+Todos os direitos reservados.
+
+</p>
+
 
 
 </footer>
+
+
+
+
+
+
+
+
+<!-- WHATSAPP FLUTUANTE -->
+
+
+<a 
+
+href="https://wa.me/5551000000000"
+
+target="_blank"
+
+style="
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:65px;
+
+height:65px;
+
+background:#25D366;
+
+color:white;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:32px;
+
+z-index:999;
+
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+
+">
+
+
+<i class="fa-brands fa-whatsapp"></i>
+
+
+</a>
+
+
+
+
 
 
 

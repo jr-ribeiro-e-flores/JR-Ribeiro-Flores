@@ -1,98 +1,70 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 
 <head>
 
+
 <meta charset="UTF-8">
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Conteúdos Jurídicos | JR Ribeiro & Flores Advocacia</title>
 
-<meta name="description" content="Conteúdos jurídicos da JR Ribeiro & Flores Advocacia sobre Direito Trabalhista, Previdenciário, Consumidor e Civil.">
+
+<title>
+Artigos Jurídicos | JR Ribeiro & Flores Advocacia
+</title>
+
+
+
+<meta name="description" content="Artigos jurídicos da JR Ribeiro & Flores Advocacia sobre Direito Trabalhista, Previdenciário, Consumidor, Civil e Empresarial.">
+
+
+<meta name="keywords" content="artigos jurídicos, advogado Canoas, direito trabalhista, direito previdenciário, direito consumidor">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 
 
 <style>
 
+
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',Arial,sans-serif;
+
 }
+
 
 
 body{
 
 background:#080808;
-color:white;
-
-}
-
-
-header{
-
-background:#050505;
-padding:25px 10%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-}
-
-
-.logo{
-
-font-size:25px;
-font-weight:bold;
-
-}
-
-
-.gold{
-
-color:#c9a227;
-
-}
-
-
-nav a{
 
 color:white;
+
+font-family:'Inter',sans-serif;
+
+}
+
+
+
+a{
+
 text-decoration:none;
-margin-left:25px;
-
-}
-
-
-nav a:hover{
-
-color:#c9a227;
-
-}
-
-
-
-.hero{
-
-padding:100px 10%;
-text-align:center;
-background:#111;
-
-}
-
-
-.hero h1{
-
-font-size:50px;
-margin-bottom:20px;
-
-}
-
-
-.hero p{
-
-font-size:20px;
-color:#ddd;
 
 }
 
@@ -100,7 +72,645 @@ color:#ddd;
 
 section{
 
-padding:80px 10%;
+padding:100px 8%;
+
+}
+
+
+
+
+
+
+
+/* HEADER */
+
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+
+padding:22px 8%;
+
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+
+background:#080808;
+
+
+z-index:999;
+
+}
+
+
+
+.logo{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:34px;
+
+font-weight:700;
+
+}
+
+
+
+.logo span{
+
+color:#C9A227;
+
+}
+
+
+
+.logo small{
+
+display:block;
+
+font-family:'Inter';
+
+font-size:12px;
+
+letter-spacing:4px;
+
+color:#aaa;
+
+}
+
+
+
+nav{
+
+display:flex;
+
+gap:30px;
+
+}
+
+
+
+nav a{
+
+color:white;
+
+font-size:15px;
+
+}
+
+
+
+nav a:hover{
+
+color:#C9A227;
+
+}
+
+
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+
+height:70vh;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+text-align:center;
+
+
+
+background:
+
+
+linear-gradient(
+
+rgba(0,0,0,.55),
+
+rgba(0,0,0,.80)
+
+),
+
+
+url("assets/img/escritorio.jpg");
+
+
+
+background-size:cover;
+
+
+background-position:center;
+
+
+}
+
+
+
+.hero h1{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:65px;
+
+
+max-width:1000px;
+
+
+}
+
+
+
+.hero p{
+
+
+font-size:20px;
+
+color:#ddd;
+
+max-width:850px;
+
+margin:30px auto;
+
+
+line-height:1.8;
+
+
+}
+  
+
+/* ==========================
+TÍTULOS
+========================== */
+
+
+.title{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:52px;
+
+text-align:center;
+
+margin-bottom:25px;
+
+}
+
+
+
+.subtitle{
+
+max-width:850px;
+
+margin:auto;
+
+text-align:center;
+
+font-size:19px;
+
+line-height:1.8;
+
+color:#ccc;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+CATEGORIAS
+========================== */
+
+
+.categories{
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+gap:15px;
+
+
+flex-wrap:wrap;
+
+
+margin-top:40px;
+
+
+}
+
+
+
+.category{
+
+
+border:1px solid #C9A227;
+
+
+color:#C9A227;
+
+
+padding:12px 25px;
+
+
+border-radius:30px;
+
+
+font-size:14px;
+
+
+transition:.3s;
+
+
+}
+
+
+
+.category:hover{
+
+
+background:#C9A227;
+
+
+color:#111;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+ARTIGOS
+========================== */
+
+
+.articles{
+
+
+display:grid;
+
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+
+gap:35px;
+
+
+margin-top:60px;
+
+
+}
+
+
+
+
+
+
+.article-card{
+
+
+background:#111;
+
+
+border:1px solid #222;
+
+
+border-radius:20px;
+
+
+overflow:hidden;
+
+
+transition:.35s;
+
+
+}
+
+
+
+
+.article-card:hover{
+
+
+transform:translateY(-10px);
+
+
+border-color:#C9A227;
+
+
+box-shadow:0 20px 40px rgba(201,162,39,.15);
+
+
+}
+
+
+
+
+
+
+
+.article-card img{
+
+
+width:100%;
+
+
+height:220px;
+
+
+object-fit:cover;
+
+
+}
+
+
+
+
+
+
+
+.article-content{
+
+
+padding:30px;
+
+
+}
+
+
+
+
+
+
+
+.article-category{
+
+
+color:#C9A227;
+
+
+font-size:13px;
+
+
+text-transform:uppercase;
+
+
+letter-spacing:2px;
+
+
+}
+
+
+
+
+
+.article-content h3{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:30px;
+
+
+margin:15px 0;
+
+
+line-height:1.2;
+
+
+}
+
+
+
+
+
+
+
+.article-content p{
+
+
+color:#ccc;
+
+
+line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+.read-more{
+
+
+display:inline-block;
+
+
+margin-top:25px;
+
+
+color:#C9A227;
+
+
+font-weight:bold;
+
+
+}
+
+
+
+
+
+.read-more:hover{
+
+
+color:white;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+DESTAQUE
+========================== */
+
+
+.featured{
+
+
+background:#111;
+
+
+text-align:center;
+
+
+}
+
+
+
+
+.featured h2{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:50px;
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.featured p{
+
+
+max-width:850px;
+
+
+margin:auto;
+
+
+color:#ccc;
+
+
+font-size:19px;
+
+
+line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+FOOTER
+========================== */
+
+
+footer{
+
+
+background:#050505;
+
+
+padding:50px 8%;
+
+
+text-align:center;
+
+
+}
+
+
+
+
+footer h3{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:35px;
+
+
+}
+
+
+
+
+footer p{
+
+
+color:#aaa;
+
+
+line-height:2;
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:900px){
+
+
+
+nav{
+
+
+display:none;
+
+
+}
+
+
+
+
+.hero h1{
+
+
+font-size:45px;
+
 
 }
 
@@ -108,110 +718,24 @@ padding:80px 10%;
 
 .title{
 
-text-align:center;
-font-size:38px;
-margin-bottom:50px;
+
+font-size:40px;
+
 
 }
 
 
 
-.cards{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-
 }
-
-
-
-.card{
-
-background:#111;
-border:1px solid #222;
-padding:35px;
-border-radius:15px;
-
-}
-
-
-.card:hover{
-
-border-color:#c9a227;
-
-}
-
-
-
-.card h2{
-
-color:#c9a227;
-margin-bottom:20px;
-
-}
-
-
-
-.card p{
-
-color:#ddd;
-line-height:1.7;
-
-}
-
-
-
-.btn{
-
-display:inline-block;
-margin-top:25px;
-background:#c9a227;
-color:#000;
-padding:12px 25px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-
-}
-
-
-
-footer{
-
-background:#050505;
-padding:30px;
-text-align:center;
-color:#aaa;
-
-}
-
-
-
-@media(max-width:800px){
-
-nav{
-
-display:none;
-
-}
-
-.hero h1{
-
-font-size:35px;
-
-}
-
-}
-
-
-</style>
-
+  </style>
 
 </head>
 
 
 <body>
+  
+
+<!-- HEADER -->
 
 
 <header>
@@ -219,28 +743,69 @@ font-size:35px;
 
 <div class="logo">
 
-JR <span class="gold">Ribeiro & Flores</span>
+JR <span>Ribeiro & Flores</span>
 
-<br>
+<small>
 
-<small>Advocacia</small>
+ADVOCACIA
+
+</small>
 
 </div>
 
 
+
+
 <nav>
 
-<a href="index.html">Início</a>
 
-<a href="escritorio.html">Escritório</a>
+<a href="index.html">
 
-<a href="socios.html">Sócios</a>
+Início
 
-<a href="atuacao.html">Atuação</a>
+</a>
 
-<a href="artigos.html">Conteúdos</a>
 
-<a href="contato.html">Contato</a>
+
+<a href="escritorio.html">
+
+Escritório
+
+</a>
+
+
+
+<a href="socios.html">
+
+Sócios
+
+</a>
+
+
+
+<a href="atuacao.html">
+
+Atuação
+
+</a>
+
+
+
+<a href="artigos.html">
+
+Artigos
+
+</a>
+
+
+
+<a href="contato.html">
+
+Contato
+
+</a>
+
+
 
 </nav>
 
@@ -251,21 +816,37 @@ JR <span class="gold">Ribeiro & Flores</span>
 
 
 
+
+
+
+
+<!-- HERO -->
+
+
 <section class="hero">
+
+
+<div>
 
 
 <h1>
 
-Conteúdos Jurídicos
+Conhecimento jurídico para ajudar você a tomar melhores decisões.
 
 </h1>
 
 
+
 <p>
 
-Informação jurídica para ajudar você a tomar melhores decisões.
+Informação jurídica clara, estratégica e acessível sobre temas
+que impactam pessoas e empresas.
 
 </p>
+
+
+
+</div>
 
 
 </section>
@@ -274,43 +855,173 @@ Informação jurídica para ajudar você a tomar melhores decisões.
 
 
 
+
+
+
+
+<!-- INTRODUÇÃO -->
+
+
 <section>
 
 
 <h2 class="title">
 
-Últimos artigos
+Conteúdos Jurídicos
 
 </h2>
 
 
 
-<div class="cards">
+
+<p class="subtitle">
+
+
+A JR Ribeiro & Flores Advocacia compartilha conhecimento
+jurídico para aproximar o Direito das pessoas.
+
+
+<br><br>
+
+
+Nosso objetivo é apresentar informações relevantes de forma
+simples, permitindo que você compreenda seus direitos e saiba
+quando buscar orientação profissional.
+
+</p>
 
 
 
-<div class="card">
 
 
-<h2>
+<div class="categories">
+
+
+<a href="#" class="category">
+
+Trabalhista
+
+</a>
+
+
+
+<a href="#" class="category">
+
+Previdenciário
+
+</a>
+
+
+
+<a href="#" class="category">
+
+Consumidor
+
+</a>
+
+
+
+<a href="#" class="category">
+
+Civil
+
+</a>
+
+
+
+<a href="#" class="category">
+
+Empresarial
+
+</a>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ARTIGOS -->
+
+
+<section>
+
+
+
+<div class="articles">
+
+
+
+
+
+
+
+
+
+<!-- ARTIGO 1 -->
+
+
+<div class="article-card">
+
+
+<img 
+
+src="assets/img/escritorio.jpg"
+
+alt="Direito Trabalhista">
+
+
+
+
+
+<div class="article-content">
+
+
+<span class="article-category">
 
 Direito Trabalhista
 
-</h2>
+</span>
+
+
+
+<h3>
+
+Fui demitido. Quais são meus direitos?
+
+</h3>
+
 
 
 <p>
 
-Empresa não pagou insalubridade? Entenda quando o trabalhador pode buscar seus direitos e quais documentos são importantes.
+
+Entenda quais verbas podem ser devidas após uma
+rescisão contratual e quais cuidados tomar nesse momento.
 
 </p>
 
 
-<a class="btn" href="#">
 
-Ler artigo
+<a href="#" class="read-more">
+
+Ler artigo →
 
 </a>
+
+
+
+</div>
 
 
 </div>
@@ -319,28 +1030,64 @@ Ler artigo
 
 
 
-<div class="card">
 
 
-<h2>
+
+
+<!-- ARTIGO 2 -->
+
+
+<div class="article-card">
+
+
+<img 
+
+src="assets/img/escritorio.jpg"
+
+alt="Direito Previdenciário">
+
+
+
+
+
+<div class="article-content">
+
+
+<span class="article-category">
 
 Direito Previdenciário
 
-</h2>
+</span>
+
+
+
+<h3>
+
+INSS negou meu benefício. O que fazer?
+
+</h3>
+
 
 
 <p>
 
-INSS negou seu benefício? Saiba quais caminhos podem ser analisados para buscar a proteção previdenciária.
+
+Conheça os caminhos possíveis quando um benefício
+previdenciário é indeferido pelo INSS.
 
 </p>
 
 
-<a class="btn" href="#">
 
-Ler artigo
+<a href="#" class="read-more">
+
+Ler artigo →
 
 </a>
+
+
+
+</div>
 
 
 </div>
@@ -349,28 +1096,64 @@ Ler artigo
 
 
 
-<div class="card">
 
 
-<h2>
+
+
+<!-- ARTIGO 3 -->
+
+
+<div class="article-card">
+
+
+<img 
+
+src="assets/img/escritorio.jpg"
+
+alt="Direito do Consumidor">
+
+
+
+
+
+<div class="article-content">
+
+
+<span class="article-category">
 
 Direito do Consumidor
 
-</h2>
+</span>
+
+
+
+<h3>
+
+Cobrança indevida gera indenização?
+
+</h3>
+
 
 
 <p>
 
-Cobranças indevidas e contratos abusivos: conheça os direitos do consumidor.
+
+Saiba quais são os direitos do consumidor diante de
+cobranças abusivas ou serviços inadequados.
 
 </p>
 
 
-<a class="btn" href="#">
 
-Ler artigo
+<a href="#" class="read-more">
+
+Ler artigo →
 
 </a>
+
+
+
+</div>
 
 
 </div>
@@ -378,32 +1161,6 @@ Ler artigo
 
 
 
-
-<div class="card">
-
-
-<h2>
-
-Direito Civil
-
-</h2>
-
-
-<p>
-
-Contratos, indenizações e conflitos: como uma análise jurídica pode evitar prejuízos.
-
-</p>
-
-
-<a class="btn" href="#">
-
-Ler artigo
-
-</a>
-
-
-</div>
 
 
 
@@ -413,41 +1170,402 @@ Ler artigo
 </section>
 
 
-
+<!-- MAIS ARTIGOS -->
 
 
 <section>
 
 
-<h2 class="title">
 
-Conhecimento gera segurança
-
-</h2>
+<div class="articles">
 
 
-<p style="max-width:900px;margin:auto;text-align:center;color:#ddd;font-size:20px;line-height:1.8;">
 
-Nosso objetivo é traduzir o Direito de forma clara, levando informação de qualidade para que pessoas e empresas possam tomar decisões mais seguras.
+
+
+
+
+<!-- ARTIGO 4 -->
+
+
+<div class="article-card">
+
+
+<img 
+
+src="assets/img/escritorio.jpg"
+
+alt="Direito Civil">
+
+
+
+
+
+<div class="article-content">
+
+
+<span class="article-category">
+
+Direito Civil
+
+</span>
+
+
+
+<h3>
+
+Contratos: por que a análise jurídica é importante?
+
+</h3>
+
+
+
+<p>
+
+
+Entenda como uma análise preventiva pode evitar
+problemas futuros e proteger seus direitos.
 
 </p>
+
+
+
+<a href="#" class="read-more">
+
+Ler artigo →
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ARTIGO 5 -->
+
+
+<div class="article-card">
+
+
+<img 
+
+src="assets/img/escritorio.jpg"
+
+alt="Direito Empresarial">
+
+
+
+
+
+<div class="article-content">
+
+
+<span class="article-category">
+
+Direito Empresarial
+
+</span>
+
+
+
+<h3>
+
+Como proteger juridicamente sua empresa?
+
+</h3>
+
+
+
+<p>
+
+
+A assessoria jurídica preventiva auxilia empresas na
+redução de riscos e tomada de decisões mais seguras.
+
+</p>
+
+
+
+<a href="#" class="read-more">
+
+Ler artigo →
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ARTIGO 6 -->
+
+
+<div class="article-card">
+
+
+<img 
+
+src="assets/img/escritorio.jpg"
+
+alt="Consultoria Jurídica">
+
+
+
+
+
+<div class="article-content">
+
+
+<span class="article-category">
+
+Advocacia Estratégica
+
+</span>
+
+
+
+<h3>
+
+Quando procurar um advogado?
+
+</h3>
+
+
+
+<p>
+
+
+A orientação jurídica no momento correto pode evitar
+prejuízos e encontrar soluções mais eficientes.
+
+</p>
+
+
+
+<a href="#" class="read-more">
+
+Ler artigo →
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+</div>
 
 
 </section>
 
 
 
+
+
+
+
+
+
+<!-- DESTAQUE -->
+
+
+<section class="featured">
+
+
+<h2>
+
+Informação é o primeiro passo para proteger seus direitos.
+
+</h2>
+
+
+
+<p>
+
+
+O Direito está presente nas principais decisões da vida
+das pessoas e das empresas.
+
+
+<br><br>
+
+
+Por isso, a JR Ribeiro & Flores Advocacia busca levar
+conhecimento jurídico de forma clara, permitindo que você
+compreenda suas possibilidades e tome decisões mais seguras.
+
+</p>
+
+
+
+<br><br>
+
+
+
+<a href="contato.html" class="btn">
+
+Falar com um advogado
+
+</a>
+
+
+
+</section>
+
+
+<!-- RODAPÉ -->
 
 
 <footer>
 
-© 2026 JR Ribeiro & Flores Advocacia
+
+<h3>
+
+JR Ribeiro & Flores Advocacia
+
+</h3>
+
+
+
+<p>
+
+Advocacia estratégica para pessoas físicas e empresas.
+
+</p>
+
+
 
 <br>
 
-Canoas - Rio Grande do Sul
+
+
+<p>
+
+📍 Canoas - Rio Grande do Sul
+
+</p>
+
+
+
+<p>
+
+📱 (51) 99999-9999
+
+</p>
+
+
+
+<p>
+
+✉ contato@jrribeiroeflores.com.br
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+© 2026 JR Ribeiro & Flores Advocacia.
+
+<br>
+
+Todos os direitos reservados.
+
+</p>
+
+
 
 </footer>
+
+
+
+
+
+
+
+
+
+<!-- WHATSAPP FLUTUANTE -->
+
+
+<a 
+
+href="https://wa.me/5551000000000"
+
+target="_blank"
+
+style="
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:65px;
+
+height:65px;
+
+background:#25D366;
+
+color:white;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:32px;
+
+z-index:999;
+
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+
+">
+
+
+<i class="fa-brands fa-whatsapp"></i>
+
+
+</a>
+
+
+
+
 
 
 

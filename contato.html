@@ -8,8 +8,21 @@
 
 <title>Contato | JR Ribeiro & Flores Advocacia</title>
 
-<meta name="description" content="Entre em contato com a JR Ribeiro & Flores Advocacia. Atendimento jurídico personalizado em Canoas e região.">
+<meta name="description" content="Entre em contato com a JR Ribeiro & Flores Advocacia. Atendimento jurídico estratégico para pessoas físicas e empresas.">
 
+<meta name="keywords" content="contato advogado Canoas, escritório de advocacia Canoas, advogado trabalhista, advogado previdenciário">
+
+<meta name="author" content="JR Ribeiro & Flores Advocacia">
+
+<meta name="theme-color" content="#C9A227">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
 
@@ -17,191 +30,375 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',Arial,sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+}
 
 body{
-
+font-family:'Inter',sans-serif;
 background:#080808;
-color:white;
-
+color:#fff;
+overflow-x:hidden;
 }
 
+a{
+text-decoration:none;
+}
+
+section{
+padding:100px 8%;
+}
+
+.title{
+font-family:'Cormorant Garamond',serif;
+font-size:52px;
+text-align:center;
+margin-bottom:25px;
+}
+
+.subtitle{
+max-width:850px;
+margin:auto;
+text-align:center;
+font-size:19px;
+line-height:1.8;
+color:#ccc;
+}
+
+/* HEADER */
 
 header{
 
-background:#050505;
-padding:25px 10%;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+
+padding:22px 8%;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
 
-}
+background:#080808;
 
+z-index:999;
+
+}
 
 .logo{
 
-font-size:25px;
-font-weight:bold;
+font-family:'Cormorant Garamond',serif;
+font-size:34px;
+font-weight:700;
 
 }
 
-
-.gold{
-
-color:#c9a227;
-
+.logo span{
+color:#C9A227;
 }
 
-
-nav a{
-
-color:white;
-text-decoration:none;
-margin-left:25px;
-
-}
-
-
-nav a:hover{
-
-color:#c9a227;
-
-}
-
-
-
-.hero{
-
-padding:100px 10%;
-text-align:center;
-background:#111;
-
-}
-
-
-.hero h1{
-
-font-size:50px;
-margin-bottom:20px;
-
-}
-
-
-.hero p{
-
-font-size:20px;
-color:#ddd;
-
-}
-
-
-
-section{
-
-padding:80px 10%;
-
-}
-
-
-
-.contact{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:40px;
-
-}
-
-
-
-.box{
-
-background:#111;
-padding:35px;
-border-radius:15px;
-border:1px solid #222;
-
-}
-
-
-
-.box h2{
-
-color:#c9a227;
-margin-bottom:20px;
-
-}
-
-
-
-.box p{
-
-color:#ddd;
-line-height:1.8;
-
-}
-
-
-
-form input,
-form textarea{
-
-width:100%;
-padding:15px;
-margin-bottom:15px;
-background:#080808;
-border:1px solid #333;
-color:white;
-border-radius:8px;
-
-}
-
-
-textarea{
-
-height:130px;
-
-}
-
-
-
-.btn{
-
-display:inline-block;
-background:#c9a227;
-color:#000;
-padding:15px 35px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-border:none;
-cursor:pointer;
-
-}
-
-
-.btn:hover{
-
-background:white;
-
-}
-
-
-
-footer{
-
-background:#050505;
-padding:30px;
-text-align:center;
+.logo small{
+
+display:block;
+font-size:12px;
+letter-spacing:4px;
 color:#aaa;
 
 }
 
+nav{
+
+display:flex;
+gap:30px;
+
+}
+
+nav a{
+
+color:#fff;
+font-size:15px;
+
+}
+
+nav a:hover{
+
+color:#C9A227;
+
+}
+
+/* HERO */
+
+.hero{
+
+height:70vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.80)
+),
+
+url("assets/img/escritorio.jpg");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.hero h1{
+
+font-family:'Cormorant Garamond',serif;
+font-size:68px;
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+max-width:850px;
+margin:auto;
+font-size:21px;
+line-height:1.8;
+color:#ddd;
+
+}
+/* ==========================
+CONTATO
+========================== */
+
+.contact-grid{
+
+display:grid;
+grid-template-columns:380px 1fr;
+gap:50px;
+margin-top:60px;
+
+}
 
 
-@media(max-width:800px){
+
+.contact-info{
+
+display:flex;
+flex-direction:column;
+gap:25px;
+
+}
+
+
+
+.info-card{
+
+background:#111;
+border:1px solid #222;
+border-radius:18px;
+padding:28px;
+transition:.3s;
+
+}
+
+.info-card:hover{
+
+border-color:#C9A227;
+transform:translateY(-5px);
+
+}
+
+.info-card i{
+
+font-size:28px;
+color:#C9A227;
+margin-bottom:15px;
+
+}
+
+.info-card h3{
+
+font-family:'Cormorant Garamond',serif;
+font-size:28px;
+margin-bottom:10px;
+
+}
+
+.info-card p{
+
+color:#ccc;
+line-height:1.7;
+
+}
+
+
+
+/* ==========================
+FORMULÁRIO
+========================== */
+
+.form-box{
+
+background:#111;
+border:1px solid #222;
+border-radius:20px;
+padding:40px;
+
+}
+
+.form-box h2{
+
+font-family:'Cormorant Garamond',serif;
+font-size:42px;
+margin-bottom:15px;
+
+}
+
+.form-box p{
+
+color:#bbb;
+margin-bottom:30px;
+line-height:1.8;
+
+}
+
+.form-group{
+
+margin-bottom:22px;
+
+}
+
+.form-group label{
+
+display:block;
+margin-bottom:8px;
+font-weight:600;
+color:#ddd;
+
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+width:100%;
+padding:15px;
+background:#0c0c0c;
+border:1px solid #2b2b2b;
+border-radius:10px;
+color:#fff;
+font-size:15px;
+outline:none;
+transition:.3s;
+
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+border-color:#C9A227;
+
+}
+
+.form-group textarea{
+
+resize:vertical;
+min-height:160px;
+
+}
+
+
+
+/* ==========================
+BOTÃO
+========================== */
+
+.btn{
+
+display:inline-block;
+background:#C9A227;
+color:#111;
+padding:16px 36px;
+border:none;
+border-radius:40px;
+font-weight:700;
+font-size:15px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+background:#fff;
+
+}
+
+
+
+/* ==========================
+MAPA
+========================== */
+
+.map{
+
+margin-top:80px;
+border-radius:20px;
+overflow:hidden;
+border:1px solid #222;
+
+}
+
+.map iframe{
+
+width:100%;
+height:450px;
+border:0;
+
+}
+
+
+
+/* ==========================
+FOOTER
+========================== */
+
+footer{
+
+background:#050505;
+padding:50px 8%;
+text-align:center;
+
+}
+
+footer h3{
+
+font-family:'Cormorant Garamond',serif;
+font-size:34px;
+
+}
+
+footer p{
+
+color:#aaa;
+line-height:2;
+
+}
+
+
+
+/* ==========================
+RESPONSIVO
+========================== */
+
+@media(max-width:900px){
 
 nav{
 
@@ -211,47 +408,51 @@ display:none;
 
 .hero h1{
 
-font-size:35px;
+font-size:44px;
+
+}
+
+.title{
+
+font-size:40px;
+
+}
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.form-box{
+
+padding:30px 25px;
 
 }
 
 }
-
-</style>
-
+  </style>
 
 </head>
 
-
 <body>
-
+  <!-- HEADER -->
 
 <header>
 
+    <div class="logo">
+        JR <span>Ribeiro & Flores</span>
+        <small>ADVOCACIA</small>
+    </div>
 
-<div class="logo">
-
-JR <span class="gold">Ribeiro & Flores</span>
-
-<br>
-
-<small>Advocacia</small>
-
-</div>
-
-
-<nav>
-
-<a href="index.html">Início</a>
-
-<a href="escritorio.html">Escritório</a>
-
-<a href="atuacao.html">Atuação</a>
-
-<a href="contato.html">Contato</a>
-
-</nav>
-
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="escritorio.html">Escritório</a>
+        <a href="socios.html">Sócios</a>
+        <a href="atuacao.html">Atuação</a>
+        <a href="artigos.html">Artigos</a>
+        <a href="contato.html">Contato</a>
+    </nav>
 
 </header>
 
@@ -259,125 +460,235 @@ JR <span class="gold">Ribeiro & Flores</span>
 
 
 
+<!-- HERO -->
+
 <section class="hero">
 
+    <div>
 
-<h1>
+        <h1>
+            Vamos conversar sobre o seu caso.
+        </h1>
 
-Entre em contato
+        <p>
+            Estamos preparados para oferecer orientação jurídica estratégica,
+            atendimento personalizado e soluções eficientes para proteger seus direitos.
+        </p>
 
-</h1>
-
-
-<p>
-
-Nossa equipe está pronta para analisar sua situação jurídica.
-
-</p>
-
+    </div>
 
 </section>
 
 
 
 
+
+<!-- CONTATO -->
 
 <section>
 
+    <h2 class="title">
+        Entre em contato
+    </h2>
 
-<div class="contact">
-
-
-<div class="box">
-
-
-<h2>
-
-Atendimento
-
-</h2>
+    <p class="subtitle">
+        Será um prazer conhecer sua necessidade e indicar o melhor caminho jurídico.
+        Nossa equipe está pronta para atendê-lo com transparência, agilidade e compromisso.
+    </p>
 
 
-<p>
 
-📱 WhatsApp
-
-<br><br>
-
-(51) 99522-5270
-
-<br><br>
-
-📧 E-mail
-
-<br><br>
-
-contato@jrribeiroeflores.com.br
-
-<br><br>
-
-📍 Canoas - Rio Grande do Sul
-
-</p>
+    <div class="contact-grid">
 
 
-<br>
 
 
-<a class="btn" href="https://wa.me/5500000000000">
+        <!-- INFORMAÇÕES -->
 
-Chamar no WhatsApp
+        <div class="contact-info">
 
-</a>
+            <div class="info-card">
+                <i class="fa-brands fa-whatsapp"></i>
 
+                <h3>WhatsApp</h3>
 
-</div>
+                <p>
+                    Atendimento rápido para tirar dúvidas e agendar consultas.
+                </p>
+
+                <br>
+
+                <a class="btn"
+                   href="https://wa.me/555199522-5270"
+                   target="_blank">
+
+                    Conversar agora
+
+                </a>
+
+            </div>
 
 
 
 
 
-<div class="box">
+            <div class="info-card">
 
+                <i class="fa-solid fa-envelope"></i>
 
-<h2>
+                <h3>E-mail</h3>
 
-Envie sua mensagem
+                <p>
 
-</h2>
+                    contato@jrribeiroeflores.com.br
 
+                </p>
 
-<form>
-
-
-<input type="text" placeholder="Nome">
-
-
-<input type="tel" placeholder="WhatsApp">
-
-
-<input type="email" placeholder="E-mail">
-
-
-<textarea placeholder="Conte brevemente seu caso"></textarea>
-
-
-<button class="btn">
-
-Enviar mensagem
-
-</button>
-
-
-</form>
-
-
-</div>
+            </div>
 
 
 
-</div>
 
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <h3>Localização</h3>
+
+                <p>
+
+                    Canoas • Rio Grande do Sul
+
+                </p>
+
+            </div>
+
+
+
+
+
+            <div class="info-card">
+
+                <i class="fa-regular fa-clock"></i>
+
+                <h3>Horário de Atendimento</h3>
+
+                <p>
+
+                    Segunda a Sexta
+
+                    <br><br>
+
+                    08:30 às 18:00
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- FORMULÁRIO -->
+
+        <div class="form-box">
+
+            <h2>
+
+                Solicite um atendimento
+
+            </h2>
+
+            <p>
+
+                Preencha os dados abaixo. Nossa equipe entrará em contato o mais breve possível.
+
+            </p>
+
+            <form>
+
+                <div class="form-group">
+
+                    <label>Nome completo</label>
+
+                    <input
+                        type="text"
+                        placeholder="Digite seu nome">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Telefone / WhatsApp</label>
+
+                    <input
+                        type="tel"
+                        placeholder="(51) 99522-5270">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>E-mail</label>
+
+                    <input
+                        type="email"
+                        placeholder="seuemail@exemplo.com">
+
+                </div>
+                                <div class="form-group">
+
+                    <label>Área de Interesse</label>
+
+                    <select>
+
+                        <option>Selecione uma área</option>
+
+                        <option>Direito Trabalhista</option>
+
+                        <option>Direito Previdenciário</option>
+
+                        <option>Direito do Consumidor</option>
+
+                        <option>Direito Civil</option>
+
+                        <option>Direito Empresarial</option>
+
+                        <option>Outro assunto</option>
+
+                    </select>
+
+                </div>
+
+
+
+
+                <div class="form-group">
+
+                    <label>Mensagem</label>
+
+                    <textarea
+                    placeholder="Descreva brevemente sua necessidade."></textarea>
+
+                </div>
+
+
+
+
+                <button class="btn" type="submit">
+
+                    Solicitar atendimento
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -385,17 +696,196 @@ Enviar mensagem
 
 
 
+<!-- MAPA -->
+
+<section>
+
+    <h2 class="title">
+
+        Onde Estamos
+
+    </h2>
+
+    <p class="subtitle">
+
+        Atendemos clientes presencialmente e também de forma
+        totalmente online em todo o Brasil.
+
+    </p>
+
+    <div class="map">
+
+        <iframe
+        src="https://www.google.com/maps?q=Canoas,RS&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- CTA FINAL -->
+
+<section style="background:#111;text-align:center;">
+
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:56px;margin-bottom:25px;">
+
+        Seu problema jurídico merece atenção especializada.
+
+    </h2>
+
+    <p style="max-width:850px;margin:auto;color:#ccc;font-size:20px;line-height:1.8;">
+
+        Entre em contato com a JR Ribeiro & Flores Advocacia
+        e receba uma orientação jurídica baseada em estratégia,
+        transparência e compromisso com os seus objetivos.
+
+    </p>
+
+    <br><br>
+
+    <a
+    href="https://wa.me/555199522-5270"
+    class="btn"
+    target="_blank">
+
+        Falar pelo WhatsApp
+
+    </a>
+
+</section>
+<!-- RODAPÉ -->
+
 <footer>
 
-© 2026 JR Ribeiro & Flores Advocacia
+    <h3>
 
-<br>
+        JR Ribeiro & Flores Advocacia
 
-Canoas - Rio Grande do Sul
+    </h3>
+
+    <p>
+
+        Advocacia estratégica para pessoas físicas e empresas.
+
+    </p>
+
+    <br>
+
+    <p>
+
+        📍 Canoas • Rio Grande do Sul
+
+    </p>
+
+    <p>
+
+        📞 (51) 99522-5270
+
+    </p>
+
+    <p>
+
+        ✉ contato@jrribeiroeflores.com.br
+
+    </p>
+
+    <br>
+
+    <p>
+
+        © 2026 JR Ribeiro & Flores Advocacia.
+        <br>
+        Todos os direitos reservados.
+
+    </p>
 
 </footer>
 
 
+
+
+
+<!-- BOTÃO WHATSAPP -->
+
+<a
+
+href="https://wa.me/55SEUNUMERO?text=Olá!%20Visitei%20o%20site%20da%20JR%20Ribeiro%20%26%20Flores%20Advocacia%20e%20gostaria%20de%20agendar%20um%20atendimento."
+
+target="_blank"
+
+style="
+position:fixed;
+right:25px;
+bottom:25px;
+width:65px;
+height:65px;
+background:#25D366;
+color:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+box-shadow:0 10px 30px rgba(0,0,0,.40);
+z-index:9999;
+transition:.3s;
+"
+
+onmouseover="this.style.transform='scale(1.08)'"
+onmouseout="this.style.transform='scale(1)'"
+
+>
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+
+
+<script>
+
+// Destaca o item "Contato" do menu
+document.querySelectorAll("nav a").forEach(link => {
+
+    if (link.getAttribute("href") === "contato.html") {
+        link.style.color = "#C9A227";
+    }
+
+});
+
+
+// Scroll suave para links internos
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        const destino = document.querySelector(this.getAttribute("href"));
+
+        if(destino){
+
+            destino.scrollIntoView({
+
+                behavior:"smooth"
+
+            });
+
+        }
+
+    });
+
+});
+
+</script>
 
 </body>
 

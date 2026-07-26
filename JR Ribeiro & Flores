@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JRSILVA Advocacia</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0b0b0b;
+    color:white;
+}
+
+header{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.logo{
+    font-size:45px;
+    font-weight:bold;
+}
+
+.gold{
+    color:#c9a227;
+}
+
+p{
+    margin-top:20px;
+    font-size:20px;
+    max-width:600px;
+    line-height:1.5;
+}
+
+.btn{
+    margin-top:35px;
+    background:#c9a227;
+    color:#000;
+    padding:15px 35px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#fff;
+}
+
+footer{
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    text-align:center;
+    font-size:14px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+
+<div class="logo">
+
+JR<span class="gold">SILVA</span>
+
+<br>
+
+<span style="font-size:25px">
+Advocacia
+</span>
+
+</div>
+
+
+<p>
+Excelência jurídica, estratégia e tecnologia para defender seus direitos.
+</p>
+
+
+<a class="btn" href="https://wa.me/5500000000000">
+Fale conosco
+</a>
+
+
+</header>
+
+
+<footer>
+© 2026 JRSILVA Advocacia - Canoas/RS
+</footer>
+
+
+</body>
+
+</html>

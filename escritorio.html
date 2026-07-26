@@ -1,112 +1,66 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 
 <head>
 
+
 <meta charset="UTF-8">
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>O Escritório | JR Ribeiro & Flores Advocacia</title>
 
-<meta name="description" content="Conheça a JR Ribeiro & Flores Advocacia, escritório jurídico com atuação estratégica e atendimento personalizado.">
+
+<title>
+O Escritório | JR Ribeiro & Flores Advocacia
+</title>
+
+
+
+<meta name="description" content="Conheça a JR Ribeiro & Flores Advocacia, um escritório jurídico moderno, estratégico e comprometido com seus clientes.">
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
 
 <style>
 
+
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',Arial,sans-serif;
+
 }
+
 
 
 body{
 
 background:#080808;
 color:white;
+font-family:'Inter',sans-serif;
 
 }
 
 
-header{
 
-background:#050505;
-padding:25px 10%;
-display:flex;
-justify-content:space-between;
-align-items:center;
+a{
 
-}
-
-
-.logo{
-
-font-size:25px;
-font-weight:bold;
-
-}
-
-
-.gold{
-
-color:#c9a227;
-
-}
-
-
-nav a{
-
-color:white;
 text-decoration:none;
-margin-left:25px;
-
-}
-
-
-nav a:hover{
-
-color:#c9a227;
-
-}
-
-
-
-.hero{
-
-padding:100px 10%;
-text-align:center;
-
-background:
-
-linear-gradient(
-rgba(0,0,0,.7),
-rgba(0,0,0,.9)
-),
-
-url("https://images.unsplash.com/photo-1505664194779-8beaceb93744");
-
-background-size:cover;
-background-position:center;
-
-}
-
-
-
-.hero h1{
-
-font-size:50px;
-margin-bottom:30px;
-
-}
-
-
-.hero p{
-
-max-width:850px;
-margin:auto;
-font-size:21px;
-line-height:1.8;
-color:#ddd;
 
 }
 
@@ -114,17 +68,173 @@ color:#ddd;
 
 section{
 
-padding:80px 10%;
+padding:100px 8%;
 
 }
 
 
 
-.title{
+
+/* HEADER */
+
+
+header{
+
+position:fixed;
+top:0;
+width:100%;
+padding:22px 8%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:#080808;
+
+z-index:999;
+
+}
+
+
+
+.logo{
+
+font-family:'Cormorant Garamond',serif;
+font-size:34px;
+font-weight:700;
+
+}
+
+
+
+.logo span{
+
+color:#C9A227;
+
+}
+
+
+
+.logo small{
+
+display:block;
+font-family:'Inter';
+font-size:12px;
+letter-spacing:4px;
+color:#aaa;
+
+}
+
+
+
+nav{
+
+display:flex;
+gap:30px;
+
+}
+
+
+
+nav a{
+
+color:white;
+font-size:15px;
+
+}
+
+
+
+nav a:hover{
+
+color:#C9A227;
+
+}
+
+
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+
+height:70vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
 
 text-align:center;
-font-size:38px;
-margin-bottom:40px;
+
+
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.7),
+rgba(0,0,0,.85)
+),
+
+url("https://images.unsplash.com/photo-1556761175-b413da4baf72");
+
+
+background-size:cover;
+background-position:center;
+
+
+}
+
+
+
+.hero h1{
+
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:65px;
+
+
+}
+
+
+
+.hero p{
+
+
+max-width:800px;
+
+margin:30px auto;
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#ddd;
+
+
+}
+
+
+
+/* CONTEÚDO */
+
+
+.title{
+
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:50px;
+
+text-align:center;
+
+margin-bottom:30px;
+
 
 }
 
@@ -132,50 +242,219 @@ margin-bottom:40px;
 
 .text{
 
+
 max-width:900px;
+
 margin:auto;
-font-size:19px;
-line-height:2;
-color:#ddd;
+
 text-align:center;
 
+font-size:19px;
+
+line-height:1.9;
+
+color:#ccc;
+
+
+}
+
+
+/* ==========================
+CARDS INSTITUCIONAIS
+========================== */
+
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:50px;
+
 }
 
 
 
-.box{
+.card{
 
 background:#111;
+
 border:1px solid #222;
-padding:40px;
-border-radius:15px;
-margin-top:40px;
+
+padding:35px;
+
+border-radius:18px;
+
+text-align:center;
+
+transition:.3s;
 
 }
 
 
 
-.box h2{
+.card:hover{
 
-color:#c9a227;
+transform:translateY(-8px);
+
+border-color:#C9A227;
+
+}
+
+
+
+.card i{
+
+font-size:42px;
+
+color:#C9A227;
+
 margin-bottom:20px;
 
 }
 
 
 
-footer{
+.card h3{
 
-background:#050505;
-padding:30px;
-text-align:center;
-color:#aaa;
+font-family:'Cormorant Garamond',serif;
+
+font-size:30px;
+
+margin-bottom:15px;
 
 }
 
 
 
-@media(max-width:800px){
+.card p{
+
+color:#ccc;
+
+line-height:1.8;
+
+}
+
+
+
+
+
+/* ==========================
+CTA
+========================== */
+
+
+.cta{
+
+background:#111;
+
+text-align:center;
+
+}
+
+
+
+.cta h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:50px;
+
+margin-bottom:25px;
+
+}
+
+
+
+.cta p{
+
+max-width:750px;
+
+margin:auto;
+
+color:#ccc;
+
+font-size:19px;
+
+line-height:1.8;
+
+}
+
+
+
+/* BOTÃO */
+
+
+.btn{
+
+display:inline-block;
+
+margin-top:35px;
+
+background:#C9A227;
+
+color:#111;
+
+padding:16px 35px;
+
+border-radius:40px;
+
+font-weight:bold;
+
+}
+
+
+
+.btn:hover{
+
+background:white;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#050505;
+
+padding:50px 8%;
+
+text-align:center;
+
+}
+
+
+
+footer h3{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:35px;
+
+margin-bottom:20px;
+
+}
+
+
+
+footer p{
+
+color:#aaa;
+
+line-height:2;
+
+}
+
+
+
+/* RESPONSIVO */
+
+
+@media(max-width:900px){
+
 
 nav{
 
@@ -184,21 +463,31 @@ display:none;
 }
 
 
+
 .hero h1{
 
-font-size:35px;
+font-size:45px;
 
 }
 
+
+
+.title{
+
+font-size:40px;
+
 }
 
 
+}
 </style>
 
 </head>
 
 
 <body>
+  
+<!-- HEADER -->
 
 
 <header>
@@ -206,26 +495,62 @@ font-size:35px;
 
 <div class="logo">
 
-JR <span class="gold">Ribeiro & Flores</span>
+JR <span>Ribeiro & Flores</span>
 
-<br>
+<small>
 
-<small>Advocacia</small>
+ADVOCACIA
+
+</small>
 
 </div>
 
 
+
 <nav>
 
-<a href="index.html">Início</a>
 
-<a href="escritorio.html">Escritório</a>
+<a href="index.html">
 
-<a href="socios.html">Sócios</a>
+Início
 
-<a href="atuacao.html">Atuação</a>
+</a>
 
-<a href="contato.html">Contato</a>
+
+<a href="escritorio.html">
+
+Escritório
+
+</a>
+
+
+<a href="socios.html">
+
+Sócios
+
+</a>
+
+
+<a href="atuacao.html">
+
+Atuação
+
+</a>
+
+
+<a href="artigos.html">
+
+Artigos
+
+</a>
+
+
+<a href="contato.html">
+
+Contato
+
+</a>
+
 
 </nav>
 
@@ -235,27 +560,50 @@ JR <span class="gold">Ribeiro & Flores</span>
 
 
 
+
+
+
+<!-- HERO -->
+
+
 <section class="hero">
+
+
+<div>
 
 
 <h1>
 
-O Escritório
+Um escritório construído com estratégia,
+ética e compromisso.
 
 </h1>
 
 
+
 <p>
 
-Uma advocacia construída sobre confiança, estratégia e compromisso com cada cliente.
+A JR Ribeiro & Flores Advocacia nasceu com o propósito
+de oferecer uma advocacia moderna, técnica e próxima,
+colocando o cliente no centro de cada decisão.
 
 </p>
+
+
+
+</div>
 
 
 </section>
 
 
 
+
+
+
+
+
+<!-- NOSSA HISTÓRIA -->
 
 
 <section>
@@ -263,28 +611,39 @@ Uma advocacia construída sobre confiança, estratégia e compromisso com cada c
 
 <h2 class="title">
 
-Quem Somos
+Nossa História
 
 </h2>
 
 
-<p class="text">
-
-A JR Ribeiro & Flores Advocacia nasceu com o propósito de oferecer uma atuação jurídica moderna, técnica e humanizada.
-
-</p>
 
 
 <p class="text">
 
-Acreditamos que cada cliente possui uma história única e que cada demanda exige uma estratégia personalizada.
 
-</p>
+A JR Ribeiro & Flores Advocacia foi criada a partir da união
+de conhecimento jurídico, visão estratégica e o desejo de
+transformar a forma como as pessoas se relacionam com a
+advocacia.
 
 
-<p class="text">
 
-Nossa atuação combina conhecimento jurídico, dedicação e inovação para proporcionar segurança nas decisões mais importantes.
+<br><br>
+
+
+Mais do que representar clientes em processos, acreditamos
+que o papel do advogado é compreender cada situação,
+identificar riscos, construir estratégias e buscar soluções
+eficientes.
+
+
+
+<br><br>
+
+
+Nossa atuação é baseada em três pilares fundamentais:
+excelência técnica, atendimento humanizado e compromisso
+com resultados.
 
 </p>
 
@@ -293,24 +652,47 @@ Nossa atuação combina conhecimento jurídico, dedicação e inovação para pr
 
 
 
+
+
+
+
+
+<!-- FILOSOFIA -->
 
 
 <section>
 
 
-<div class="box">
+<h2 class="title">
 
-
-<h2>
-
-Nossa Missão
+Nossa Filosofia
 
 </h2>
 
 
+
+<div class="cards">
+
+
+
+<div class="card">
+
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+
+<h3>
+
+Estratégia Jurídica
+
+</h3>
+
+
 <p>
 
-Oferecer soluções jurídicas eficientes, com atendimento próximo, transparente e comprometido com os objetivos de nossos clientes.
+Cada caso recebe uma análise individualizada,
+buscando o melhor caminho jurídico para alcançar
+os objetivos do cliente.
 
 </p>
 
@@ -320,19 +702,24 @@ Oferecer soluções jurídicas eficientes, com atendimento próximo, transparent
 
 
 
-<div class="box">
+
+<div class="card">
 
 
-<h2>
+<i class="fa-solid fa-handshake"></i>
 
-Nossa Visão
 
-</h2>
+<h3>
+
+Relacionamento
+
+</h3>
 
 
 <p>
 
-Ser reconhecido como um escritório de referência pela excelência técnica, inovação e relacionamento com clientes.
+Construímos relações baseadas em confiança,
+transparência e comunicação clara.
 
 </p>
 
@@ -342,21 +729,146 @@ Ser reconhecido como um escritório de referência pela excelência técnica, in
 
 
 
-<div class="box">
+
+<div class="card">
 
 
-<h2>
+<i class="fa-solid fa-lightbulb"></i>
 
-Nossos Valores
 
-</h2>
+<h3>
+
+Inovação
+
+</h3>
 
 
 <p>
 
-Ética, responsabilidade, transparência, estratégia e respeito pelas pessoas.
+Utilizamos tecnologia e métodos modernos para
+proporcionar um atendimento mais eficiente.
 
 </p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+<!-- COMO TRABALHAMOS -->
+
+
+<section>
+
+
+<h2 class="title">
+
+Como Trabalhamos
+
+</h2>
+
+
+
+<p class="text">
+
+Nossa atuação começa com a compreensão completa do problema
+apresentado pelo cliente. A partir disso, desenvolvemos uma
+estratégia jurídica personalizada, avaliando riscos, oportunidades
+e os melhores caminhos para cada situação.
+
+</p>
+
+
+
+
+<div class="cards">
+
+
+
+<div class="card">
+
+
+<i class="fa-solid fa-comments"></i>
+
+
+<h3>
+
+1. Atendimento Inicial
+
+</h3>
+
+
+<p>
+
+Escutamos sua situação, analisamos documentos e
+identificamos os pontos jurídicos relevantes.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+
+<h3>
+
+2. Análise Estratégica
+
+</h3>
+
+
+<p>
+
+Estudamos o caso com profundidade para definir
+a melhor estratégia jurídica.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<i class="fa-solid fa-gavel"></i>
+
+
+<h3>
+
+3. Atuação Jurídica
+
+</h3>
+
+
+<p>
+
+Realizamos a defesa dos seus interesses com técnica,
+responsabilidade e acompanhamento próximo.
+
+</p>
+
+
+</div>
+
+
 
 
 </div>
@@ -368,15 +880,263 @@ Nossos Valores
 
 
 
+
+
+
+<!-- TECNOLOGIA -->
+
+
+<section>
+
+
+<h2 class="title">
+
+Tecnologia Aplicada ao Direito
+
+</h2>
+
+
+
+
+<p class="text">
+
+
+A JR Ribeiro & Flores Advocacia acredita que a tecnologia é uma
+aliada para tornar a advocacia mais eficiente.
+
+
+<br><br>
+
+
+Utilizamos ferramentas modernas para organização de demandas,
+acompanhamento processual e melhoria da experiência do cliente,
+sem deixar de lado o atendimento próximo e humanizado.
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ATENDIMENTO HUMANIZADO -->
+
+
+<section>
+
+
+<h2 class="title">
+
+O Cliente no Centro da Advocacia
+
+</h2>
+
+
+
+<p class="text">
+
+
+Sabemos que cada processo representa uma história, uma
+preocupação ou um objetivo importante.
+
+
+<br><br>
+
+
+Por isso, buscamos oferecer um atendimento claro, transparente
+e acessível, permitindo que o cliente compreenda cada etapa da
+sua demanda jurídica.
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- COMPROMISSO -->
+
+
+<section class="cta">
+
+
+<h2>
+
+Compromisso com seus direitos.
+
+</h2>
+
+
+
+<p>
+
+Conte com a JR Ribeiro & Flores Advocacia para encontrar
+soluções jurídicas seguras e estratégicas.
+
+</p>
+
+
+
+<a href="contato.html" class="btn">
+
+Agendar Atendimento
+
+</a>
+
+
+</section>
+
+<!-- RODAPÉ -->
+
+
 <footer>
 
-© 2026 JR Ribeiro & Flores Advocacia
+
+<h3>
+
+JR Ribeiro & Flores Advocacia
+
+</h3>
+
+
+
+<p>
+
+Advocacia estratégica para pessoas físicas e empresas.
+
+</p>
+
+
 
 <br>
 
-Canoas - Rio Grande do Sul
+
+
+<p>
+
+📍 Canoas - Rio Grande do Sul
+
+</p>
+
+
+
+<p>
+
+📱 (51) 99999-9999
+
+</p>
+
+
+
+<p>
+
+✉ contato@jrribeiroeflores.com.br
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+© 2026 JR Ribeiro & Flores Advocacia.
+
+<br>
+
+Todos os direitos reservados.
+
+</p>
+
+
 
 </footer>
+
+
+
+
+
+
+
+<!-- WHATSAPP -->
+
+
+<a 
+
+href="https://wa.me/5551000000000"
+
+target="_blank"
+
+class="whatsapp">
+
+
+<i class="fa-brands fa-whatsapp"></i>
+
+
+</a>
+
+
+
+
+
+
+
+
+<!-- JAVASCRIPT -->
+
+
+<script>
+
+
+const header = document.querySelector("header");
+
+
+
+window.addEventListener("scroll",()=>{
+
+
+if(window.scrollY > 80){
+
+
+header.style.background="#080808";
+
+
+header.style.boxShadow="0 10px 30px rgba(0,0,0,.5)";
+
+
+}else{
+
+
+header.style.background="transparent";
+
+
+header.style.boxShadow="none";
+
+
+}
+
+
+});
+
+
+
+</script>
+
+
 
 
 

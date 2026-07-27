@@ -13,10 +13,10 @@ JR Ribeiro & Flores Advocacia | Advocacia Estratégica
 </title>
 
 
-<meta name="description" content="JR Ribeiro & Flores Advocacia. Soluções jurídicas estratégicas nas áreas Trabalhista, Previdenciária, Civil, Consumidor e Empresarial.">
+<meta name="description" content="A JR Ribeiro & Flores Advocacia oferece atendimento jurídico estratégico para pessoas físicas e empresas, com atuação Trabalhista, Previdenciária, Civil, Consumidor e Empresarial.">
 
 
-<meta name="keywords" content="advogado Canoas, advocacia trabalhista, advogado previdenciário, direito empresarial, JR Ribeiro Flores">
+<meta name="keywords" content="advogado Canoas, advogado trabalhista Canoas, advogado previdenciário, advogado consumidor, JR Ribeiro Flores">
 
 
 <meta name="author" content="JR Ribeiro & Flores Advocacia">
@@ -24,8 +24,6 @@ JR Ribeiro & Flores Advocacia | Advocacia Estratégica
 
 <meta name="theme-color" content="#C9A227">
 
-
-<link rel="icon" href="assets/img/logo.png">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,224 +37,560 @@ JR Ribeiro & Flores Advocacia | Advocacia Estratégica
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 
-<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
 
 
-</head>
+*{
 
+margin:0;
+padding:0;
+box-sizing:border-box;
 
-
-<body>
-
-
-
-<header>
-
-
-<div class="header-container">
-
-
-<a href="index.html" class="logo">
-
-JR <span>Ribeiro & Flores</span>
-
-<small>ADVOCACIA</small>
-
-</a>
+}
 
 
 
-<nav>
+html{
 
+scroll-behavior:smooth;
 
-<a href="index.html" class="active">
-
-Início
-
-</a>
-
-
-<a href="escritorio.html">
-
-Escritório
-
-</a>
-
-
-<a href="socios.html">
-
-Sócios
-
-</a>
-
-
-<a href="atuacao.html">
-
-Atuação
-
-</a>
-
-
-<a href="artigos.html">
-
-Artigos
-
-</a>
-
-
-<a href="contato.html">
-
-Contato
-
-</a>
-
-
-</nav>
+}
 
 
 
-<div class="menu-toggle">
+body{
 
-<i class="fa-solid fa-bars"></i>
+font-family:'Inter',sans-serif;
 
-</div>
+background:#080808;
+
+color:white;
+
+overflow-x:hidden;
+
+}
 
 
-</div>
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
 
 
-</header>
+
+section{
+
+padding:110px 8%;
+
+}
+
+
+
+.title{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:52px;
+
+text-align:center;
+
+margin-bottom:25px;
+
+}
+
+
+
+.subtitle{
+
+max-width:850px;
+
+margin:auto;
+
+text-align:center;
+
+font-size:19px;
+
+line-height:1.8;
+
+color:#ccc;
+
+}
 
 
 
 
+/* HEADER */
 
 
-<section class="hero" style="background-image:url('assets/img/hero.webp');">
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:22px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+z-index:999;
+
+transition:.4s;
+
+}
 
 
-<div class="hero-content">
+
+header.scrolled{
+
+background:#080808;
+
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+
+}
 
 
-<p style="
+
+.logo{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:34px;
+
+font-weight:700;
+
+}
+
+
+
+.logo span{
+
 color:#C9A227;
-letter-spacing:5px;
-font-size:14px;
+
+}
+
+
+
+.logo small{
+
+display:block;
+
+font-family:'Inter';
+
+font-size:12px;
+
+letter-spacing:4px;
+
+color:#aaa;
+
+}
+
+
+
+nav{
+
+display:flex;
+
+gap:30px;
+
+}
+
+
+
+nav a{
+
+color:white;
+
+font-size:15px;
+
+position:relative;
+
+}
+
+
+
+nav a:hover{
+
+color:#C9A227;
+
+}
+
+
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+height:2px;
+
+width:0;
+
+bottom:-8px;
+
+left:0;
+
+background:#C9A227;
+
+transition:.3s;
+
+}
+
+
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+
+
+/* HERO */
+
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.70),
+rgba(0,0,0,.85)
+),
+
+url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80");
+
+
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+
+
+.hero-content{
+
+max-width:1000px;
+
+}
+
+
+
+.hero h1{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:72px;
+
+line-height:1.1;
+
+margin-bottom:30px;
+
+}
+
+
+
+.hero p{
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#ddd;
+
+margin-bottom:40px;
+
+}
+
+
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.btn{
+
+background:#C9A227;
+
+color:#111;
+
+padding:17px 40px;
+
+border-radius:40px;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 15px 35px rgba(201,162,39,.4);
+
+}
+
+
+
+.btn-outline{
+
+border:2px solid #C9A227;
+
+color:#C9A227;
+
+padding:15px 38px;
+
+border-radius:40px;
+
+font-weight:700;
+
+}
+
+
+
+.btn-outline:hover{
+
+background:#C9A227;
+
+color:#111;
+
+}
+/* ==========================
+SOBRE O ESCRITÓRIO
+========================== */
+
+
+.about{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+
+
+.about img{
+
+width:100%;
+
+border-radius:20px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.4);
+
+}
+
+
+
+.about h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:55px;
+
+margin-bottom:25px;
+
+}
+
+
+
+.about p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#d5d5d5;
+
 margin-bottom:20px;
-text-transform:uppercase;
-">
 
-JR Ribeiro & Flores Advocacia
-
-</p>
-
-
-
-<h1>
-
-Estratégia jurídica.
-<br>
-
-Confiança para decisões importantes.
-
-</h1>
-
-
-
-<p>
-
-Uma advocacia moderna, técnica e personalizada, dedicada a proteger direitos e construir soluções jurídicas eficientes.
-
-</p>
+}
 
 
 
 
-<div class="hero-buttons">
+/* ==========================
+CARDS DE ATUAÇÃO
+========================== */
 
 
-<a href="contato.html" class="btn">
+.cards{
 
-<i class="fa-solid fa-calendar-check"></i>
+display:grid;
 
-Agendar atendimento
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
 
-</a>
+gap:30px;
 
+margin-top:50px;
 
-
-<a href="atuacao.html" class="btn btn-outline">
-
-Conheça nossa atuação
-
-</a>
+}
 
 
-</div>
+
+.card{
+
+background:#111;
+
+border:1px solid #222;
+
+border-radius:18px;
+
+padding:40px 30px;
+
+text-align:center;
+
+transition:.35s;
+
+}
 
 
-</div>
+
+.card:hover{
+
+transform:translateY(-10px);
+
+border-color:#C9A227;
+
+box-shadow:0 20px 40px rgba(201,162,39,.18);
+
+}
 
 
-</section>
-<section class="section-dark">
 
-<div class="container">
+.card i{
+
+font-size:45px;
+
+color:#C9A227;
+
+margin-bottom:25px;
+
+}
 
 
-<div class="grid-2">
+
+.card h3{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:30px;
+
+margin-bottom:15px;
+
+}
 
 
-<div class="image-box reveal">
+
+.card p{
+
+color:#ccc;
+
+line-height:1.8;
+
+}
+
+
+
+.card .btn{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:12px 25px;
+
+font-size:14px;
+
+}
+
+
+
+/* ==========================
+HTML - CONTEÚDO
+========================== */
+
+
+<section class="about">
+
+
+<div>
+
 
 <img 
-src="assets/img/escritorio.webp" 
-alt="Ambiente da JR Ribeiro & Flores Advocacia">
+src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80"
+alt="Escritório de advocacia">
+
 
 </div>
 
 
 
-<div class="reveal">
+<div>
 
 
-<div style="
-width:60px;
-height:3px;
-background:#C9A227;
-margin-bottom:25px;
-"></div>
+<h2>
 
-
-<h2 class="section-title" style="text-align:left;">
-
-Uma advocacia construída com estratégia e confiança.
+Advocacia estratégica construída com confiança.
 
 </h2>
 
 
 
-<p style="
-color:#d7d7d7;
-font-size:18px;
-line-height:1.9;
-margin-bottom:22px;
-">
+<p>
 
-A JR Ribeiro & Flores Advocacia nasceu com o propósito de oferecer uma advocacia diferenciada, unindo conhecimento jurídico, tecnologia e atendimento humanizado.
+A JR Ribeiro & Flores Advocacia atua com foco em soluções jurídicas personalizadas, buscando compreender cada situação de forma individualizada e desenvolver estratégias adequadas para cada cliente.
 
 </p>
 
 
+<p>
 
-<p style="
-color:#d7d7d7;
-font-size:18px;
-line-height:1.9;
-margin-bottom:35px;
-">
-
-Cada demanda é analisada de forma individualizada, buscando compreender profundamente os objetivos do cliente para desenvolver a melhor estratégia jurídica.
+Nosso compromisso é unir conhecimento jurídico, atendimento próximo e tecnologia para oferecer uma experiência diferenciada na resolução de demandas jurídicas.
 
 </p>
 
@@ -272,14 +606,8 @@ Conheça o escritório
 </div>
 
 
-
-</div>
-
-
-</div>
-
-
 </section>
+
 
 
 
@@ -289,172 +617,27 @@ Conheça o escritório
 <section>
 
 
-<div class="container">
-
-
-<h2 class="section-title">
-
-Nossos pilares
-
-</h2>
-
-
-<p class="section-subtitle">
-
-Os valores que orientam nossa atuação e fortalecem a relação com nossos clientes.
-
-</p>
-
-
-
-<br><br>
-
-
-
-<div class="grid-4">
-
-
-
-<div class="card reveal">
-
-
-<i class="fa-solid fa-scale-balanced"></i>
-
-
-<h3>
-
-Excelência Jurídica
-
-</h3>
-
-
-<p>
-
-Atuação técnica, estratégica e fundamentada para buscar soluções jurídicas eficientes.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card reveal">
-
-
-<i class="fa-solid fa-user-tie"></i>
-
-
-<h3>
-
-Atendimento Próximo
-
-</h3>
-
-
-<p>
-
-Cada cliente possui uma história única e recebe acompanhamento personalizado.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card reveal">
-
-
-<i class="fa-solid fa-shield-halved"></i>
-
-
-<h3>
-
-Segurança
-
-</h3>
-
-
-<p>
-
-Transparência e responsabilidade em todas as etapas da atuação jurídica.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card reveal">
-
-
-<i class="fa-solid fa-microchip"></i>
-
-
-<h3>
-
-Tecnologia
-
-</h3>
-
-
-<p>
-
-Uso de ferramentas modernas para melhorar organização, comunicação e eficiência.
-
-</p>
-
-
-</div>
-
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-<section class="section-dark">
-
-<div class="container">
-
-
-<h2 class="section-title">
+<h2 class="title">
 
 Áreas de Atuação
 
 </h2>
 
 
+<p class="subtitle">
 
-<p class="section-subtitle">
-
-Soluções jurídicas desenvolvidas de forma estratégica para pessoas físicas e empresas.
+Soluções jurídicas especializadas para pessoas físicas e empresas.
 
 </p>
 
 
 
-<br><br>
+
+<div class="cards">
 
 
 
-<div class="grid-3">
-
-
-
-<div class="card reveal">
+<div class="card">
 
 
 <i class="fa-solid fa-briefcase"></i>
@@ -469,17 +652,14 @@ Direito Trabalhista
 
 <p>
 
-Atuação na defesa dos direitos de empregados e empresas, envolvendo verbas trabalhistas, rescisões, acidentes de trabalho, adicionais, jornadas, contratos e demais questões relacionadas às relações de trabalho.
+Atuação em demandas trabalhistas, verbas rescisórias, acidentes de trabalho, adicionais, contratos e relações de emprego.
 
 </p>
 
 
-<br>
-
-
 <a href="atuacao.html" class="btn">
 
-Conhecer área
+Saiba mais
 
 </a>
 
@@ -490,10 +670,10 @@ Conhecer área
 
 
 
-<div class="card reveal">
+<div class="card">
 
 
-<i class="fa-solid fa-person-circle-check"></i>
+<i class="fa-solid fa-heart-pulse"></i>
 
 
 <h3>
@@ -505,17 +685,14 @@ Direito Previdenciário
 
 <p>
 
-Planejamento e atuação em benefícios previdenciários, aposentadorias, auxílio-acidente, benefícios por incapacidade, revisões e demandas administrativas e judiciais.
+Aposentadorias, benefícios, auxílio-acidente, revisões e planejamento previdenciário.
 
 </p>
 
 
-<br>
-
-
 <a href="atuacao.html" class="btn">
 
-Conhecer área
+Saiba mais
 
 </a>
 
@@ -526,7 +703,7 @@ Conhecer área
 
 
 
-<div class="card reveal">
+<div class="card">
 
 
 <i class="fa-solid fa-scale-balanced"></i>
@@ -541,17 +718,14 @@ Direito Civil
 
 <p>
 
-Soluções para contratos, indenizações, obrigações, responsabilidade civil, família, sucessões e demais relações jurídicas do cotidiano.
+Contratos, indenizações, responsabilidade civil, família, sucessões e obrigações.
 
 </p>
 
 
-<br>
-
-
 <a href="atuacao.html" class="btn">
 
-Conhecer área
+Saiba mais
 
 </a>
 
@@ -562,7 +736,7 @@ Conhecer área
 
 
 
-<div class="card reveal">
+<div class="card">
 
 
 <i class="fa-solid fa-cart-shopping"></i>
@@ -577,17 +751,14 @@ Direito do Consumidor
 
 <p>
 
-Atuação em conflitos envolvendo instituições financeiras, contratos, cobranças indevidas, serviços, produtos e relações de consumo.
+Defesa dos consumidores em conflitos contratuais, cobranças indevidas e relações bancárias.
 
 </p>
 
 
-<br>
-
-
 <a href="atuacao.html" class="btn">
 
-Conhecer área
+Saiba mais
 
 </a>
 
@@ -596,9 +767,13 @@ Conhecer área
 
 
 
+</div>
+    /* ==========================
+CONTINUAÇÃO ÁREAS DE ATUAÇÃO
+========================== */
 
 
-<div class="card reveal">
+<div class="card">
 
 
 <i class="fa-solid fa-building"></i>
@@ -613,17 +788,14 @@ Direito Empresarial
 
 <p>
 
-Assessoria preventiva e estratégica para empresas, contratos empresariais, organização jurídica e suporte para decisões importantes.
+Assessoria jurídica preventiva, contratos empresariais e suporte estratégico para empresas.
 
 </p>
 
 
-<br>
-
-
 <a href="atuacao.html" class="btn">
 
-Conhecer área
+Saiba mais
 
 </a>
 
@@ -633,8 +805,7 @@ Conhecer área
 
 
 
-
-<div class="card reveal">
+<div class="card">
 
 
 <i class="fa-solid fa-file-signature"></i>
@@ -649,12 +820,9 @@ Consultoria Jurídica
 
 <p>
 
-Análise preventiva, orientação jurídica e elaboração de estratégias para reduzir riscos e proporcionar maior segurança.
+Análise preventiva, elaboração de documentos e orientação para decisões mais seguras.
 
 </p>
-
-
-<br>
 
 
 <a href="contato.html" class="btn">
@@ -668,14 +836,11 @@ Solicitar atendimento
 
 
 
-
-</div>
-
-
 </div>
 
 
 </section>
+
 
 
 
@@ -685,204 +850,44 @@ Solicitar atendimento
 <section>
 
 
-<div class="container">
-
-
-<div class="grid-2">
-
-
-
-<div class="reveal">
-
-
-<div style="
-width:60px;
-height:3px;
-background:#C9A227;
-margin-bottom:25px;
-"></div>
-
-
-
-<h2 class="section-title" style="text-align:left;">
+<h2 class="title">
 
 Por que escolher a JR Ribeiro & Flores?
 
 </h2>
 
 
+<p class="subtitle">
 
-
-<p style="
-color:#d7d7d7;
-font-size:18px;
-line-height:1.9;
-margin-bottom:25px;
-">
-
-Mais do que atuar em processos, buscamos compreender cada situação e construir caminhos jurídicos seguros, com comunicação clara e estratégia personalizada.
+Uma advocacia baseada em estratégia, proximidade e compromisso com cada cliente.
 
 </p>
 
 
 
-<div style="margin-bottom:25px;">
 
+<div class="cards">
 
-<h3 style="
-color:#C9A227;
-margin-bottom:8px;
-">
 
-01 — Estratégia
 
-</h3>
+<div class="card">
 
 
-<p style="color:#ccc;">
-
-Cada caso recebe análise individual e planejamento adequado aos objetivos do cliente.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div style="margin-bottom:25px;">
-
-
-<h3 style="
-color:#C9A227;
-margin-bottom:8px;
-">
-
-02 — Transparência
-
-</h3>
-
-
-<p style="color:#ccc;">
-
-O cliente acompanha cada etapa com informações claras sobre sua demanda.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div>
-
-
-<h3 style="
-color:#C9A227;
-margin-bottom:8px;
-">
-
-03 — Comprometimento
-
-</h3>
-
-
-<p style="color:#ccc;">
-
-Atuação responsável, ética e focada na melhor condução jurídica possível.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="image-box reveal">
-
-
-<img 
-src="assets/img/socios.webp"
-alt="Sócios fundadores JR Ribeiro e Flores Advocacia">
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-    <section class="section-dark">
-
-<div class="container">
-
-
-<h2 class="section-title">
-
-Conhecimento Jurídico
-
-</h2>
-
-
-<p class="section-subtitle">
-
-Informações jurídicas produzidas para auxiliar você na tomada de decisões mais seguras.
-
-</p>
-
-
-
-<br><br>
-
-
-
-<div class="grid-3">
-
-
-
-<div class="card reveal">
-
-
-<i class="fa-solid fa-newspaper"></i>
+<i class="fa-solid fa-user-shield"></i>
 
 
 <h3>
 
-Artigos Jurídicos
+Atendimento Personalizado
 
 </h3>
 
 
 <p>
 
-Conteúdos sobre direitos, mudanças legislativas e temas relevantes das principais áreas do Direito.
+Cada caso recebe atenção individual, respeitando as necessidades e objetivos de cada cliente.
 
 </p>
-
-
-<br>
-
-
-<a href="artigos.html" class="btn">
-
-Ver artigos
-
-</a>
 
 
 </div>
@@ -890,8 +895,7 @@ Ver artigos
 
 
 
-
-<div class="card reveal">
+<div class="card">
 
 
 <i class="fa-solid fa-lightbulb"></i>
@@ -899,26 +903,16 @@ Ver artigos
 
 <h3>
 
-Informação Estratégica
+Estratégia Jurídica
 
 </h3>
 
 
 <p>
 
-Explicações jurídicas em linguagem clara para ajudar você a compreender melhor seus direitos.
+Buscamos compreender o cenário completo antes de definir a melhor atuação.
 
 </p>
-
-
-<br>
-
-
-<a href="artigos.html" class="btn">
-
-Acessar conteúdo
-
-</a>
 
 
 </div>
@@ -926,49 +920,59 @@ Acessar conteúdo
 
 
 
+<div class="card">
 
-<div class="card reveal">
 
-
-<i class="fa-solid fa-comments"></i>
+<i class="fa-solid fa-handshake"></i>
 
 
 <h3>
 
-Precisa de orientação?
+Transparência
 
 </h3>
 
 
 <p>
 
-Nossa equipe está preparada para analisar sua situação e indicar o melhor caminho jurídico.
+Comunicação clara e acompanhamento próximo durante todas as etapas.
 
 </p>
 
 
-<br>
-
-
-<a href="contato.html" class="btn">
-
-Falar conosco
-
-</a>
-
-
 </div>
 
 
 
+
+<div class="card">
+
+
+<i class="fa-solid fa-laptop"></i>
+
+
+<h3>
+
+Tecnologia
+
+</h3>
+
+
+<p>
+
+Organização e inovação para oferecer um atendimento mais eficiente.
+
+</p>
+
+
 </div>
+
 
 
 </div>
 
 
 </section>
-
 
 
 
@@ -979,32 +983,18 @@ Falar conosco
 <section class="cta">
 
 
-<div class="container">
-
-
-<div style="
-width:60px;
-height:3px;
-background:#C9A227;
-margin:0 auto 25px;
-"></div>
-
-
-
 <h2>
 
-Seu direito merece uma estratégia jurídica.
+Seu direito merece uma estratégia.
 
 </h2>
 
 
-
 <p>
 
-Conte com uma advocacia preparada para compreender seu caso, construir soluções e oferecer segurança em cada etapa.
+Entre em contato com a JR Ribeiro & Flores Advocacia e descubra como podemos auxiliar na construção da melhor solução jurídica para o seu caso.
 
 </p>
-
 
 
 <div class="hero-buttons">
@@ -1018,17 +1008,11 @@ Agendar atendimento
 
 
 
-<a href="https://wa.me/55SEUNUMERO" 
-target="_blank"
-class="btn btn-outline">
+<a href="https://wa.me/55SEUNUMERO" class="btn-outline">
 
 WhatsApp
 
 </a>
-
-
-</div>
-
 
 
 </div>
@@ -1042,40 +1026,27 @@ WhatsApp
 
 
 
-
-
 <footer>
-
-
-<div class="footer-grid">
-
 
 
 <div>
 
 
-<h3 class="footer-title">
+<h3 class="logo">
 
-JR Ribeiro & Flores
+JR <span>Ribeiro & Flores</span>
 
 </h3>
 
 
+<p>
 
-<p style="
-color:#aaa;
-line-height:1.8;
-">
-
-Advocacia estratégica com atuação personalizada, técnica e comprometida com cada cliente.
+Advocacia estratégica com atuação personalizada e compromisso com nossos clientes.
 
 </p>
 
 
-
 </div>
-
-
 
 
 
@@ -1131,11 +1102,7 @@ Contato
 </a>
 
 
-
 </div>
-
-
-
 
 
 
@@ -1150,49 +1117,25 @@ Contato
 </h4>
 
 
-<p style="color:#aaa;margin-bottom:10px;">
+<p>
 
 📍 Canoas - RS
 
 </p>
 
 
-<p style="color:#aaa;margin-bottom:10px;">
+<p>
 
 📞 (51) XXXXX-XXXX
 
 </p>
 
 
-<p style="color:#aaa;">
+<p>
 
 ✉ contato@jrribeiroeflores.com.br
 
 </p>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="footer-bottom">
-
-
-© 2026 JR Ribeiro & Flores Advocacia
-
-<br>
-
-Todos os direitos reservados.
-
 
 
 </div>
@@ -1208,10 +1151,9 @@ Todos os direitos reservados.
 
 
 
-<a 
-href="https://wa.me/55SEUNUMERO"
-target="_blank"
-class="whatsapp">
+<a href="https://wa.me/55SEUNUMERO" 
+class="whatsapp"
+target="_blank">
 
 
 <i class="fa-brands fa-whatsapp"></i>
@@ -1223,12 +1165,9 @@ class="whatsapp">
 
 
 
-
-<a href="#" class="scroll-top">
-
+<a href="#" class="topo">
 
 <i class="fa-solid fa-arrow-up"></i>
-
 
 </a>
 
@@ -1236,9 +1175,48 @@ class="whatsapp">
 
 
 
+<script>
 
 
-<script src="assets/js/script.js"></script>
+window.addEventListener("scroll",function(){
+
+
+const header=document.querySelector("header");
+
+
+if(window.scrollY>50){
+
+header.classList.add("scrolled");
+
+}else{
+
+header.classList.remove("scrolled");
+
+}
+
+
+});
+
+
+
+
+
+
+const menu=document.querySelector(".menu-toggle");
+
+const nav=document.querySelector("nav");
+
+
+menu.addEventListener("click",()=>{
+
+nav.classList.toggle("active");
+
+});
+
+
+</script>
+
+
 
 
 </body>

@@ -1,1 +1,180 @@
+/* ==========================================
+   JR RIBEIRO & FLORES ADVOCACIA
+   ARQUIVO GLOBAL DE ESTILOS
+========================================== */
 
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#080808;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+section{
+    padding:100px 8%;
+}
+
+/* VARIÁVEIS */
+
+:root{
+
+    --gold:#C9A227;
+
+    --gold-light:#DFC36A;
+
+    --black:#080808;
+
+    --black2:#111111;
+
+    --gray:#CCCCCC;
+
+    --white:#FFFFFF;
+
+    --radius:18px;
+
+    --transition:.35s;
+
+    --shadow:0 20px 40px rgba(0,0,0,.30);
+
+}
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:rgba(8,8,8,.90);
+    backdrop-filter:blur(10px);
+
+    z-index:1000;
+
+    transition:.35s;
+
+}
+
+header.scrolled{
+
+    background:#080808;
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+
+}
+
+.logo{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:34px;
+    font-weight:700;
+    line-height:1.1;
+
+}
+
+.logo span{
+
+    color:var(--gold);
+
+}
+
+.logo small{
+
+    display:block;
+    margin-top:3px;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    color:#9f9f9f;
+
+}
+
+nav{
+
+    display:flex;
+    align-items:center;
+    gap:30px;
+
+}
+
+nav a{
+
+    position:relative;
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:var(--transition);
+
+}
+
+nav a:hover{
+
+    color:var(--gold);
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--gold);
+
+    transition:var(--transition);
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}

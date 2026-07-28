@@ -406,25 +406,32 @@ color:var(--gold);
 
 .hero{
 
-    position:relative;
+height:100vh;
 
-    min-height:100vh;
+display:flex;
 
-    display:flex;
+align-items:center;
 
-    align-items:center;
+justify-content:flex-start;
 
-    justify-content:center;
+padding:0 8%;
 
-    text-align:center;
+background-image:
 
-    overflow:hidden;
+linear-gradient(
+90deg,
+rgba(0,0,0,.88) 15%,
+rgba(0,0,0,.55) 55%,
+rgba(0,0,0,.35) 100%
+),
 
-    background-size:cover;
+url("assets/img/hero-artemis.jpg");
 
-    background-position:center;
+background-size:cover;
 
-    background-repeat:no-repeat;
+background-position:center;
+
+background-repeat:no-repeat;
 
 }
 
@@ -448,43 +455,35 @@ color:var(--gold);
 
 .hero-content{
 
-    position:relative;
+max-width:700px;
 
-    z-index:2;
-
-    width:92%;
-
-    max-width:950px;
+text-align:left;
 
 }
 
 .hero h1{
 
-    font-family:'Cormorant Garamond',serif;
+font-size:78px;
 
-    font-size:74px;
+font-family:'Cormorant Garamond',serif;
 
-    line-height:1.08;
+line-height:1.05;
 
-    margin-bottom:28px;
-
-    animation:fadeUp .9s ease;
+margin-bottom:25px;
 
 }
 
 .hero p{
 
-    max-width:760px;
+font-size:22px;
 
-    margin:auto;
+max-width:620px;
 
-    font-size:21px;
+line-height:1.9;
 
-    color:var(--gray);
+color:#ddd;
 
-    line-height:1.9;
-
-    margin-bottom:45px;
+margin-bottom:40px;
 
 }
 

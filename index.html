@@ -333,19 +333,18 @@ SOBRE O ESCRITÓRIO
 ========================== */
 
 
+/* SOBRE O ESCRITÓRIO */
+
 .about{
 
-position:relative;
-
 display:grid;
-
-grid-template-columns:55% 45%;
-
+grid-template-columns:1.2fr 1fr;
+gap:60px;
 align-items:center;
 
-padding:90px;
+padding:70px;
 
-background:#0b0b0b;
+background:#101010;
 
 border:1px solid rgba(201,162,39,.15);
 
@@ -357,71 +356,72 @@ overflow:hidden;
 
 .about-content{
 
-position:relative;
-
-z-index:3;
-
-padding-right:40px;
+z-index:2;
 
 }
 
-.about-artemis{
+.section-tag{
 
-position:relative;
+display:inline-block;
 
-height:520px;
+margin-bottom:20px;
 
-background-image:
-linear-gradient(
-rgba(8,8,8,.60),
-rgba(8,8,8,.80)
-),
-url("assets/img/hero-artemis.jpg");
+font-size:13px;
+
+letter-spacing:4px;
+
+color:#C9A227;
+
+font-weight:600;
+
+}
+
+.about h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:56px;
+
+margin-bottom:25px;
+
+}
+
+.about p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#d5d5d5;
+
+margin-bottom:20px;
+
+}
+
+.about-image{
+
+height:500px;
+
+border-radius:20px;
+
+background-image:url("assets/img/hero-artemis.jpg");
 
 background-size:cover;
 
 background-position:center;
 
-border-left:1px solid rgba(201,162,39,.25);
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+transition:.4s;
 
 }
 
-.about::before{
+.about-image:hover{
 
-content:"";
-position:absolute;
-top:0;
-right:-80px;
-width:48%;
-height:100%;
-
-background-image:url("assets/img/artemis-watermark.png");
-background-repeat:no-repeat;
-background-position:center right;
-background-size:contain;
-
-opacity:.05;
-pointer-events:none;
+transform:scale(1.02);
 
 }
-
-.about::after{
-
-content:"";
-position:absolute;
-top:12%;
-right:42%;
-width:1px;
-height:76%;
-
-background:linear-gradient(
-transparent,
-rgba(201,162,39,.55),
-transparent
-);
-
-}
-
+    
 /* ==========================
 CARDS DE ÁREAS
 ========================== */
@@ -1019,53 +1019,44 @@ O Escritório
 
 
 
-<p>
+<!-- SOBRE O ESCRITÓRIO -->
 
-A JR Ribeiro & Flores Advocacia nasceu com o propósito
-de oferecer uma advocacia moderna, estratégica e próxima
-do cliente.
+<section class="reveal">
 
-</p>
+    <div class="about">
 
+        <div class="about-content">
 
+            <span class="section-tag">JR RIBEIRO & FLORES</span>
 
-<p>
+            <h2>O Escritório</h2>
 
-Nossa atuação combina conhecimento jurídico,
-atendimento humanizado e tecnologia para construir
-soluções eficientes para cada situação.
+            <p>
+                A JR Ribeiro & Flores Advocacia nasceu com o propósito de oferecer
+                uma advocacia moderna, estratégica e próxima do cliente.
+            </p>
 
-</p>
+            <p>
+                Nossa atuação une conhecimento jurídico, tecnologia e atendimento
+                personalizado para oferecer soluções eficientes e seguras.
+            </p>
 
+            <p>
+                Mais do que processos, defendemos pessoas, empresas e patrimônios
+                com ética, responsabilidade e excelência técnica.
+            </p>
 
+            <a href="escritorio.html" class="btn">
+                Conheça nossa história
+            </a>
 
-<p>
+        </div>
 
-Mais do que processos, cuidamos de histórias,
-buscando sempre defender os interesses de nossos
-clientes com responsabilidade e excelência.
+        <div class="about-image"></div>
 
-</p>
+    </div>
 
-
-
-
-<a href="escritorio.html" class="btn">
-
-Conheça nossa história
-
-</a>
-
-
-
-</div>
-
-
-
-</div>
-
-
-</section
+</section>
 <!-- ÁREAS DE ATUAÇÃO -->
 
 

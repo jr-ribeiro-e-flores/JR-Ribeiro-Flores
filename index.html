@@ -332,31 +332,57 @@ color:#111;
 SOBRE O ESCRITÓRIO
 ========================== */
 
-
-/* SOBRE O ESCRITÓRIO */
-
 .about{
 
 display:grid;
-grid-template-columns:1.2fr 1fr;
-gap:60px;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
 align-items:center;
 
-padding:70px;
+margin-top:60px;
 
-background:#101010;
+}
 
-border:1px solid rgba(201,162,39,.15);
+.about-image{
+
+position:relative;
+
+overflow:hidden;
 
 border-radius:24px;
 
-overflow:hidden;
+border:1px solid rgba(201,162,39,.18);
+
+box-shadow:0 20px 50px rgba(0,0,0,.45);
+
+}
+
+.about-image img{
+
+width:100%;
+
+height:620px;
+
+object-fit:cover;
+
+display:block;
+
+transition:.5s;
+
+}
+
+.about-image:hover img{
+
+transform:scale(1.04);
 
 }
 
 .about-content{
 
-z-index:2;
+padding:20px;
 
 }
 
@@ -364,15 +390,17 @@ z-index:2;
 
 display:inline-block;
 
-margin-bottom:20px;
+color:#C9A227;
 
 font-size:13px;
 
 letter-spacing:4px;
 
-color:#C9A227;
-
 font-weight:600;
+
+margin-bottom:18px;
+
+text-transform:uppercase;
 
 }
 
@@ -380,7 +408,7 @@ font-weight:600;
 
 font-family:'Cormorant Garamond',serif;
 
-font-size:56px;
+font-size:58px;
 
 margin-bottom:25px;
 
@@ -392,33 +420,51 @@ font-size:18px;
 
 line-height:1.9;
 
-color:#d5d5d5;
+color:#d4d4d4;
 
-margin-bottom:20px;
+margin-bottom:22px;
+
+}
+
+.about .btn{
+
+margin-top:15px;
+
+}
+
+@media(max-width:900px){
+
+.about{
+
+grid-template-columns:1fr;
+
+gap:40px;
 
 }
 
 .about-image{
 
-height:500px;
-
-border-radius:20px;
-
-background-image:url("assets/img/hero-artemis.jpg");
-
-background-size:cover;
-
-background-position:center;
-
-box-shadow:0 20px 50px rgba(0,0,0,.4);
-
-transition:.4s;
+order:-1;
 
 }
 
-.about-image:hover{
+.about-image img{
 
-transform:scale(1.02);
+height:360px;
+
+}
+
+.about h2{
+
+font-size:42px;
+
+}
+
+.about p{
+
+font-size:17px;
+
+}
 
 }
     
@@ -984,52 +1030,25 @@ Conheça o Escritório
 
 <!-- SOBRE O ESCRITÓRIO -->
 
-
-<section class="reveal">
-
-
-<div class="about">
-
-
-
-<div>
-
-
-<img 
-
-src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80"
-
-alt="Escritório de advocacia">
-
-
-</div>
-
-
-
-
-
-<div>
-
-
-<h2>
-
-O Escritório
-
-</h2>
-
-
-
-<!-- SOBRE O ESCRITÓRIO -->
-
 <section class="reveal">
 
     <div class="about">
 
+        <div class="about-image">
+
+            <img src="assets/img/hero-artemis.jpg" alt="JR Ribeiro & Flores Advocacia">
+
+        </div>
+
         <div class="about-content">
 
-            <span class="section-tag">JR RIBEIRO & FLORES</span>
+            <span class="section-tag">
+                JR RIBEIRO & FLORES ADVOCACIA
+            </span>
 
-            <h2>O Escritório</h2>
+            <h2>
+                O Escritório
+            </h2>
 
             <p>
                 A JR Ribeiro & Flores Advocacia nasceu com o propósito de oferecer
@@ -1037,13 +1056,16 @@ O Escritório
             </p>
 
             <p>
-                Nossa atuação une conhecimento jurídico, tecnologia e atendimento
-                personalizado para oferecer soluções eficientes e seguras.
+                Nossa atuação combina conhecimento jurídico,
+                atendimento personalizado e tecnologia para
+                construir soluções eficientes para pessoas físicas
+                e empresas.
             </p>
 
             <p>
-                Mais do que processos, defendemos pessoas, empresas e patrimônios
-                com ética, responsabilidade e excelência técnica.
+                Mais do que processos, defendemos histórias,
+                patrimônios e direitos com ética,
+                responsabilidade e excelência técnica.
             </p>
 
             <a href="escritorio.html" class="btn">
@@ -1051,8 +1073,6 @@ O Escritório
             </a>
 
         </div>
-
-        <div class="about-image"></div>
 
     </div>
 

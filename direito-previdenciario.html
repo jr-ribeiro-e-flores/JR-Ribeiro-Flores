@@ -269,6 +269,15 @@ header nav.rf-nav.open{display:flex !important}
 header nav.rf-nav a{padding:10px;font-size:17px}
 }
 </style>
+<style>
+.faq-item{background:#111;border:1px solid #222;border-radius:14px;margin-bottom:14px;padding:0 24px;transition:.3s}
+.faq-item[open]{border-color:rgba(201,162,39,.45)}
+.faq-item summary{cursor:pointer;list-style:none;padding:20px 30px 20px 0;font-weight:600;font-size:17px;position:relative;color:#fff}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:0;top:14px;color:#C9A227;font-size:26px;font-weight:400}
+.faq-item[open] summary::after{content:"–"}
+.faq-item p{color:#ccc;line-height:1.8;padding-bottom:20px;margin:0}
+</style>
 </head>
 
 
@@ -533,9 +542,18 @@ Falar com um advogado
 
 
 
+<section class="faq" style="padding:80px 8%;max-width:960px;margin:0 auto">
+<h2 class="title" style="text-align:center">Perguntas frequentes</h2>
+<div style="margin-top:36px">
+<details class="faq-item"><summary>O INSS negou meu benefício. Perdi o direito?</summary><p>Não necessariamente. É possível apresentar recurso administrativo, em regra no prazo de 30 dias, fazer novo pedido com documentação completa ou buscar a Justiça Federal.</p></details>
+<details class="faq-item"><summary>Quanto tempo de contribuição preciso para receber auxílio por incapacidade?</summary><p>Em regra, são exigidas 12 contribuições mensais de carência. Há exceções, como em casos de acidente de qualquer natureza e de algumas doenças graves previstas em lei.</p></details>
+<details class="faq-item"><summary>Posso revisar minha aposentadoria?</summary><p>Sim, desde que dentro do prazo legal, que em geral é de 10 anos a partir do primeiro pagamento. Uma análise do cálculo mostra se a revisão vale a pena.</p></details>
+<details class="faq-item"><summary>Atendem segurados de outros estados?</summary><p>Sim. O atendimento é online, e os processos previdenciários tramitam de forma eletrônica, o que permite atuar em todo o Brasil.</p></details>
+</div>
+</section>
 <section class="leia-tambem" style="padding:60px 8%;text-align:center;background:#0b0b0b;border-top:1px solid #1a1a1a">
 <span style="color:#C9A227;font-size:13px;letter-spacing:4px;font-weight:600">LEIA TAMBÉM</span>
-<h2 style="font-family:'Cormorant Garamond',serif;font-size:34px;margin:14px 0 22px"><a href="artigo-inss-negou-beneficio.html" style="color:#fff">INSS negou meu benefício. O que fazer?</a></h2>
+<h2 style="font-family:'Cormorant Garamond',serif;font-size:34px;margin:14px 0 22px"><a href="artigo-inss-negou-beneficio.html" style="color:#fff;text-decoration:none">INSS negou meu benefício. O que fazer?</a></h2>
 <a href="artigo-inss-negou-beneficio.html" style="display:inline-block;border:2px solid #C9A227;color:#C9A227;padding:12px 30px;border-radius:40px;font-weight:600">Ler artigo</a>
 </section>
 <footer>

@@ -267,6 +267,15 @@ header nav.rf-nav.open{display:flex !important}
 header nav.rf-nav a{padding:10px;font-size:17px}
 }
 </style>
+<style>
+.faq-item{background:#111;border:1px solid #222;border-radius:14px;margin-bottom:14px;padding:0 24px;transition:.3s}
+.faq-item[open]{border-color:rgba(201,162,39,.45)}
+.faq-item summary{cursor:pointer;list-style:none;padding:20px 30px 20px 0;font-weight:600;font-size:17px;position:relative;color:#fff}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:0;top:14px;color:#C9A227;font-size:26px;font-weight:400}
+.faq-item[open] summary::after{content:"–"}
+.faq-item p{color:#ccc;line-height:1.8;padding-bottom:20px;margin:0}
+</style>
 </head>
 
 
@@ -536,9 +545,18 @@ Falar com um advogado
 
 
 
+<section class="faq" style="padding:80px 8%;max-width:960px;margin:0 auto">
+<h2 class="title" style="text-align:center">Perguntas frequentes</h2>
+<div style="margin-top:36px">
+<details class="faq-item"><summary>Qual é o prazo para entrar com uma ação trabalhista?</summary><p>Em regra, até 2 anos após o fim do contrato de trabalho. Dentro desse prazo, é possível cobrar direitos referentes aos últimos 5 anos. Por isso, quanto antes a análise for feita, melhor.</p></details>
+<details class="faq-item"><summary>Quais documentos devo separar?</summary><p>Carteira de trabalho, contracheques, termo de rescisão, extrato do FGTS e qualquer prova da rotina de trabalho, como mensagens, e-mails, fotos e nomes de testemunhas.</p></details>
+<details class="faq-item"><summary>Preciso ir até o escritório?</summary><p>Não. Todo o atendimento é online: conversa inicial, envio de documentos e reuniões por vídeo. Se houver audiência, orientamos você sobre como participar.</p></details>
+<details class="faq-item"><summary>A empresa vai saber que procurei um advogado?</summary><p>Não. A consulta é protegida pelo sigilo profissional. Nenhuma medida é tomada sem a sua autorização.</p></details>
+</div>
+</section>
 <section class="leia-tambem" style="padding:60px 8%;text-align:center;background:#0b0b0b;border-top:1px solid #1a1a1a">
 <span style="color:#C9A227;font-size:13px;letter-spacing:4px;font-weight:600">LEIA TAMBÉM</span>
-<h2 style="font-family:'Cormorant Garamond',serif;font-size:34px;margin:14px 0 22px"><a href="artigo-demissao-direitos.html" style="color:#fff">Fui demitido. Quais são meus direitos?</a></h2>
+<h2 style="font-family:'Cormorant Garamond',serif;font-size:34px;margin:14px 0 22px"><a href="artigo-demissao-direitos.html" style="color:#fff;text-decoration:none">Fui demitido. Quais são meus direitos?</a></h2>
 <a href="artigo-demissao-direitos.html" style="display:inline-block;border:2px solid #C9A227;color:#C9A227;padding:12px 30px;border-radius:40px;font-weight:600">Ler artigo</a>
 </section>
 <footer>

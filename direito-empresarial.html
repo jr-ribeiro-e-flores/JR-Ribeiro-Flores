@@ -51,6 +51,15 @@ footer p{color:#aaa;line-height:1.9}
 footer a{color:#aaa;text-decoration:none}
 footer a:hover{color:#C9A227}
 .whatsapp{position:fixed;right:25px;bottom:25px;width:62px;height:62px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;color:#fff;z-index:999;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+
+.faq-item{background:#111;border:1px solid #222;border-radius:14px;margin-bottom:14px;padding:0 24px;transition:.3s}
+.faq-item[open]{border-color:rgba(201,162,39,.45)}
+.faq-item summary{cursor:pointer;list-style:none;padding:20px 30px 20px 0;font-weight:600;font-size:17px;position:relative;color:#fff}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:0;top:14px;color:#C9A227;font-size:26px;font-weight:400}
+.faq-item[open] summary::after{content:"–"}
+.faq-item p{color:#ccc;line-height:1.8;padding-bottom:20px;margin:0}
+
 .rf-toggle{display:none;background:none;border:1px solid rgba(201,162,39,.5);color:#C9A227;width:44px;height:44px;border-radius:10px;cursor:pointer;font-size:20px;align-items:center;justify-content:center}
 @media(max-width:900px){
 .rf-toggle{display:flex}
@@ -124,6 +133,10 @@ footer .oab-line{font-size:13px;color:#888;margin-top:8px}
 <p>Orientação sobre direitos e deveres perante o Código de Defesa do Consumidor e defesa em reclamações.</p>
 <h2>Assessoria contínua ou pontual</h2>
 <p>Atendemos demandas específicas ou oferecemos acompanhamento jurídico mensal, com atendimento online e comunicação direta com os sócios.</p>
+<h2>Perguntas frequentes</h2>
+<details class="faq-item"><summary>Empresa pequena precisa de assessoria jurídica?</summary><p>Sim. Pequenas empresas costumam ser as mais afetadas por um contrato mal feito ou por uma ação trabalhista. A prevenção custa bem menos do que resolver o problema depois.</p></details>
+<details class="faq-item"><summary>Qual a diferença entre assessoria mensal e atendimento pontual?</summary><p>No atendimento pontual, cuidamos de uma demanda específica, como um contrato ou uma cobrança. Na assessoria mensal, acompanhamos a empresa de forma contínua, com orientação sempre que surgir uma dúvida.</p></details>
+<details class="faq-item"><summary>Atendem empresas de outros estados?</summary><p>Sim. Todo o atendimento é online, com reuniões por vídeo e troca de documentos digital, para empresas de todo o Brasil.</p></details>
 <div class="cta-box"><h3>Vamos conversar sobre a sua empresa?</h3><p>Atendimento online em todo o Brasil, de segunda a sexta, das 8h às 19h.</p><a class="btn" href="contato.html">Solicitar atendimento</a></div>
 <div class="related"><h3 style="color:#C9A227;margin-bottom:10px">Leia também</h3><a href="artigo-protecao-juridica-empresa.html">Como proteger juridicamente sua empresa? →</a><a href="artigo-analise-de-contratos.html">Contratos: por que a análise jurídica é importante? →</a></div>
 

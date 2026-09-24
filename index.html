@@ -959,6 +959,17 @@ grid-template-columns:1fr;
     background:#C9A227;
     color:#111;
 }
+
+.card-link{display:block;color:#fff;text-decoration:none}
+.card-more{display:inline-block;margin-top:22px;color:#C9A227;font-weight:600;font-size:15px}
+.card-link:hover .card-more{text-decoration:underline}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;margin-top:55px;counter-reset:s}
+.step{background:#101010;border:1px solid #1e1e1e;border-radius:18px;padding:34px 28px;position:relative}
+.step-n{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:2px solid #C9A227;color:#C9A227;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:18px}
+.step h4{font-size:20px;margin-bottom:10px}
+.step p{color:#ccc;line-height:1.7}
+@media(max-width:900px){.hero{padding-bottom:110px}}
+@media(max-width:600px){.hero-kicker{font-size:10px;letter-spacing:2px;line-height:1.8}section{padding:80px 6%}.whatsapp{width:56px;height:56px;right:16px;bottom:16px}.topo{width:46px;height:46px;left:16px;bottom:16px}}
 </style>
 
 
@@ -966,7 +977,7 @@ grid-template-columns:1fr;
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ribeiro &amp; Flores Advocacia">
-<meta property="og:title" content="Ribeiro &amp; Flores Advocacia | Canoas - RS">
+<meta property="og:title" content="Ribeiro &amp; Flores Advocacia | Atendimento online em todo o Brasil">
 <meta property="og:description" content="Advocacia Trabalhista, Previdenciária e Cível. Atendimento online em todo o Brasil, de segunda a sexta, das 8h às 19h.">
 <meta property="og:image" content="https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/assets/img/og-image.jpg">
 <style>
@@ -1026,9 +1037,7 @@ Sócios
 </a>
 
 
-<a href="atuacao.html">
-Áreas de Atuação
-</a>
+<a href="atuacao.html">Áreas de Atuação</a>
 
 
 <a href="artigos.html">
@@ -1072,8 +1081,7 @@ Construindo soluções jurídicas.
 
 <p>
 
-A Ribeiro & Flores Advocacia atua de forma estratégica,
-oferecendo atendimento personalizado para pessoas físicas
+A Ribeiro & Flores Advocacia oferece atendimento jurídico personalizado para pessoas físicas
 e empresas de todo o Brasil, com ética, transparência e excelência técnica.
 Atendimento online, de segunda a sexta, das 8h às 19h.
 
@@ -1180,7 +1188,7 @@ Conheça o Escritório
 <p class="subtitle">
 
 Soluções jurídicas personalizadas para pessoas físicas e empresas,
-com atuação estratégica e acompanhamento próximo.
+com acompanhamento próximo em cada etapa.
 
 </p>
 
@@ -1194,7 +1202,7 @@ com atuação estratégica e acompanhamento próximo.
 <!-- TRABALHISTA -->
 
 
-<div class="card">
+<a class="card card-link" href="direito-trabalhista.html">
 
 
 <i class="fa-solid fa-scale-balanced"></i>
@@ -1216,9 +1224,8 @@ envolvendo verbas trabalhistas, rescisões,
 adicionais, acidentes de trabalho e demais demandas.
 
 </p>
-
-
-</div>
+<span class="card-more">Saiba mais →</span>
+</a>
 
 
 
@@ -1228,7 +1235,7 @@ adicionais, acidentes de trabalho e demais demandas.
 <!-- PREVIDENCIÁRIO -->
 
 
-<div class="card">
+<a class="card card-link" href="direito-previdenciario.html">
 
 
 <i class="fa-solid fa-landmark"></i>
@@ -1250,9 +1257,8 @@ benefícios do INSS, auxílio-acidente, auxílio-doença
 e defesa dos segurados.
 
 </p>
-
-
-</div>
+<span class="card-more">Saiba mais →</span>
+</a>
 
 
 
@@ -1262,7 +1268,7 @@ e defesa dos segurados.
 <!-- CONSUMIDOR -->
 
 
-<div class="card">
+<a class="card card-link" href="direito-consumidor.html">
 
 
 <i class="fa-solid fa-cart-shopping"></i>
@@ -1284,9 +1290,8 @@ contratos abusivos, negativação irregular,
 falhas de serviços e indenizações.
 
 </p>
-
-
-</div>
+<span class="card-more">Saiba mais →</span>
+</a>
 
 
 
@@ -1296,7 +1301,7 @@ falhas de serviços e indenizações.
 <!-- CIVIL -->
 
 
-<div class="card">
+<a class="card card-link" href="direito-civil.html">
 
 
 <i class="fa-solid fa-file-signature"></i>
@@ -1318,16 +1323,15 @@ responsabilidade civil, obrigações e conflitos
 entre pessoas físicas e jurídicas.
 
 </p>
-
-
-</div>
+<span class="card-more">Saiba mais →</span>
+</a>
 
 
 
 <!-- EMPRESARIAL -->
 
 
-<div class="card">
+<a class="card card-link" href="artigo-protecao-juridica-empresa.html">
 
 
 <i class="fa-solid fa-building"></i>
@@ -1349,9 +1353,8 @@ contratos, prevenção de conflitos e estratégias
 para segurança dos negócios.
 
 </p>
-
-
-</div>
+<span class="card-more">Saiba mais →</span>
+</a>
 
 
 </div>
@@ -1389,7 +1392,7 @@ para segurança dos negócios.
 
             <p>
                 Advogado fundador da Ribeiro & Flores Advocacia,
-                com atuação estratégica e foco na defesa dos direitos
+                com foco na defesa dos direitos
                 de pessoas físicas e empresas.
             </p>
 
@@ -1415,7 +1418,7 @@ para segurança dos negócios.
 
             <p>
                 Advogada sócia fundadora da Ribeiro & Flores Advocacia,
-                com atuação humanizada, estratégica e comprometida com a
+                com atuação humanizada e comprometida com a
                 defesa dos interesses de seus clientes.
             </p>
 
@@ -1430,107 +1433,24 @@ para segurança dos negócios.
 </section>
 
 
-<!-- MISSÃO VISÃO VALORES -->
-
+<!-- COMO FUNCIONA -->
 
 <section class="reveal">
 
+<span class="section-tag" style="display:block;text-align:center">Atendimento online</span>
+<h2 class="title">Como funciona o atendimento</h2>
+<p class="subtitle">Você resolve tudo sem sair de casa, de qualquer lugar do Brasil.</p>
 
-<h2 class="title">
-
-Nossa Essência
-
-</h2>
-
-
-
-<div class="features">
-
-
-
-
-
-<div class="feature">
-
-
-<h4>
-
-Missão
-
-</h4>
-
-
-<p>
-
-Oferecer soluções jurídicas estratégicas,
-unindo conhecimento técnico, tecnologia e
-atendimento humanizado para proteger os
-interesses dos nossos clientes.
-
-</p>
-
-
+<div class="steps">
+<div class="step"><span class="step-n">1</span><h4>Primeiro contato</h4><p>Você nos chama pelo WhatsApp ou pelo formulário e conta brevemente o que aconteceu.</p></div>
+<div class="step"><span class="step-n">2</span><h4>Análise do caso</h4><p>Pedimos os documentos necessários, que podem ser enviados por foto ou PDF, e analisamos sua situação.</p></div>
+<div class="step"><span class="step-n">3</span><h4>Orientação clara</h4><p>Explicamos os caminhos possíveis, riscos e custos, por chamada de vídeo ou telefone, sem juridiquês.</p></div>
+<div class="step"><span class="step-n">4</span><h4>Acompanhamento</h4><p>Se você decidir seguir, cuidamos de tudo e mantemos você informado sobre cada andamento.</p></div>
 </div>
 
-
-
-
-
-
-<div class="feature">
-
-
-<h4>
-
-Visão
-
-</h4>
-
-
-<p>
-
-Ser reconhecido como um escritório de referência
-na região, pela excelência jurídica, inovação e
-confiança construída com nossos clientes.
-
-</p>
-
-
+<div style="text-align:center;margin-top:45px">
+<a href="https://wa.me/5551995225270?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Ribeiro%20%26%20Flores%20Advocacia%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener" class="btn">Começar pelo WhatsApp</a>
 </div>
-
-
-
-
-
-
-
-<div class="feature">
-
-
-<h4>
-
-Valores
-
-</h4>
-
-
-<p>
-
-Ética, transparência, responsabilidade,
-comprometimento e busca constante pela
-excelência profissional.
-
-</p>
-
-
-</div>
-
-
-
-
-
-</div>
-
 
 </section>
 
@@ -1541,131 +1461,26 @@ excelência profissional.
 
 <!-- DIFERENCIAIS -->
 
-
 <section class="reveal">
-
-
-<h2 class="title">
-
-Por que escolher a Ribeiro & Flores?
-
-</h2>
-
-
-
-
+<h2 class="title">Por que escolher a Ribeiro &amp; Flores?</h2>
 <div class="features">
-
-
-
-
-
 <div class="feature">
-
-
-<h4>
-
-<i class="fa-solid fa-scale-balanced" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Atendimento Personalizado
-
-</h4>
-
-
-<p>
-
-Cada cliente recebe uma estratégia jurídica
-pensada de acordo com sua necessidade.
-
-</p>
-
-
+<h4><i class="fa-solid fa-user-tie" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Atendimento direto com os sócios</h4>
+<p>Seu caso é conduzido pessoalmente pelos advogados fundadores, do início ao fim.</p>
 </div>
-
-
-
-
-
-
-
 <div class="feature">
-
-
-<h4>
-
-<i class="fa-solid fa-handshake" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Transparência
-
-</h4>
-
-
-<p>
-
-Comunicação clara e acompanhamento próximo
-em todas as etapas.
-
-</p>
-
-
+<h4><i class="fa-solid fa-comments" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Comunicação clara</h4>
+<p>Explicamos cada etapa em linguagem simples e respondemos suas dúvidas com agilidade.</p>
 </div>
-
-
-
-
-
-
-
 <div class="feature">
-
-
-<h4>
-
-<i class="fa-solid fa-laptop-code" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Tecnologia
-
-</h4>
-
-
-<p>
-
-Utilizamos ferramentas modernas para tornar
-o atendimento mais eficiente.
-
-</p>
-
-
+<h4><i class="fa-solid fa-globe" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Atendimento em todo o Brasil</h4>
+<p>Reuniões por vídeo, envio digital de documentos e acompanhamento sem deslocamento.</p>
 </div>
-
-
-
-
-
-
-
 <div class="feature">
-
-
-<h4>
-
-<i class="fa-solid fa-book-open" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Excelência Técnica
-
-</h4>
-
-
-<p>
-
-Atuação baseada em estudo constante,
-legislação atualizada e estratégia.
-
-</p>
-
-
+<h4><i class="fa-solid fa-shield-halved" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Ética e sigilo</h4>
+<p>Atuação pautada pelo Código de Ética da OAB, com total confidencialidade das suas informações.</p>
 </div>
-
-
-
-
-
-
 </div>
-
-
 </section>
 
     <!-- ARTIGOS JURÍDICOS -->
@@ -1848,8 +1663,7 @@ Seu problema jurídico merece uma estratégia.
 <p>
 
 Entre em contato com a Ribeiro & Flores Advocacia.
-Nossa equipe está preparada para analisar sua situação
-e buscar a melhor solução jurídica.
+Analisamos sua situação e mostramos, com clareza, os caminhos possíveis.
 
 </p>
 
@@ -1891,111 +1705,7 @@ WhatsApp
 
 
 
-<!-- CONTATO -->
 
-<section class="reveal">
-
-
-<h2 class="title">
-
-Entre em Contato
-
-</h2>
-
-
-
-
-<p class="subtitle">
-
-Estamos à disposição para atender você.
-
-</p>
-
-
-
-
-
-<div class="features">
-
-
-
-
-
-<div class="feature">
-
-
-<h4>
-
-<i class="fa-solid fa-globe" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Atendimento
-
-</h4>
-
-
-<p>
-
-Online para todo o Brasil<br>Segunda a sexta, das 8h às 19h
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div class="feature">
-
-
-<h4>
-
-<i class="fa-brands fa-whatsapp" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> WhatsApp
-
-</h4>
-
-
-<p>
-
-(51) 99522-5270
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div class="feature">
-
-
-<h4>
-
-<i class="fa-solid fa-envelope" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> E-mail
-
-</h4>
-
-
-<p>
-
-atendimento.jrribeiroflores@gmail.com
-</p>
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-</section>
 
     <!-- RODAPÉ -->
 
@@ -2012,7 +1722,7 @@ atendimento.jrribeiroflores@gmail.com
 
 <p>
 
-Advocacia estratégica, personalizada e comprometida com soluções jurídicas eficientes.
+Advocacia Trabalhista, Previdenciária e Cível com atendimento online em todo o Brasil.
 
 </p>
 

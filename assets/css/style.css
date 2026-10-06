@@ -529,3 +529,6 @@ body.menu-open .wa-float{display:none}
 .field input[type="checkbox"]{appearance:auto;-webkit-appearance:checkbox;width:20px;min-height:0;height:20px;padding:0}
 .highlights{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
 .tags a:not([style]){color:inherit}
+.profile__social{display:inline-flex;align-items:center;gap:10px;margin:-6px 0 26px;padding:8px 16px 8px 12px;border:1px solid var(--ivory-line);border-radius:999px;font-size:14.5px;font-weight:500;color:var(--on-ivory);transition:border-color .3s,color .3s}
+.profile__social .ico{width:18px;height:18px;color:var(--gold-deep)}
+.profile__social:hover{border-color:var(--gold-deep);color:var(--gold-deep)}

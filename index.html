@@ -1,2009 +1,374 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>
-Ribeiro & Flores Advocacia | Advocacia Estratégica
-</title>
-
-
-<meta name="description" content="A Ribeiro & Flores Advocacia oferece atendimento jurídico estratégico para pessoas físicas e empresas, com atuação Trabalhista, Previdenciária, Civil, Consumidor e Empresarial.">
-
-
-<meta name="keywords" content="advogado Canoas, advogado trabalhista Canoas, advogado previdenciário, advogado consumidor, Ribeiro Flores advocacia">
-
-
-<meta name="author" content="Ribeiro & Flores Advocacia">
-
-
-<meta name="theme-color" content="#080808">
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-
-
-<style>
-
-
-*{
-
-margin:0;
-padding:0;
-box-sizing:border-box;
-
-}
-
-
-html{
-
-scroll-behavior:smooth;
-
-}
-
-
-
-body{
-
-font-family:'Inter',sans-serif;
-background:#080808;
-color:white;
-overflow-x:hidden;
-
-}
-
-
-a{
-
-text-decoration:none;
-
-}
-
-
-section{
-
-padding:110px 8%;
-
-}
-
-
-
-.title{
-
-font-family:'Cormorant Garamond',serif;
-font-size:52px;
-text-align:center;
-margin-bottom:25px;
-
-}
-
-
-
-.subtitle{
-
-max-width:850px;
-margin:auto;
-text-align:center;
-font-size:19px;
-line-height:1.8;
-color:#ccc;
-
-}
-
-
-
-/* HEADER */
-
-
-header{
-
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:22px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:999;
-transition:.4s;
-
-}
-
-
-
-header.scrolled{
-
-background:#080808;
-box-shadow:0 10px 30px rgba(0,0,0,.5);
-
-}
-
-
-
-.logo{
-
-font-family:'Cormorant Garamond',serif;
-font-size:34px;
-font-weight:700;
-
-}
-
-
-
-.logo span{
-
-color:#C9A227;
-
-}
-
-
-
-.logo small{
-
-display:block;
-font-family:'Inter';
-font-size:12px;
-letter-spacing:4px;
-color:#aaa;
-
-}
-
-
-
-nav{
-
-display:flex;
-gap:30px;
-
-}
-
-
-
-nav a{
-
-color:white;
-font-size:15px;
-position:relative;
-
-}
-
-
-
-nav a:hover{
-
-color:#C9A227;
-
-}
-
-
-
-nav a::after{
-
-content:"";
-position:absolute;
-height:2px;
-width:0;
-bottom:-8px;
-left:0;
-background:#C9A227;
-transition:.3s;
-
-}
-
-
-
-nav a:hover::after{
-
-width:100%;
-
-}
-
-
-
-/* HERO */
-
-
-.hero{
-
-height:100vh;
-
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-
-
-background-image:
-
-linear-gradient(
-rgba(0,0,0,.55),
-rgba(0,0,0,.85)
-),
-
-url("assets/img/hero.jpg");
-
-background-size:cover;
-
-background-position:center;
-
-
-}
-
-
-
-.hero-content{
-
-max-width:1000px;
-
-}
-.hero-crest{width:110px;height:auto;display:block;margin:0 auto 22px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
-.hero-kicker span{white-space:nowrap}
-.hero-kicker{display:block;word-spacing:6px;color:#C9A227;font-size:13px;letter-spacing:5px;text-transform:uppercase;margin-bottom:22px;font-weight:600}
-@media(max-width:900px){.hero-crest{display:none}.hero{padding-top:120px;height:auto;min-height:100vh}}
-@media(max-width:600px){.hero-kicker{font-size:11px;letter-spacing:3px}}
-
-
-
-.hero h1{
-
-font-family:'Cormorant Garamond',serif;
-font-size:72px;
-line-height:1.1;
-margin-bottom:30px;
-
-}
-
-
-
-.hero p{
-
-font-size:22px;
-line-height:1.8;
-color:#ddd;
-margin-bottom:40px;
-
-}
-
-
-
-.hero-buttons{
-
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-
-}
-
-
-
-.btn{
-
-background:#C9A227;
-color:#111;
-padding:17px 40px;
-border-radius:40px;
-font-weight:700;
-transition:.3s;
-
-}
-
-
-
-.btn:hover{
-
-transform:translateY(-5px);
-box-shadow:0 15px 35px rgba(201,162,39,.4);
-
-}
-
-
-
-.btn-outline{
-
-border:2px solid #C9A227;
-color:#C9A227;
-padding:15px 38px;
-border-radius:40px;
-font-weight:700;
-
-}
-
-
-
-.btn-outline:hover{
-
-background:#C9A227;
-color:#111;
-
-}
-    
-/* ==========================
-SOBRE O ESCRITÓRIO
-========================== */
-
-.about{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:70px;
-
-align-items:center;
-
-margin-top:60px;
-
-}
-
-.about-image{
-
-position:relative;
-
-overflow:hidden;
-
-border-radius:24px;
-
-border:1px solid rgba(201,162,39,.18);
-
-box-shadow:0 20px 50px rgba(0,0,0,.45);
-
-}
-
-.about-image img{
-
-width:100%;
-
-height:620px;
-
-object-fit:cover;
-
-display:block;
-
-transition:.5s;
-
-}
-
-.about-image:hover img{
-
-transform:scale(1.04);
-
-}
-
-.about-content{
-
-padding:20px;
-
-}
-
-.section-tag{
-
-display:inline-block;
-
-color:#C9A227;
-
-font-size:13px;
-
-letter-spacing:4px;
-
-font-weight:600;
-
-margin-bottom:18px;
-
-text-transform:uppercase;
-
-}
-
-.about h2{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:58px;
-
-margin-bottom:25px;
-
-}
-
-.about p{
-
-font-size:18px;
-
-line-height:1.9;
-
-color:#d4d4d4;
-
-margin-bottom:22px;
-
-}
-
-.about .btn{
-
-margin-top:15px;
-
-}
-
-@media(max-width:900px){
-
-.about{
-
-grid-template-columns:1fr;
-
-gap:40px;
-
-}
-
-.about-image{
-
-order:-1;
-
-}
-
-.about-image img{
-
-height:360px;
-
-}
-
-.about h2{
-
-font-size:42px;
-
-}
-
-.about p{
-
-font-size:17px;
-
-}
-
-}
-    
-/* ==========================
-CARDS DE ÁREAS
-========================== */
-
-
-.cards{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-gap:30px;
-margin-top:50px;
-
-}
-
-
-.card{
-
-background:#111;
-border:1px solid #222;
-border-radius:18px;
-padding:40px 30px;
-text-align:center;
-transition:.35s;
-
-}
-
-
-
-.card:hover{
-
-transform:translateY(-10px);
-border-color:#C9A227;
-box-shadow:0 20px 40px rgba(201,162,39,.18);
-
-}
-
-
-
-.card i{
-
-font-size:45px;
-color:#C9A227;
-margin-bottom:25px;
-
-}
-
-
-
-.card h3{
-
-font-family:'Cormorant Garamond',serif;
-font-size:30px;
-margin-bottom:15px;
-
-}
-
-
-
-.card p{
-
-color:#ccc;
-line-height:1.8;
-
-}
-
-
-
-.card .btn{
-
-display:inline-block;
-margin-top:25px;
-padding:12px 25px;
-font-size:14px;
-
-}
-
-
-
-/* ==========================
-DIFERENCIAIS
-========================== */
-
-
-.features{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:50px;
-
-}
-
-
-
-.feature{
-
-background:#101010;
-padding:30px;
-border-left:4px solid #C9A227;
-border-radius:12px;
-transition:.3s;
-
-}
-
-
-
-.feature:hover{
-
-transform:translateY(-8px);
-
-}
-
-
-
-.feature h4{
-
-font-size:22px;
-margin-bottom:15px;
-
-}
-
-
-
-.feature p{
-
-color:#ccc;
-line-height:1.7;
-
-}
-
-
-
-/* ==========================
-CTA
-========================== */
-
-
-.cta{
-
-background:#111;
-text-align:center;
-
-}
-
-
-
-.cta h2{
-
-font-family:'Cormorant Garamond',serif;
-font-size:55px;
-margin-bottom:25px;
-
-}
-
-
-
-.cta p{
-
-max-width:800px;
-margin:auto;
-font-size:20px;
-line-height:1.8;
-color:#ccc;
-margin-bottom:40px;
-
-}
-
-
-
-
-/* ==========================
-ANIMAÇÕES
-========================== */
-
-
-.reveal{
-
-opacity:0;
-transform:translateY(50px);
-transition:.8s;
-
-}
-
-
-
-.reveal.active{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-
-
-/* ==========================
-WHATSAPP
-========================== */
-
-
-.whatsapp{
-
-position:fixed;
-right:25px;
-bottom:25px;
-
-width:65px;
-height:65px;
-
-background:#25D366;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:32px;
-
-color:white;
-
-z-index:999;
-
-box-shadow:0 10px 30px rgba(0,0,0,.5);
-
-transition:.3s;
-
-}
-
-
-
-.whatsapp:hover{
-
-transform:scale(1.1);
-
-}
-
-
-
-
-/* ==========================
-BOTÃO TOPO
-========================== */
-
-
-.topo{
-
-position:fixed;
-left:25px;
-bottom:25px;
-
-width:55px;
-height:55px;
-
-background:#C9A227;
-
-color:#111;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:22px;
-
-cursor:pointer;
-
-z-index:999;
-
-}
-
-
-
-/* ==========================
-MENU MOBILE
-========================== */
-
-
-.menu-toggle{
-
-display:none;
-font-size:28px;
-cursor:pointer;
-
-}
-
-
-
-@media(max-width:900px){
-
-
-.menu-toggle{
-
-display:block;
-
-}
-
-
-
-nav{
-
-position:absolute;
-top:100%;
-left:0;
-width:100%;
-background:#080808;
-
-display:none;
-flex-direction:column;
-
-padding:30px;
-
-text-align:center;
-
-}
-
-
-
-nav.active{
-
-display:flex;
-
-}
-
-
-
-nav a{
-
-margin:15px;
-
-}
-
-
-
-.about{
-
-grid-template-columns:1fr;
-
-}
-
-
-
-.hero h1{
-
-font-size:45px;
-
-}
-
-
-
-.hero p{
-
-font-size:18px;
-
-}
-
-
-
-.title{
-
-font-size:40px;
-
-}
-
-
-
-}
-
-    /* ==========================
-RODAPÉ
-========================== */
-
-.footer-content{
-
-display:grid;
-
-grid-template-columns:2fr 1fr 1fr;
-
-gap:50px;
-
-}
-
-footer a{
-
-display:block;
-
-color:#bbb;
-
-margin:12px 0;
-
-transition:.3s;
-
-}
-
-footer a:hover{
-
-color:#C9A227;
-
-}
-
-footer h4{
-
-font-size:20px;
-
-margin-bottom:20px;
-
-color:#C9A227;
-
-}
-
-footer p{
-
-color:#aaa;
-
-line-height:1.8;
-
-}
-
-@media(max-width:900px){
-
-.footer-content{
-
-grid-template-columns:1fr;
-
-}
-
-}
- .mini-socio{
-
-    width:90px;
-    height:90px;
-
-    border-radius:50%;
-
-    border:3px solid #C9A227;
-
-    object-fit:cover;
-
-    object-position:center -15px;
-
-}
-
-.cargo{
-    display:block;
-    color:#C9A227;
-    margin-bottom:15px;
-    font-size:14px;
-}
-    /* ===== SÓCIOS HOME ===== */
-
-.socio-card-home{
-    text-align:center;
-}
-
-.mini-socio{
-    width:90px;
-    height:90px;
-    object-fit:cover;
-    object-position:center 15%;
-    border-radius:50%;
-    border:3px solid #C9A227;
-    display:block;
-    margin:0 auto 20px;
-}
-
-.cargo{
-    display:block;
-    color:#C9A227;
-    margin-bottom:18px;
-    font-size:14px;
-    font-weight:600;
-}
-
-.btn-mini{
-    display:inline-block;
-    margin-top:15px;
-    padding:10px 20px;
-    border:1px solid #C9A227;
-    border-radius:30px;
-    color:#C9A227;
-    transition:.3s;
-}
-
-.btn-mini:hover{
-    background:#C9A227;
-    color:#111;
-}
-
-.card-link{display:block;color:#fff;text-decoration:none}
-.card-more{display:inline-block;margin-top:22px;color:#C9A227;font-weight:600;font-size:15px}
-.card-link:hover .card-more{text-decoration:underline}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;margin-top:55px;counter-reset:s}
-.step{background:#101010;border:1px solid #1e1e1e;border-radius:18px;padding:34px 28px;position:relative}
-.step-n{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:2px solid #C9A227;color:#C9A227;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:18px}
-.step h4{font-size:20px;margin-bottom:10px}
-.step p{color:#ccc;line-height:1.7}
-@media(max-width:900px){.hero{padding-bottom:110px}}
-@media(max-width:600px){.hero-kicker{font-size:10px;letter-spacing:2px;line-height:1.8}section{padding:80px 6%}.whatsapp{width:56px;height:56px;right:16px;bottom:16px}.topo{width:46px;height:46px;left:16px;bottom:16px}}
-</style>
-
-
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
-<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ribeiro &amp; Flores Advocacia | Advogados Online em Todo o Brasil</title>
+<meta name="description" content="Advocacia estratégica nas áreas Trabalhista, Previdenciária, Cível, do Consumidor e Empresarial. Atendimento direto com os sócios, online em todo o Brasil.">
+<link rel="canonical" href="https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/">
+<meta name="robots" content="index, follow, max-image-preview:large"><meta name="theme-color" content="#0b0b0c">
+<meta name="format-detection" content="telephone=no">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Ribeiro &amp; Flores Advocacia">
-<meta property="og:title" content="Ribeiro &amp; Flores Advocacia | Atendimento online em todo o Brasil">
-<meta property="og:description" content="Advocacia Trabalhista, Previdenciária, Consumidor, Cível e Empresarial. Atendimento online em todo o Brasil, de segunda a sexta, das 8h às 19h.">
-<meta property="og:image" content="https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/assets/img/og-image.jpg">
-<style>
-/* ===== IDENTIDADE RIBEIRO & FLORES (global) ===== */
-.brand{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none}
-.brand-crest{width:44px;height:auto;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
-.brand-text{display:flex;flex-direction:column;line-height:1}
-.brand-name,.logo .brand-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff}
-.logo .brand-sub{color:#C9A227}
-.menu-toggle{color:#fff;flex-shrink:0}
-.brand-name em{font-style:normal;color:#C9A227}
-.brand-sub{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:6px;color:#C9A227;margin-top:6px;padding-left:2px}
-.logo{font-size:inherit}
-footer .brand{justify-content:inherit;margin-bottom:16px}
-footer{background:#050505;padding:70px 8% 30px;border-top:1px solid rgba(201,162,39,.2)}
-footer hr{border:0;border-top:1px solid #1d1d1d;margin:40px 0 24px}
-footer .oab-line{font-size:13px;color:#888;margin-top:8px}
-.brand-name{white-space:nowrap}
-@media(max-width:420px){.logo .brand-name{font-size:18px;letter-spacing:.5px}.brand{gap:9px}}
-@media(max-width:600px){.brand-name{font-size:21px}.brand-crest{width:36px}.brand-sub{font-size:9px;letter-spacing:4px}}
-</style>
+<meta property="og:title" content="Ribeiro &amp; Flores Advocacia | Advogados Online em Todo o Brasil">
+<meta property="og:description" content="Advocacia estratégica nas áreas Trabalhista, Previdenciária, Cível, do Consumidor e Empresarial. Atendimento direto com os sócios, online em todo o Brasil.">
+<meta property="og:url" content="https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/">
+<meta property="og:image" content="https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/assets/img/opt/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/img/opt/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/img/opt/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/opt/hero-1400.webp" imagesrcset="assets/img/opt/hero-640.webp 640w, assets/img/opt/hero-960.webp 960w, assets/img/opt/hero-1400.webp 1400w" imagesizes="(max-width:860px) 100vw, 64vw"><link rel="stylesheet" href="assets/css/style.css?v=202610052315">
+<script>document.documentElement.classList.add("js")</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/#escritorio", "@type": "LegalService", "address": {"@type": "PostalAddress", "addressCountry": "BR", "addressLocality": "Canoas", "addressRegion": "RS"}, "areaServed": {"@type": "Country", "name": "Brasil"}, "contactPoint": {"@type": "ContactPoint", "areaServed": "BR", "availableLanguage": "Portuguese", "contactType": "customer service", "telephone": "+5551995225270"}, "description": "Escrit\u00f3rio de advocacia com atua\u00e7\u00e3o Trabalhista, Previdenci\u00e1ria, C\u00edvel, do Consumidor e Empresarial. Atendimento online em todo o Brasil.", "email": "atendimento.ribeiroflores.adv@gmail.com", "founder": [{"@type": "Person", "name": "Josu\u00e9 Ribeiro"}, {"@type": "Person", "name": "Renata Flores"}], "image": "https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/assets/img/opt/og-default.jpg", "knowsAbout": ["Direito Trabalhista", "Direito Previdenci\u00e1rio", "Direito do Consumidor", "Direito Civil", "Direito Empresarial"], "logo": "https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/assets/img/opt/icon-512.png", "name": "Ribeiro \u0026 Flores Advocacia", "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "closes": "19:00", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00"}], "priceRange": "Consulte", "telephone": "+5551995225270", "url": "https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "inLanguage": "pt-BR", "name": "Ribeiro \u0026 Flores Advocacia", "publisher": {"@id": "https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/#escritorio"}, "url": "https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/"}</script>
 </head>
-
-
 <body>
-    <!-- HEADER -->
-
-<header id="header">
-
-
-<div class="logo"><a href="index.html" class="brand" aria-label="Ribeiro &amp; Flores Advocacia - início"><img src="assets/img/logo-rf-small.png" alt="" class="brand-crest" width="44" height="52"><span class="brand-text"><span class="brand-name">Ribeiro <em>&amp;</em> Flores</span><span class="brand-sub">ADVOCACIA</span></span></a></div>
-
-
-
-<div class="menu-toggle" id="menuToggle">
-
-<i class="fa-solid fa-bars"></i>
-
-</div>
-
-
-
-<nav id="menu">
-
-<a href="index.html">
-Início
-</a>
-
-
-<a href="escritorio.html">
-Escritório
-</a>
-
-
-<a href="socios.html">
-Sócios
-</a>
-
-
-<a href="atuacao.html">Áreas de Atuação</a>
-
-
-<a href="artigos.html">
-Artigos
-</a>
-
-
-<a href="contato.html">
-Contato
-</a>
-
-
-</nav>
-
-
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="./" aria-label="Ribeiro &amp; Flores Advocacia — página inicial">
+      <img src="assets/img/opt/crest-104.webp" alt="" width="88" height="104">
+      <span class="brand-text"><span class="brand-name">Ribeiro <em>&amp;</em> Flores</span><span class="brand-sub">ADVOCACIA</span></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="escritorio/">Escritório</a></li>
+        <li class="has-sub">
+          <a class="nav-link" href="areas/">Áreas de atuação <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#chevron"></use></svg></a>
+          <ul class="subnav">
+<li><a href="areas/direito-trabalhista/"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#briefcase"></use></svg>Direito Trabalhista</a></li><li><a href="areas/direito-previdenciario/"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#shield"></use></svg>Direito Previdenciário</a></li><li><a href="areas/direito-do-consumidor/"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#cart"></use></svg>Direito do Consumidor</a></li><li><a href="areas/direito-civil/"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#scale"></use></svg>Direito Civil</a></li><li><a href="areas/direito-empresarial/"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#building"></use></svg>Direito Empresarial</a></li>          </ul>
+        </li>
+        <li><a class="nav-link" href="artigos/">Artigos</a></li>
+        <li><a class="nav-link" href="socios/">Sócios</a></li>
+        <li><a class="nav-link" href="contato/">Contato</a></li>
+      </ul>
+      <a class="btn btn--sm nav-cta" href="contato/">Agendar atendimento</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#menu"></use></svg></button>
+  </div>
 </header>
-
-
-
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-
-<div class="hero-content">
-<img src="assets/img/logo-rf.png" alt="Brasão Ribeiro &amp; Flores Advocacia" class="hero-crest">
-<span class="hero-kicker"><span>Trabalhista</span> · <span>Previdenciário</span> · <span>Consumidor</span> · <span>Cível</span> · <span>Empresarial</span></span>
-
-
-<h1>
-
-Protegendo direitos.<br>
-
-Construindo soluções jurídicas.
-
-</h1>
-
-
-
-<p>
-
-A Ribeiro & Flores Advocacia oferece atendimento jurídico personalizado para pessoas físicas
-e empresas de todo o Brasil, com ética, transparência e excelência técnica.
-Atendimento online, de segunda a sexta, das 8h às 19h.
-
-</p>
-
-
-
-
-<div class="hero-buttons">
-
-
-<a href="contato.html" class="btn">
-
-Agendar Atendimento
-
-</a>
-
-
-
-<a href="escritorio.html" class="btn-outline">
-
-Conheça o Escritório
-
-</a>
-
-
-
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mobile-nav__top">
+    <a class="brand" href="./"><img src="assets/img/opt/crest-104.webp" alt="" width="88" height="104"><span class="brand-text"><span class="brand-name">Ribeiro <em>&amp;</em> Flores</span><span class="brand-sub">ADVOCACIA</span></span></a>
+    <button class="menu-btn menu-close" type="button" aria-label="Fechar menu" style="display:inline-flex"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#close"></use></svg></button>
+  </div>
+  <ul>
+    <li class="mobile-item"><a href="./" aria-current="page">Início</a></li>
+    <li class="mobile-item"><a href="escritorio/">Escritório</a></li>
+    <li class="mobile-item"><details><summary>Áreas de atuação<svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#chevron"></use></svg></summary>
+      <ul><li><a href="areas/">Todas as áreas</a></li><li><a href="areas/direito-trabalhista/">Direito Trabalhista</a></li><li><a href="areas/direito-previdenciario/">Direito Previdenciário</a></li><li><a href="areas/direito-do-consumidor/">Direito do Consumidor</a></li><li><a href="areas/direito-civil/">Direito Civil</a></li><li><a href="areas/direito-empresarial/">Direito Empresarial</a></li></ul>
+    </details></li>
+    <li class="mobile-item"><a href="artigos/">Artigos</a></li>
+    <li class="mobile-item"><a href="socios/">Sócios</a></li>
+    <li class="mobile-item"><a href="contato/">Contato</a></li>
+  </ul>
+  <div class="mobile-nav__foot mobile-item">
+    <a class="btn btn--block" href="contato/">Agendar atendimento <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></a>
+    <a class="btn btn--ghost btn--block" href="https://wa.me/5551995225270?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Ribeiro%20%26%20Flores%20Advocacia%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#whatsapp"></use></svg> Falar pelo WhatsApp</a>
+    <p class="mobile-nav__meta">Segunda a sexta, das 8h às 19h · Atendimento online em todo o Brasil</p>
+  </div>
 </div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<!-- SOBRE O ESCRITÓRIO -->
-
-<section class="reveal">
-
-    <div class="about">
-
-        <div class="about-image">
-
-            <img loading="lazy" src="assets/img/socios-duo.jpg" alt="Josué Ribeiro e Renata Flores, sócios fundadores da Ribeiro &amp; Flores Advocacia" style="object-position:center top">
-
-        </div>
-
-        <div class="about-content">
-
-            <span class="section-tag">
-                RIBEIRO & FLORES ADVOCACIA
-            </span>
-
-            <h2>
-                O Escritório
-            </h2>
-
-            <p>
-                A Ribeiro & Flores Advocacia nasceu com o propósito de oferecer
-                uma advocacia moderna, estratégica e próxima do cliente.
-            </p>
-
-            <p>
-                Nossa atuação combina conhecimento jurídico,
-                atendimento personalizado e tecnologia para
-                construir soluções eficientes para pessoas físicas
-                e empresas.
-            </p>
-
-            <p>
-                Mais do que processos, defendemos histórias,
-                patrimônios e direitos com ética,
-                responsabilidade e excelência técnica.
-            </p>
-
-            <a href="escritorio.html" class="btn">
-                Conheça nossa história
-            </a>
-
-        </div>
-
+<main id="conteudo">
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__media">
+    <img src="assets/img/opt/hero-640.webp"
+     srcset="assets/img/opt/hero-640.webp 640w, assets/img/opt/hero-960.webp 960w, assets/img/opt/hero-1400.webp 1400w"
+     sizes="(max-width:860px) 100vw, 64vw" alt="" width="1400" height="1120"fetchpriority="high" decoding="async">
+  </div>
+  <div class="container">
+    <div class="hero__inner">
+      <span class="eyebrow" data-hero style="--d:100ms">Advocacia estratégica · Online em todo o Brasil</span>
+      <h1 class="display" id="hero-title" data-hero style="--d:220ms">Seus direitos tratados com <em>estratégia</em>, clareza e proximidade.</h1>
+      <p class="lead" data-hero style="--d:380ms">Atuação Trabalhista, Previdenciária, Cível, do Consumidor e Empresarial. Seu caso é conduzido pessoalmente pelos sócios, do primeiro contato à solução.</p>
+      <div class="btn-row" data-hero style="--d:520ms">
+        <a class="btn" href="contato/">Agendar atendimento <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></a>
+        <a class="btn btn--ghost" href="#areas">Conheça as áreas</a>
+      </div>
     </div>
-
-</section>
-<!-- ÁREAS DE ATUAÇÃO -->
-
-
-<section class="reveal">
-
-
-<h2 class="title">
-
-Áreas de Atuação
-
-</h2>
-
-
-
-<p class="subtitle">
-
-Soluções jurídicas personalizadas para pessoas físicas e empresas,
-com acompanhamento próximo em cada etapa.
-
-</p>
-
-
-
-
-<div class="cards">
-
-
-
-<!-- TRABALHISTA -->
-
-
-<a class="card card-link" href="direito-trabalhista.html">
-
-
-<i class="fa-solid fa-scale-balanced"></i>
-
-
-
-<h3>
-
-Direito Trabalhista
-
-</h3>
-
-
-
-<p>
-
-Atuação na defesa de trabalhadores e empresas,
-envolvendo verbas trabalhistas, rescisões,
-adicionais, acidentes de trabalho e demais demandas.
-
-</p>
-<span class="card-more">Saiba mais →</span>
-</a>
-
-
-
-
-
-
-<!-- PREVIDENCIÁRIO -->
-
-
-<a class="card card-link" href="direito-previdenciario.html">
-
-
-<i class="fa-solid fa-landmark"></i>
-
-
-
-<h3>
-
-Direito Previdenciário
-
-</h3>
-
-
-
-<p>
-
-Planejamento previdenciário, aposentadorias,
-benefícios do INSS, auxílio-acidente, auxílio-doença
-e defesa dos segurados.
-
-</p>
-<span class="card-more">Saiba mais →</span>
-</a>
-
-
-
-
-
-
-<!-- CONSUMIDOR -->
-
-
-<a class="card card-link" href="direito-consumidor.html">
-
-
-<i class="fa-solid fa-cart-shopping"></i>
-
-
-
-<h3>
-
-Direito do Consumidor
-
-</h3>
-
-
-
-<p>
-
-Proteção contra cobranças indevidas,
-contratos abusivos, negativação irregular,
-falhas de serviços e indenizações.
-
-</p>
-<span class="card-more">Saiba mais →</span>
-</a>
-
-
-
-
-
-
-<!-- CIVIL -->
-
-
-<a class="card card-link" href="direito-civil.html">
-
-
-<i class="fa-solid fa-file-signature"></i>
-
-
-
-<h3>
-
-Direito Civil
-
-</h3>
-
-
-
-<p>
-
-Soluções para contratos, indenizações,
-responsabilidade civil, obrigações e conflitos
-entre pessoas físicas e jurídicas.
-
-</p>
-<span class="card-more">Saiba mais →</span>
-</a>
-
-
-
-<!-- EMPRESARIAL -->
-
-
-<a class="card card-link" href="direito-empresarial.html">
-
-
-<i class="fa-solid fa-building"></i>
-
-
-
-<h3>
-
-Direito Empresarial
-
-</h3>
-
-
-
-<p>
-
-Assessoria jurídica para empresas,
-contratos, prevenção de conflitos e estratégias
-para segurança dos negócios.
-
-</p>
-<span class="card-more">Saiba mais →</span>
-</a>
-
-
-</div>
-
-
-</section>
-<!-- SÓCIOS -->
-
-<section class="reveal">
-
-    <h2 class="title">
-        Nossos Sócios
-    </h2>
-
-    <p class="subtitle">
-        Uma advocacia construída com conhecimento jurídico,
-        dedicação e compromisso com cada cliente.
-    </p>
-
-    <div class="cards">
-
-        <!-- JOSUÉ -->
-
-        <div class="card socio-card-home">
-
-            <img loading="lazy" src="assets/img/josue.jpg"
-                 alt="Josué Ribeiro"
-                 class="mini-socio">
-
-            <h3>Josué Ribeiro</h3>
-
-            <span class="cargo">
-                Advogado • Sócio Fundador
-            </span>
-
-            <p>
-                Advogado fundador da Ribeiro & Flores Advocacia,
-                com foco na defesa dos direitos
-                de pessoas físicas e empresas.
-            </p>
-
-            <a href="socios.html" class="btn-mini">
-                Saiba mais
-            </a>
-
-        </div>
-
-        <!-- RENATA -->
-
-        <div class="card socio-card-home">
-
-            <img loading="lazy" src="assets/img/renata.jpg"
-                 alt="Renata Flores"
-                 class="mini-socio">
-
-            <h3>Renata Flores</h3>
-
-            <span class="cargo">
-                Advogada • Sócia Fundadora
-            </span>
-
-            <p>
-                Advogada sócia fundadora da Ribeiro & Flores Advocacia,
-                com atuação humanizada e comprometida com a
-                defesa dos interesses de seus clientes.
-            </p>
-
-            <a href="socios.html" class="btn-mini">
-                Saiba mais
-            </a>
-
-        </div>
-
+  </div>
+  <div class="hero__trust" data-hero style="--d:700ms">
+    <div class="container">
+      <ul>
+        <li><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#users"></use></svg> Atendimento direto com os sócios</li>
+        <li><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#video"></use></svg> Reuniões por vídeo, sem deslocamento</li>
+        <li><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#lock"></use></svg> Sigilo profissional garantido</li>
+      </ul>
     </div>
-
+  </div>
+  <span class="hero__scroll" aria-hidden="true">Role</span>
 </section>
-
-
-<!-- COMO FUNCIONA -->
-
-<section class="reveal">
-
-<span class="section-tag" style="display:block;text-align:center">Atendimento online</span>
-<h2 class="title">Como funciona o atendimento</h2>
-<p class="subtitle">Você resolve tudo sem sair de casa, de qualquer lugar do Brasil.</p>
-
-<div class="steps">
-<div class="step"><span class="step-n">1</span><h4>Primeiro contato</h4><p>Você nos chama pelo WhatsApp ou pelo formulário e conta brevemente o que aconteceu.</p></div>
-<div class="step"><span class="step-n">2</span><h4>Análise do caso</h4><p>Pedimos os documentos necessários, que podem ser enviados por foto ou PDF, e analisamos sua situação.</p></div>
-<div class="step"><span class="step-n">3</span><h4>Orientação clara</h4><p>Explicamos os caminhos possíveis, riscos e custos, por chamada de vídeo ou telefone, sem juridiquês.</p></div>
-<div class="step"><span class="step-n">4</span><h4>Acompanhamento</h4><p>Se você decidir seguir, cuidamos de tudo e mantemos você informado sobre cada andamento.</p></div>
-</div>
-
-<div style="text-align:center;margin-top:45px">
-<a href="https://wa.me/5551995225270?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Ribeiro%20%26%20Flores%20Advocacia%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener" class="btn">Começar pelo WhatsApp</a>
-</div>
-
+<!-- ============ QUEM SOMOS ============ -->
+<section class="section theme-ivory" aria-labelledby="sobre-title">
+  <div class="container">
+    <div class="split">
+      <div data-reveal>
+        <span class="eyebrow">Quem somos</span>
+        <h2 class="h2" id="sobre-title">Uma advocacia moderna, técnica e <em>próxima</em> de quem confia em nós.</h2>
+      </div>
+      <div data-reveal style="--d:120ms">
+        <p class="lead">A Ribeiro &amp; Flores Advocacia nasceu com o propósito de oferecer uma advocacia estratégica e humana, que coloca o cliente no centro de cada decisão.</p>
+        <p class="muted">Combinamos conhecimento jurídico, atendimento personalizado e tecnologia para construir soluções eficientes para pessoas e empresas. Mais do que processos, defendemos histórias, patrimônios e direitos, com ética, responsabilidade e excelência técnica.</p>
+        <a class="link mt-s" href="escritorio/">Conheça o escritório <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></a>
+      </div>
+    </div>
+    <div class="stats" data-stagger="120">
+      <div class="stat" data-reveal><strong data-count="5">5</strong><span>áreas de atuação</span></div>
+      <div class="stat" data-reveal><strong data-count="100" data-suffix="%">100%</strong><span>atendimento online</span></div>
+      <div class="stat" data-reveal><strong data-count="2">2</strong><span>sócios dedicados ao seu caso</span></div>
+      <div class="stat" data-reveal><strong>8h–19h</strong><span>de segunda a sexta</span></div>
+    </div>
+  </div>
 </section>
-
-
-
-
-
-
-<!-- DIFERENCIAIS -->
-
-<section class="reveal">
-<h2 class="title">Por que escolher a Ribeiro &amp; Flores?</h2>
-<div class="features">
-<div class="feature">
-<h4><i class="fa-solid fa-user-tie" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Atendimento direto com os sócios</h4>
-<p>Seu caso é conduzido pessoalmente pelos advogados fundadores, do início ao fim.</p>
-</div>
-<div class="feature">
-<h4><i class="fa-solid fa-comments" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Comunicação clara</h4>
-<p>Explicamos cada etapa em linguagem simples e respondemos suas dúvidas com agilidade.</p>
-</div>
-<div class="feature">
-<h4><i class="fa-solid fa-globe" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Atendimento em todo o Brasil</h4>
-<p>Reuniões por vídeo, envio digital de documentos e acompanhamento sem deslocamento.</p>
-</div>
-<div class="feature">
-<h4><i class="fa-solid fa-shield-halved" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Ética e sigilo</h4>
-<p>Atuação pautada pelo Código de Ética da OAB, com total confidencialidade das suas informações.</p>
-</div>
-</div>
+<!-- ============ ÁREAS ============ -->
+<section class="section" id="areas" aria-labelledby="areas-title">
+  <div class="container">
+    <div class="section-head section-head--row">
+      <div data-reveal>
+        <span class="eyebrow">O que fazemos</span>
+        <h2 class="h2" id="areas-title">Áreas de atuação</h2>
+        <p class="lead">Soluções jurídicas personalizadas para os momentos mais importantes da sua vida e do seu negócio.</p>
+      </div>
+      <a class="link" href="areas/" data-reveal>Ver todas as áreas <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></a>
+    </div>
+    <div class="areas-grid" data-stagger="90">
+<a class="card" href="areas/direito-trabalhista/" data-reveal>
+  <span class="card__num">01</span>
+  <span class="card__icon"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#briefcase"></use></svg></span>
+  <h3 class="h3">Direito Trabalhista</h3>
+  <p>Defesa de trabalhadores e empresas em rescisões, horas extras, adicionais e acidentes de trabalho.</p>
+  <span class="link">Saiba mais <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></span>
+</a><a class="card" href="areas/direito-previdenciario/" data-reveal>
+  <span class="card__num">02</span>
+  <span class="card__icon"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#shield"></use></svg></span>
+  <h3 class="h3">Direito Previdenciário</h3>
+  <p>Aposentadorias, benefícios negados pelo INSS, BPC/LOAS, revisões e planejamento previdenciário.</p>
+  <span class="link">Saiba mais <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></span>
+</a><a class="card" href="areas/direito-do-consumidor/" data-reveal>
+  <span class="card__num">03</span>
+  <span class="card__icon"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#cart"></use></svg></span>
+  <h3 class="h3">Direito do Consumidor</h3>
+  <p>Cobranças indevidas, negativação irregular, fraudes bancárias, contratos abusivos e indenizações.</p>
+  <span class="link">Saiba mais <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></span>
+</a><a class="card" href="areas/direito-civil/" data-reveal>
+  <span class="card__num">04</span>
+  <span class="card__icon"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#scale"></use></svg></span>
+  <h3 class="h3">Direito Civil</h3>
+  <p>Contratos, indenizações, responsabilidade civil, cobranças e conflitos patrimoniais.</p>
+  <span class="link">Saiba mais <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></span>
+</a><a class="card" href="areas/direito-empresarial/" data-reveal>
+  <span class="card__num">05</span>
+  <span class="card__icon"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#building"></use></svg></span>
+  <h3 class="h3">Direito Empresarial</h3>
+  <p>Assessoria preventiva para empresas: contratos, questões societárias, crédito e LGPD.</p>
+  <span class="link">Saiba mais <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></span>
+</a>    </div>
+  </div>
 </section>
-
-    <!-- ARTIGOS JURÍDICOS -->
-
-<section class="reveal">
-
-
-<h2 class="title">
-
-Conteúdos Jurídicos
-
-</h2>
-
-
-
-<p class="subtitle">
-
-Informação jurídica de qualidade para ajudar você a compreender
-seus direitos e tomar melhores decisões.
-
-</p>
-
-
-
-
-<div class="cards">
-
-
-
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-file-lines"></i>
-
-
-
-<h3>
-
-Direitos Trabalhistas
-
-</h3>
-
-
-
-<p>
-
-Conteúdos sobre rescisão, adicionais,
-horas extras, acidentes de trabalho e
-principais direitos dos trabalhadores.
-
-</p>
-
-
-
-<a href="artigo-demissao-direitos.html" class="btn">
-
-Ler artigo
-
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-person-circle-check"></i>
-
-
-
-<h3>
-
-Direito Previdenciário
-
-</h3>
-
-
-
-<p>
-
-Informações sobre aposentadorias,
-benefícios do INSS, planejamento e
-direitos dos segurados.
-
-</p>
-
-
-
-<a href="artigo-inss-negou-beneficio.html" class="btn">
-
-Ler artigo
-
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-scale-balanced"></i>
-
-
-
-<h3>
-
-Direito do Consumidor
-
-</h3>
-
-
-
-<p>
-
-Orientações sobre contratos,
-cobranças indevidas, problemas com
-serviços e indenizações.
-
-</p>
-
-
-
-<a href="artigo-cobranca-indevida.html" class="btn">
-
-Ler artigo
-
-</a>
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
+<!-- ============ DIFERENCIAIS ============ -->
+<section class="section theme-paper" aria-labelledby="dif-title">
+  <div class="container">
+    <div class="split split--center">
+      <div class="frame frame--portrait" data-reveal="left" style="max-width:480px">
+        <img src="assets/img/opt/justice-420.webp"
+     srcset="assets/img/opt/justice-420.webp 420w, assets/img/opt/justice-720.webp 720w"
+     sizes="(max-width:980px) 90vw, 40vw" alt="Estátua da Justiça com balança, símbolo da advocacia" width="720" height="960"loading="lazy" decoding="async">
+      </div>
+      <div>
+        <div data-reveal>
+          <span class="eyebrow">Por que a Ribeiro &amp; Flores</span>
+          <h2 class="h2" id="dif-title">O que faz a diferença no seu atendimento.</h2>
+        </div>
+        <div class="grid mt-m" style="gap:34px" data-stagger="100">
+          <div class="feature" data-reveal><span class="feature__icon"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#users"></use></svg></span><div><h3 class="h4">Atendimento direto com os sócios</h3><p>Seu caso é conduzido pessoalmente pelos advogados fundadores, do início ao fim.</p></div></div>
+          <div class="feature" data-reveal><span class="feature__icon"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#chat"></use></svg></span><div><h3 class="h4">Comunicação clara, sem juridiquês</h3><p>Explicamos cada etapa em linguagem simples e respondemos suas dúvidas com agilidade.</p></div></div>
+          <div class="feature" data-reveal><span class="feature__icon"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#globe"></use></svg></span><div><h3 class="h4">Atendimento em todo o Brasil</h3><p>Reuniões por vídeo, envio digital de documentos e acompanhamento sem deslocamento.</p></div></div>
+          <div class="feature" data-reveal><span class="feature__icon"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#lock"></use></svg></span><div><h3 class="h4">Ética e sigilo</h3><p>Atuação pautada pelo Código de Ética da OAB, com total confidencialidade das suas informações.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-
-
-
-
-
-
-
-<!-- CHAMADA FINAL -->
-
-<section class="cta reveal">
-
-
-
-<h2>
-
-Seu problema jurídico merece uma estratégia.
-
-</h2>
-
-
-
-
-<p>
-
-Entre em contato com a Ribeiro & Flores Advocacia.
-Analisamos sua situação e mostramos, com clareza, os caminhos possíveis.
-
-</p>
-
-
-
-
-<div class="hero-buttons">
-
-
-<a href="contato.html" class="btn">
-
-Agendar Atendimento
-
-</a>
-
-
-
-
-<a href="https://wa.me/5551995225270?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Ribeiro%20%26%20Flores%20Advocacia%20e%20gostaria%20de%20agendar%20um%20atendimento." 
-target="_blank"
-class="btn-outline">
-
-WhatsApp
-
-</a>
-
-
-
-</div>
-
-
-
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="section" aria-labelledby="como-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Como funciona</span>
+      <h2 class="h2" id="como-title">Você resolve tudo sem sair de casa.</h2>
+      <p class="lead">Um processo simples e transparente, de qualquer lugar do Brasil.</p>
+    </div>
+    <ol class="steps" data-stagger="120" style="list-style:none">
+      <li class="step" data-reveal><span class="step__n">01</span><h3 class="h4">Primeiro contato</h3><p>Você nos chama pelo WhatsApp ou pelo formulário e conta brevemente o que aconteceu.</p></li>
+      <li class="step" data-reveal><span class="step__n">02</span><h3 class="h4">Análise do caso</h3><p>Pedimos os documentos necessários, enviados por foto ou PDF, e analisamos sua situação.</p></li>
+      <li class="step" data-reveal><span class="step__n">03</span><h3 class="h4">Orientação clara</h3><p>Explicamos os caminhos possíveis, riscos e custos, por vídeo ou telefone.</p></li>
+      <li class="step" data-reveal><span class="step__n">04</span><h3 class="h4">Acompanhamento</h3><p>Se decidir seguir, cuidamos de tudo e mantemos você informado sobre cada andamento.</p></li>
+    </ol>
+    <div class="btn-row mt-l" data-reveal>
+      <a class="btn" href="https://wa.me/5551995225270?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Ribeiro%20%26%20Flores%20Advocacia%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#whatsapp"></use></svg> Começar pelo WhatsApp</a>
+    </div>
+  </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-    <!-- RODAPÉ -->
-
-<footer>
-
-
-<div class="footer-content">
-
-
-<div>
-
-<div class="logo"><a href="index.html" class="brand" aria-label="Ribeiro &amp; Flores Advocacia - início"><img src="assets/img/logo-rf-small.png" alt="" class="brand-crest" width="44" height="52"><span class="brand-text"><span class="brand-name">Ribeiro <em>&amp;</em> Flores</span><span class="brand-sub">ADVOCACIA</span></span></a></div>
-
-
-<p>
-
-Trabalhista, Previdenciário, Consumidor, Cível e Empresarial, com atendimento online em todo o Brasil.
-
-</p>
-
-</div>
-
-
-
-
-
-<div>
-
-
-<h4>
-
-Institucional
-
-</h4>
-
-
-<a href="escritorio.html">
-Escritório
-</a>
-
-
-<a href="socios.html">
-Sócios
-</a>
-
-
-<a href="atuacao.html">
-Áreas de Atuação
-</a>
-
-
-<a href="artigos.html">
-Artigos
-</a>
-
-
-</div>
-
-
-
-
-
-
-<div>
-
-
-<h4>
-
-Contato
-
-</h4>
-
-
-<p>
-<i class="fa-solid fa-globe" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Atendimento online em todo o Brasil
-</p>
-<p>
-<i class="fa-regular fa-clock" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> Seg. a sex., das 8h às 19h
-</p>
-
-
-<p>
-<i class="fa-brands fa-whatsapp" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> (51) 99522-5270
-</p>
-
-
-<p>
-<i class="fa-solid fa-envelope" style="color:#C9A227;margin-right:8px" aria-hidden="true"></i> atendimento.ribeiroflores.adv@gmail.com
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-<hr>
-
-
-<p>
-
-© 2026 Ribeiro & Flores Advocacia.
-<br>
-Todos os direitos reservados.<br><a href="privacidade.html" style="display:inline;color:#C9A227">Política de Privacidade</a>
-
-</p>
-
-
-
+<!-- ============ CONTEÚDOS ============ -->
+<section class="section theme-ivory" aria-labelledby="blog-title">
+  <div class="container">
+    <div class="section-head section-head--row">
+      <div data-reveal>
+        <span class="eyebrow">Conteúdos jurídicos</span>
+        <h2 class="h2" id="blog-title">Informação clara para decisões mais seguras.</h2>
+      </div>
+      <a class="link" href="artigos/" data-reveal>Todos os artigos <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></a>
+    </div>
+    <div class="grid grid-3" data-stagger="100">
+<div data-reveal><a class="post-card" href="artigos/fui-demitido-quais-sao-meus-direitos/">
+  <div class="post-card__img">
+    <img src="assets/img/opt/cover-fui-demitido-quais-sao-meus-direitos-640.webp"
+         srcset="assets/img/opt/cover-fui-demitido-quais-sao-meus-direitos-640.webp 640w, assets/img/opt/cover-fui-demitido-quais-sao-meus-direitos-1200.webp 1200w"
+         sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 33vw"
+         alt="" width="640" height="360" loading="lazy" decoding="async">
+  </div>
+  <div class="post-card__body">
+    <span class="post-card__cat">Direito Trabalhista</span>
+    <h3 class="h3">Fui demitido. Quais são meus direitos?</h3>
+    <p>Entenda quais verbas podem ser devidas após o fim do contrato de trabalho e quais cuidados tomar nesse momento.</p>
+    <div class="post-card__meta">
+      <span><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#calendar"></use></svg><time datetime="2026-09-23">23 de setembro de 2026</time></span>
+      <span><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#clock"></use></svg>3 min de leitura</span>
+    </div>
+  </div>
+</a></div><div data-reveal><a class="post-card" href="artigos/inss-negou-meu-beneficio-o-que-fazer/">
+  <div class="post-card__img">
+    <img src="assets/img/opt/cover-inss-negou-meu-beneficio-o-que-fazer-640.webp"
+         srcset="assets/img/opt/cover-inss-negou-meu-beneficio-o-que-fazer-640.webp 640w, assets/img/opt/cover-inss-negou-meu-beneficio-o-que-fazer-1200.webp 1200w"
+         sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 33vw"
+         alt="" width="640" height="360" loading="lazy" decoding="async">
+  </div>
+  <div class="post-card__body">
+    <span class="post-card__cat">Direito Previdenciário</span>
+    <h3 class="h3">INSS negou meu benefício. O que fazer?</h3>
+    <p>Conheça os caminhos possíveis quando um benefício previdenciário é indeferido pelo INSS.</p>
+    <div class="post-card__meta">
+      <span><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#calendar"></use></svg><time datetime="2026-09-23">23 de setembro de 2026</time></span>
+      <span><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#clock"></use></svg>3 min de leitura</span>
+    </div>
+  </div>
+</a></div><div data-reveal><a class="post-card" href="artigos/cobranca-indevida-gera-indenizacao/">
+  <div class="post-card__img">
+    <img src="assets/img/opt/cover-cobranca-indevida-gera-indenizacao-640.webp"
+         srcset="assets/img/opt/cover-cobranca-indevida-gera-indenizacao-640.webp 640w, assets/img/opt/cover-cobranca-indevida-gera-indenizacao-1200.webp 1200w"
+         sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 33vw"
+         alt="" width="640" height="360" loading="lazy" decoding="async">
+  </div>
+  <div class="post-card__body">
+    <span class="post-card__cat">Direito do Consumidor</span>
+    <h3 class="h3">Cobrança indevida gera indenização?</h3>
+    <p>Saiba quais são os direitos do consumidor diante de cobranças abusivas, negativação irregular ou serviços inadequados.</p>
+    <div class="post-card__meta">
+      <span><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#calendar"></use></svg><time datetime="2026-09-23">23 de setembro de 2026</time></span>
+      <span><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#clock"></use></svg>3 min de leitura</span>
+    </div>
+  </div>
+</a></div>    </div>
+  </div>
+</section>
+<!-- ============ SÓCIOS ============ -->
+<section class="section" aria-labelledby="socios-title">
+  <div class="container">
+    <div class="section-head section-head--center" data-reveal>
+      <span class="eyebrow eyebrow--center">Quem cuida do seu caso</span>
+      <h2 class="h2" id="socios-title">Conheça os sócios</h2>
+      <p class="lead">Uma advocacia construída com conhecimento jurídico, dedicação e compromisso com cada cliente.</p>
+    </div>
+    <div class="grid grid-2" style="max-width:920px;margin-inline:auto" data-stagger="140">
+      <a class="partner-card" href="socios/#josue-ribeiro" data-reveal>
+        <div class="partner-card__img"><img src="assets/img/opt/josue-420.webp"
+     srcset="assets/img/opt/josue-420.webp 420w, assets/img/opt/josue-720.webp 720w"
+     sizes="(max-width:640px) 100vw, 460px" alt="Josué Ribeiro, Advogado · Sócio fundador" width="720" height="960"loading="lazy" decoding="async"></div>
+        <div class="partner-card__body">
+          <div class="partner-card__role">Advogado · Sócio fundador</div>
+          <h3 class="h3">Josué Ribeiro</h3>
+          <p>Advogado fundador da Ribeiro &amp; Flores Advocacia, com atuação pautada na estratégia jurídica, na análise técnica e na construção de soluções personalizadas para cada cliente.</p>
+          <span class="link">Ver perfil <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></span>
+        </div>
+      </a>
+      <a class="partner-card" href="socios/#renata-flores" data-reveal>
+        <div class="partner-card__img"><img src="assets/img/opt/renata-420.webp"
+     srcset="assets/img/opt/renata-420.webp 420w, assets/img/opt/renata-720.webp 720w"
+     sizes="(max-width:640px) 100vw, 460px" alt="Renata Flores, Advogada · Sócia fundadora" width="720" height="960"loading="lazy" decoding="async"></div>
+        <div class="partner-card__body">
+          <div class="partner-card__role">Advogada · Sócia fundadora</div>
+          <h3 class="h3">Renata Flores</h3>
+          <p>Advogada sócia fundadora da Ribeiro &amp; Flores Advocacia, com atuação humanizada, ética e comprometida com os objetivos de cada cliente.</p>
+          <span class="link">Ver perfil <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="section section--tight cta-band" aria-label="Contato">
+  <div class="container">
+    <div data-reveal>
+      <span class="eyebrow">Fale com a gente</span>
+      <h2 class="h2">Seu problema jurídico merece uma <em>estratégia</em>.</h2>
+      <p class="lead">Analisamos sua situação e mostramos, com clareza, os caminhos possíveis. Segunda a sexta, das 8h às 19h.</p>
+    </div>
+    <div class="btn-row" data-reveal="right">
+      <a class="btn" href="contato/">Agendar atendimento <svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#arrow"></use></svg></a>
+      <a class="btn btn--ghost" href="https://wa.me/5551995225270?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Ribeiro%20%26%20Flores%20Advocacia%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#whatsapp"></use></svg> WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="./"><img src="assets/img/opt/crest-104.webp" alt="" width="88" height="104" loading="lazy"><span class="brand-text"><span class="brand-name">Ribeiro <em>&amp;</em> Flores</span><span class="brand-sub">ADVOCACIA</span></span></a>
+        <p>Advocacia estratégica para pessoas e empresas, com atendimento direto com os sócios e online em todo o Brasil.</p>
+      </div>
+      <div>
+        <h2>Institucional</h2>
+        <ul>
+          <li><a href="escritorio/">O Escritório</a></li>
+          <li><a href="socios/">Sócios</a></li>
+          <li><a href="artigos/">Artigos</a></li>
+          <li><a href="contato/">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Áreas de atuação</h2>
+        <ul>
+<li><a href="areas/direito-trabalhista/">Direito Trabalhista</a></li><li><a href="areas/direito-previdenciario/">Direito Previdenciário</a></li><li><a href="areas/direito-do-consumidor/">Direito do Consumidor</a></li><li><a href="areas/direito-civil/">Direito Civil</a></li><li><a href="areas/direito-empresarial/">Direito Empresarial</a></li>        </ul>
+      </div>
+      <div>
+        <h2>Atendimento</h2>
+        <ul class="footer-contact">
+          <li><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#whatsapp"></use></svg><a href="https://wa.me/5551995225270?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Ribeiro%20%26%20Flores%20Advocacia%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">(51) 99522-5270</a></li>
+          <li><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#mail"></use></svg><a href="mailto:atendimento.ribeiroflores.adv@gmail.com" style="word-break:break-all">atendimento.ribeiroflores.adv@gmail.com</a></li>
+          <li><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#clock"></use></svg><span>Segunda a sexta, das 8h às 19h</span></li>
+          <li><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#globe"></use></svg><span>Atendimento online em todo o Brasil</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <p class="mb-0">© <span data-year>2026</span> Ribeiro &amp; Flores Advocacia. Todos os direitos reservados.</p>
+        <p class="footer-legal">Conteúdo de caráter informativo, em conformidade com o Código de Ética e Disciplina da OAB e o Provimento nº 205/2021. As informações deste site não substituem a análise individual de um advogado.</p>
+      </div>
+      <nav aria-label="Links legais">
+        <a href="privacidade/">Política de Privacidade</a>
+        <a href="termos-de-uso/">Termos de Uso</a>
+      </nav>
+    </div>
+  </div>
 </footer>
-
-
-
-<!-- WHATSAPP FLUTUANTE -->
-
-
-<a href="https://wa.me/5551995225270?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Ribeiro%20%26%20Flores%20Advocacia%20e%20gostaria%20de%20agendar%20um%20atendimento."
-target="_blank"
-class="whatsapp"
-title="Falar pelo WhatsApp">
-
-
-<i class="fa-brands fa-whatsapp"></i>
-
-
-</a>
-
-
-
-
-
-
-
-
-<!-- BOTÃO VOLTAR AO TOPO -->
-
-
-<div class="topo" id="topo">
-
-
-<i class="fa-solid fa-arrow-up"></i>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- JAVASCRIPT -->
-
-
-<script>
-
-
-// ALTERAR HEADER AO ROLAR
-
-
-const header = document.getElementById("header");
-
-
-window.addEventListener("scroll",()=>{
-
-
-if(window.scrollY > 80){
-
-
-header.classList.add("scrolled");
-
-
-}else{
-
-
-header.classList.remove("scrolled");
-
-
-}
-
-
-});
-
-
-
-
-
-
-
-// MENU MOBILE
-
-
-const menuToggle = document.getElementById("menuToggle");
-
-const menu = document.getElementById("menu");
-
-
-
-menuToggle.addEventListener("click",()=>{
-
-
-menu.classList.toggle("active");
-
-
-});
-
-
-
-
-
-
-
-
-// ANIMAÇÃO DAS SEÇÕES
-
-
-const elementos = document.querySelectorAll(".reveal");
-
-
-
-function revelar(){
-
-
-elementos.forEach(elemento=>{
-
-
-const alturaTela = window.innerHeight;
-
-
-const topoElemento = elemento.getBoundingClientRect().top;
-
-
-
-if(topoElemento < alturaTela - 100){
-
-
-elemento.classList.add("active");
-
-
-}
-
-
-});
-
-
-}
-
-
-
-window.addEventListener("scroll", revelar);
-
-
-revelar();
-
-
-
-
-
-
-
-
-
-// VOLTAR AO TOPO
-
-
-const topo = document.getElementById("topo");
-
-
-
-topo.addEventListener("click",()=>{
-
-
-window.scrollTo({
-
-
-top:0,
-
-
-behavior:"smooth"
-
-
-});
-
-
-});
-
-
-
-</script>
-
-    </body>
-
+<a class="wa-float" href="https://wa.me/5551995225270?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Ribeiro%20%26%20Flores%20Advocacia%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener" aria-label="Falar com o escritório pelo WhatsApp"><svg class="ico " aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#whatsapp"></use></svg><span>Fale com um advogado</span></a>
+<script src="assets/js/script.js?v=202610052315" defer></script>
+</body>
 </html>

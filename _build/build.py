@@ -189,6 +189,8 @@ def main():
               "image": f"{SITE['url']}/assets/img/opt/{p['photo']}-720.webp",
               "url": f"{SITE['url']}/socios/#{p['key']}", "description": p["summary"],
               "knowsAbout": [C.AREA_BY_KEY[k]["name"] for k in p["areas"]]}
+        if p.get("instagram"):
+            ld["sameAs"] = [f"https://www.instagram.com/{p['instagram']}/"]
         persons.append(ld)
     render("socios.html", "socios/index.html", {
         "title": "Sócios | Josué Ribeiro e Renata Flores | Ribeiro & Flores Advocacia",

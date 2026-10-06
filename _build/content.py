@@ -56,6 +56,7 @@ PARTNERS = [
         "name": "Josué Ribeiro",
         "role": "Advogado · Sócio fundador",
         "oab": "",  # ex.: "OAB/RS 000.000"
+        "instagram": "josue_vrsilva",
         "photo": "josue",
         "summary": "Advogado fundador da Ribeiro & Flores Advocacia, com atuação pautada na estratégia jurídica, "
                    "na análise técnica e na construção de soluções personalizadas para cada cliente.",
@@ -80,6 +81,7 @@ PARTNERS = [
         "name": "Renata Flores",
         "role": "Advogada · Sócia fundadora",
         "oab": "",
+        "instagram": "renata.floresb",
         "photo": "renata",
         "summary": "Advogada sócia fundadora da Ribeiro & Flores Advocacia, com atuação humanizada, ética e "
                    "comprometida com os objetivos de cada cliente.",

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="page-hero page-hero--pattern">
-  <div class="page-hero__bg">{{ m.img('hero', [640, 960, 1400], '', eager=true, w=1400, h=1120) }}</div>
+<section class="page-hero">
+  <img class="page-hero__crest" src="{{ asset('img/opt/crest-208.webp') }}" alt="" width="176" height="208">
   <div class="container">
     {{ m.crumbs([('Início','/'),('O Escritório',None)]) }}
     <span class="eyebrow" data-reveal>O Escritório</span>
@@ -10,7 +10,7 @@
   </div>
 </section>
 
-<section class="section theme-ivory">
+<section class="section">
   <div class="container">
     <div class="split">
       <div data-reveal>
@@ -26,28 +26,28 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section theme-dark">
   <div class="container">
     <div class="section-head" data-reveal>
       <span class="eyebrow">Nossa filosofia</span>
       <h2 class="h2">Os pilares do nosso trabalho</h2>
     </div>
-    <div class="grid grid-3" data-stagger="110">
-      <div class="card" data-reveal><span class="card__icon">{{ m.icon('target') }}</span><h3 class="h3">Estratégia jurídica</h3><p>Cada caso recebe uma análise individualizada, buscando o melhor caminho para alcançar os objetivos do cliente.</p></div>
-      <div class="card" data-reveal><span class="card__icon">{{ m.icon('handshake') }}</span><h3 class="h3">Relacionamento</h3><p>Relações baseadas em confiança, transparência e comunicação clara durante toda a demanda.</p></div>
-      <div class="card" data-reveal><span class="card__icon">{{ m.icon('spark') }}</span><h3 class="h3">Inovação</h3><p>Tecnologia e métodos modernos para um atendimento mais ágil, organizado e eficiente.</p></div>
+    <div class="pillars pillars--3" data-stagger="110">
+      <div class="pillar" data-reveal><span class="pillar__n">I.</span><h3 class="h3">Estratégia jurídica</h3><p>Cada caso recebe uma análise individualizada, buscando o melhor caminho para alcançar os objetivos do cliente.</p></div>
+      <div class="pillar" data-reveal><span class="pillar__n">II.</span><h3 class="h3">Relacionamento</h3><p>Relações baseadas em confiança, transparência e comunicação clara durante toda a demanda.</p></div>
+      <div class="pillar" data-reveal><span class="pillar__n">III.</span><h3 class="h3">Inovação</h3><p>Tecnologia e métodos modernos para um atendimento mais ágil, organizado e eficiente.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section theme-paper">
+<section class="section">
   <div class="container">
     <div class="section-head" data-reveal>
       <span class="eyebrow">Como trabalhamos</span>
       <h2 class="h2">Da primeira conversa à solução</h2>
       <p class="lead">Começamos pela compreensão completa do problema. A partir dela, desenvolvemos uma estratégia personalizada, avaliando riscos, oportunidades e os melhores caminhos.</p>
     </div>
-    <ol class="steps" style="list-style:none" data-stagger="120">
+    <ol class="steps" data-stagger="120">
       <li class="step" data-reveal><span class="step__n">01</span><h3 class="h4">Atendimento inicial</h3><p>Escutamos sua situação, analisamos documentos e identificamos os pontos jurídicos relevantes.</p></li>
       <li class="step" data-reveal><span class="step__n">02</span><h3 class="h4">Análise estratégica</h3><p>Estudamos o caso com profundidade para definir a melhor estratégia.</p></li>
       <li class="step" data-reveal><span class="step__n">03</span><h3 class="h4">Atuação jurídica</h3><p>Defendemos seus interesses com técnica, responsabilidade e acompanhamento próximo.</p></li>
@@ -56,12 +56,13 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section theme-alt">
   <div class="container">
     <div class="split split--center">
-      <div class="frame frame--portrait" data-reveal="left" style="max-width:460px">
-        {{ m.img('justice', [420, 720], 'Estátua da Justiça com balança', sizes='(max-width:980px) 90vw, 40vw', w=720, h=960) }}
-      </div>
+      <figure class="crest-panel" data-reveal="left" style="max-width:460px;margin:0">
+        <img src="{{ asset('img/opt/crest-208.webp') }}" alt="Brasão da Ribeiro & Flores Advocacia" width="176" height="208" loading="lazy">
+        <figcaption>Ribeiro &amp; Flores · Advocacia</figcaption>
+      </figure>
       <div>
         <div data-reveal>
           <span class="eyebrow">Tecnologia e proximidade</span>
@@ -78,10 +79,10 @@
   </div>
 </section>
 
-<section class="section section--tight theme-ivory">
+<section class="section section--tight">
   <div class="container">
     <div class="split split--center">
-      <div data-reveal><span class="eyebrow">Próximo passo</span><h2 class="h2">Conheça quem conduz o seu caso.</h2></div>
+      <div data-reveal><span class="eyebrow">Sócios</span><h2 class="h2">Conheça quem conduz o seu caso.</h2></div>
       <div class="btn-row" data-reveal><a class="btn btn--dark" href="{{ url('/socios/') }}">Conheça os sócios {{ m.icon('arrow') }}</a><a class="btn btn--ghost" href="{{ url('/areas/') }}">Áreas de atuação</a></div>
     </div>
   </div>

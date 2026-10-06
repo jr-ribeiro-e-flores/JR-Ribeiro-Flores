@@ -21,7 +21,7 @@
     </div>
   </header>
 
-  <div class="theme-paper" style="padding:clamp(48px,6vw,72px) 0 var(--section)">
+  <div style="padding:clamp(48px,6vw,72px) 0 var(--section)">
     <div class="container narrow">
       <div class="prose">
 {{ p.body|safe }}
@@ -40,14 +40,14 @@
       </div>
 
       {% if area %}
-      <aside class="aside-card mt-l" style="position:relative;top:0">
+      <aside class="aside-card mt-l">
         <span class="eyebrow">Precisa de ajuda com o seu caso?</span>
         <h2 class="h3">Fale com um advogado de {{ area.name }}</h2>
         <p>Converse com a nossa equipe. Atendimento online em todo o Brasil, {{ site.hours_display|lower }}.</p>
         <div class="btn-row"><a class="btn" href="{{ url('/contato/') }}?area={{ area.key }}">Solicitar análise {{ m.icon('arrow') }}</a><a class="btn btn--ghost" href="{{ url('/areas/' ~ area.slug ~ '/') }}">Sobre a área</a></div>
       </aside>
       {% else %}
-      <aside class="aside-card mt-l" style="position:relative;top:0">
+      <aside class="aside-card mt-l">
         <span class="eyebrow">Precisa de ajuda com o seu caso?</span>
         <h2 class="h3">Converse com a nossa equipe</h2>
         <p>Atendimento online em todo o Brasil, {{ site.hours_display|lower }}.</p>
@@ -58,7 +58,7 @@
   </div>
 </article>
 
-<section class="section theme-ivory" aria-labelledby="rel-title">
+<section class="section theme-alt" aria-labelledby="rel-title">
   <div class="container">
     <div class="section-head section-head--row">
       <div data-reveal><span class="eyebrow">Artigos relacionados</span><h2 class="h2" id="rel-title">Continue lendo</h2></div>

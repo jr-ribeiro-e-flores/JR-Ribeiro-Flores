@@ -50,11 +50,11 @@
 </div>
 {%- endmacro %}
 
-{% macro cta_band(title, text, primary_label="Agendar atendimento", primary_href=None, wa_href=None) -%}
-<section class="section section--tight cta-band" aria-label="Contato">
+{% macro cta_band(title, text, primary_label="Agendar uma consulta", primary_href=None, wa_href=None) -%}
+<section class="section theme-dark cta-band" aria-label="Contato">
   <div class="container">
     <div data-reveal>
-      <span class="eyebrow">Fale com a gente</span>
+      <span class="eyebrow">Próximo passo</span>
       <h2 class="h2">{{ title|safe }}</h2>
       <p class="lead">{{ text }}</p>
     </div>
@@ -64,6 +64,15 @@
     </div>
   </div>
 </section>
+{%- endmacro %}
+
+{% macro area_row(a, n) -%}
+<li data-reveal><a class="area-row" href="{{ url('/areas/' ~ a.slug ~ '/') }}">
+  <span class="area-row__n">0{{ n }}</span>
+  <span class="area-row__t">{{ a.name }}</span>
+  <p class="area-row__d">{{ a.card }}</p>
+  <span class="area-row__a" aria-hidden="true">{{ icon('arrow') }}</span>
+</a></li>
 {%- endmacro %}
 
 {% macro crumbs(items) -%}

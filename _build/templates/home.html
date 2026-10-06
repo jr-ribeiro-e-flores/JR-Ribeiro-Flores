@@ -1,94 +1,118 @@
 {% extends "base.html" %}
-{% block preload %}<link rel="preload" as="image" href="{{ asset('img/opt/hero-1400.webp') }}" imagesrcset="{{ asset('img/opt/hero-640.webp') }} 640w, {{ asset('img/opt/hero-960.webp') }} 960w, {{ asset('img/opt/hero-1400.webp') }} 1400w" imagesizes="(max-width:860px) 100vw, 64vw">{% endblock %}
+{% block preload %}<link rel="preload" as="image" href="{{ asset('img/opt/josue-bw-720.webp') }}" imagesrcset="{{ asset('img/opt/josue-bw-420.webp') }} 420w, {{ asset('img/opt/josue-bw-720.webp') }} 720w" imagesizes="(max-width:980px) 45vw, 22vw">{% endblock %}
 {% block content %}
 
 <!-- ============ HERO ============ -->
 <section class="hero" aria-labelledby="hero-title">
-  <div class="hero__media">
-    {{ m.img('hero', [640, 960, 1400], '', sizes='(max-width:860px) 100vw, 64vw', eager=true, w=1400, h=1120) }}
-  </div>
   <div class="container">
-    <div class="hero__inner">
-      <span class="eyebrow" data-hero style="--d:100ms">Advocacia estratégica · Online em todo o Brasil</span>
-      <h1 class="display" id="hero-title" data-hero style="--d:220ms">Seus direitos tratados com <em>estratégia</em>, clareza e proximidade.</h1>
-      <p class="lead" data-hero style="--d:380ms">Atuação Trabalhista, Previdenciária, Cível, do Consumidor e Empresarial. Seu caso é conduzido pessoalmente pelos sócios, do primeiro contato à solução.</p>
-      <div class="btn-row" data-hero style="--d:520ms">
-        <a class="btn" href="{{ url('/contato/') }}">Agendar atendimento {{ m.icon('arrow') }}</a>
-        <a class="btn btn--ghost" href="#areas">Conheça as áreas</a>
+    <div class="hero__grid">
+      <div>
+        <span class="eyebrow" data-hero style="--d:80ms">Ribeiro &amp; Flores Advocacia</span>
+        <h1 class="display" id="hero-title" data-hero style="--d:200ms">Advocacia estratégica, conduzida <em>pessoalmente</em> pelos sócios.</h1>
+        <p class="lead" data-hero style="--d:360ms">Atuação nas áreas Trabalhista, Previdenciária, Cível, do Consumidor e Empresarial, com atendimento reservado e online em todo o Brasil.</p>
+        <div class="btn-row" data-hero style="--d:500ms">
+          <a class="btn" href="{{ url('/contato/') }}">Agendar uma consulta {{ m.icon('arrow') }}</a>
+          <a class="link" href="{{ url('/escritorio/') }}">Conheça o escritório {{ m.icon('arrow') }}</a>
+        </div>
+      </div>
+      <div class="hero__portraits">
+        {% for p in partners %}
+        <figure class="hero__portrait" data-hero style="--d:{{ 300 + loop.index0 * 180 }}ms">
+          <a href="{{ url('/socios/') }}#{{ p.key }}">{{ m.img(p.photo ~ '-bw', [420, 720], p.name ~ ', ' ~ p.role, sizes='(max-width:980px) 45vw, 22vw', eager=true, w=720, h=960) }}</a>
+          <figcaption><strong>{{ p.name }}</strong>{{ 'Sócio fundador' if loop.first else 'Sócia fundadora' }}</figcaption>
+        </figure>
+        {% endfor %}
       </div>
     </div>
+    <ul class="hero__facts" data-hero style="--d:700ms">
+      <li>{{ m.icon('users') }}<div><strong>Atendimento pelos sócios</strong>Do primeiro contato à solução</div></li>
+      <li>{{ m.icon('lock') }}<div><strong>Sigilo profissional</strong>Confidencialidade absoluta</div></li>
+      <li>{{ m.icon('globe') }}<div><strong>Todo o Brasil</strong>Reuniões por vídeo</div></li>
+      <li>{{ m.icon('clock') }}<div><strong>Seg. a sex., 8h às 19h</strong>Agendamento facilitado</div></li>
+    </ul>
   </div>
-  <div class="hero__trust" data-hero style="--d:700ms">
-    <div class="container">
-      <ul>
-        <li>{{ m.icon('users') }} Atendimento direto com os sócios</li>
-        <li>{{ m.icon('video') }} Reuniões por vídeo, sem deslocamento</li>
-        <li>{{ m.icon('lock') }} Sigilo profissional garantido</li>
-      </ul>
-    </div>
-  </div>
-  <span class="hero__scroll" aria-hidden="true">Role</span>
 </section>
 
-<!-- ============ QUEM SOMOS ============ -->
-<section class="section theme-ivory" aria-labelledby="sobre-title">
+<!-- ============ MANIFESTO ============ -->
+<section class="section theme-dark manifesto" aria-label="Manifesto">
+  <div class="container">
+    <img src="{{ asset('img/opt/crest-104.webp') }}" alt="" width="88" height="104" loading="lazy" data-reveal>
+    <p class="statement" data-reveal>Um bom advogado se mede pela <em>clareza</em> com que explica, pelo <em>cuidado</em> com que conduz e pela <em>firmeza</em> com que defende.</p>
+    <p class="manifesto__sign" data-reveal>Josué Ribeiro &nbsp;·&nbsp; Renata Flores</p>
+  </div>
+</section>
+
+<!-- ============ ESCRITÓRIO ============ -->
+<section class="section" aria-labelledby="sobre-title">
   <div class="container">
     <div class="split">
       <div data-reveal>
-        <span class="eyebrow">Quem somos</span>
-        <h2 class="h2" id="sobre-title">Uma advocacia moderna, técnica e <em>próxima</em> de quem confia em nós.</h2>
+        <span class="eyebrow">O escritório</span>
+        <h2 class="h2" id="sobre-title">Uma advocacia técnica, discreta e próxima.</h2>
       </div>
       <div data-reveal style="--d:120ms">
-        <p class="lead">A Ribeiro &amp; Flores Advocacia nasceu com o propósito de oferecer uma advocacia estratégica e humana, que coloca o cliente no centro de cada decisão.</p>
-        <p class="muted">Combinamos conhecimento jurídico, atendimento personalizado e tecnologia para construir soluções eficientes para pessoas e empresas. Mais do que processos, defendemos histórias, patrimônios e direitos, com ética, responsabilidade e excelência técnica.</p>
-        <a class="link mt-s" href="{{ url('/escritorio/') }}">Conheça o escritório {{ m.icon('arrow') }}</a>
+        <p class="lead">A Ribeiro &amp; Flores nasceu para oferecer o padrão de atendimento de um grande escritório com a atenção de quem conhece cada cliente pelo nome.</p>
+        <p class="muted">Cada caso é estudado em profundidade e conduzido pessoalmente pelos sócios. Combinamos conhecimento jurídico, estratégia e tecnologia para construir soluções seguras para pessoas e empresas, com ética, responsabilidade e comunicação clara em todas as etapas.</p>
+        <a class="link mt-s" href="{{ url('/escritorio/') }}">Nossa forma de trabalhar {{ m.icon('arrow') }}</a>
       </div>
-    </div>
-    <div class="stats" data-stagger="120">
-      <div class="stat" data-reveal><strong data-count="5">5</strong><span>áreas de atuação</span></div>
-      <div class="stat" data-reveal><strong data-count="100" data-suffix="%">100%</strong><span>atendimento online</span></div>
-      <div class="stat" data-reveal><strong data-count="2">2</strong><span>sócios dedicados ao seu caso</span></div>
-      <div class="stat" data-reveal><strong>8h–19h</strong><span>de segunda a sexta</span></div>
     </div>
   </div>
 </section>
 
 <!-- ============ ÁREAS ============ -->
-<section class="section" id="areas" aria-labelledby="areas-title">
+<section class="section theme-alt" id="areas" aria-labelledby="areas-title">
   <div class="container">
     <div class="section-head section-head--row">
       <div data-reveal>
-        <span class="eyebrow">O que fazemos</span>
-        <h2 class="h2" id="areas-title">Áreas de atuação</h2>
-        <p class="lead">Soluções jurídicas personalizadas para os momentos mais importantes da sua vida e do seu negócio.</p>
+        <span class="eyebrow">Áreas de atuação</span>
+        <h2 class="h2" id="areas-title">Onde atuamos</h2>
       </div>
-      <a class="link" href="{{ url('/areas/') }}" data-reveal>Ver todas as áreas {{ m.icon('arrow') }}</a>
+      <a class="link" href="{{ url('/areas/') }}" data-reveal>Todas as áreas {{ m.icon('arrow') }}</a>
     </div>
-    <div class="areas-grid" data-stagger="90">
-      {% for a in areas %}{{ m.area_card(a, loop.index) }}{% endfor %}
-    </div>
+    <ul class="area-list" data-stagger="80">
+      {% for a in areas %}{{ m.area_row(a, loop.index) }}{% endfor %}
+    </ul>
   </div>
 </section>
 
 <!-- ============ DIFERENCIAIS ============ -->
-<section class="section theme-paper" aria-labelledby="dif-title">
+<section class="section" aria-labelledby="dif-title">
   <div class="container">
-    <div class="split split--center">
-      <div class="frame frame--portrait" data-reveal="left" style="max-width:480px">
-        {{ m.img('justice', [420, 720], 'Estátua da Justiça com balança, símbolo da advocacia', sizes='(max-width:980px) 90vw, 40vw', w=720, h=960) }}
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Por que a Ribeiro &amp; Flores</span>
+      <h2 class="h2" id="dif-title">O padrão que orienta cada atendimento.</h2>
+    </div>
+    <div class="pillars" data-stagger="110">
+      <div class="pillar" data-reveal><span class="pillar__n">I.</span><h3 class="h3">Os sócios no seu caso</h3><p>Nada de repasses: quem analisa, decide e acompanha a sua demanda são os advogados fundadores.</p></div>
+      <div class="pillar" data-reveal><span class="pillar__n">II.</span><h3 class="h3">Estratégia antes da ação</h3><p>Avaliamos riscos, custos e caminhos possíveis antes de qualquer medida, judicial ou não.</p></div>
+      <div class="pillar" data-reveal><span class="pillar__n">III.</span><h3 class="h3">Clareza absoluta</h3><p>Você entende cada etapa, sem juridiquês, e recebe retorno sobre cada andamento.</p></div>
+      <div class="pillar" data-reveal><span class="pillar__n">IV.</span><h3 class="h3">Ética e sigilo</h3><p>Atuação pautada pelo Código de Ética da OAB e confidencialidade em todas as informações.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SÓCIOS ============ -->
+<section class="section theme-dark" aria-labelledby="socios-title">
+  <div class="container">
+    <div class="section-head section-head--row">
+      <div data-reveal>
+        <span class="eyebrow">Sócios</span>
+        <h2 class="h2" id="socios-title">Quem conduz o seu caso.</h2>
       </div>
-      <div>
-        <div data-reveal>
-          <span class="eyebrow">Por que a Ribeiro &amp; Flores</span>
-          <h2 class="h2" id="dif-title">O que faz a diferença no seu atendimento.</h2>
+      <a class="link" href="{{ url('/socios/') }}" data-reveal>Conheça os sócios {{ m.icon('arrow') }}</a>
+    </div>
+    <div class="partner-feature" data-stagger="160">
+      {% for p in partners %}
+      <a class="partner-tile" href="{{ url('/socios/') }}#{{ p.key }}" data-reveal>
+        <div class="partner-tile__img">{{ m.img(p.photo ~ '-bw', [420, 720], p.name ~ ', ' ~ p.role, sizes='(max-width:700px) 100vw, 46vw', w=720, h=960) }}</div>
+        <div class="partner-tile__body">
+          <span class="partner-tile__role">{{ p.role }}</span>
+          <h3 class="h3">{{ p.name }}</h3>
+          <p class="partner-tile__areas">{% for k in p.areas %}{{ area_by_key[k].short }}{% if not loop.last %} · {% endif %}{% endfor %}</p>
+          <span class="area-row__a" aria-hidden="true">{{ m.icon('arrow') }}</span>
         </div>
-        <div class="grid mt-m" style="gap:34px" data-stagger="100">
-          <div class="feature" data-reveal><span class="feature__icon">{{ m.icon('users') }}</span><div><h3 class="h4">Atendimento direto com os sócios</h3><p>Seu caso é conduzido pessoalmente pelos advogados fundadores, do início ao fim.</p></div></div>
-          <div class="feature" data-reveal><span class="feature__icon">{{ m.icon('chat') }}</span><div><h3 class="h4">Comunicação clara, sem juridiquês</h3><p>Explicamos cada etapa em linguagem simples e respondemos suas dúvidas com agilidade.</p></div></div>
-          <div class="feature" data-reveal><span class="feature__icon">{{ m.icon('globe') }}</span><div><h3 class="h4">Atendimento em todo o Brasil</h3><p>Reuniões por vídeo, envio digital de documentos e acompanhamento sem deslocamento.</p></div></div>
-          <div class="feature" data-reveal><span class="feature__icon">{{ m.icon('lock') }}</span><div><h3 class="h4">Ética e sigilo</h3><p>Atuação pautada pelo Código de Ética da OAB, com total confidencialidade das suas informações.</p></div></div>
-        </div>
-      </div>
+      </a>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -97,29 +121,25 @@
 <section class="section" aria-labelledby="como-title">
   <div class="container">
     <div class="section-head" data-reveal>
-      <span class="eyebrow">Como funciona</span>
-      <h2 class="h2" id="como-title">Você resolve tudo sem sair de casa.</h2>
-      <p class="lead">Um processo simples e transparente, de qualquer lugar do Brasil.</p>
+      <span class="eyebrow">Atendimento</span>
+      <h2 class="h2" id="como-title">Simples, reservado e de qualquer lugar do Brasil.</h2>
     </div>
-    <ol class="steps" data-stagger="120" style="list-style:none">
-      <li class="step" data-reveal><span class="step__n">01</span><h3 class="h4">Primeiro contato</h3><p>Você nos chama pelo WhatsApp ou pelo formulário e conta brevemente o que aconteceu.</p></li>
-      <li class="step" data-reveal><span class="step__n">02</span><h3 class="h4">Análise do caso</h3><p>Pedimos os documentos necessários, enviados por foto ou PDF, e analisamos sua situação.</p></li>
-      <li class="step" data-reveal><span class="step__n">03</span><h3 class="h4">Orientação clara</h3><p>Explicamos os caminhos possíveis, riscos e custos, por vídeo ou telefone.</p></li>
-      <li class="step" data-reveal><span class="step__n">04</span><h3 class="h4">Acompanhamento</h3><p>Se decidir seguir, cuidamos de tudo e mantemos você informado sobre cada andamento.</p></li>
+    <ol class="steps" data-stagger="120">
+      <li class="step" data-reveal><span class="step__n">01</span><h3 class="h4">Primeiro contato</h3><p>Pelo WhatsApp ou formulário, você conta brevemente o que aconteceu.</p></li>
+      <li class="step" data-reveal><span class="step__n">02</span><h3 class="h4">Análise do caso</h3><p>Reunimos os documentos necessários, enviados por foto ou PDF, e estudamos sua situação.</p></li>
+      <li class="step" data-reveal><span class="step__n">03</span><h3 class="h4">Reunião com os sócios</h3><p>Apresentamos caminhos, riscos e custos com transparência, por vídeo ou telefone.</p></li>
+      <li class="step" data-reveal><span class="step__n">04</span><h3 class="h4">Condução do caso</h3><p>Cuidamos de tudo e mantemos você informado sobre cada andamento.</p></li>
     </ol>
-    <div class="btn-row mt-l" data-reveal>
-      <a class="btn" href="{{ wa_default }}" target="_blank" rel="noopener">{{ m.icon('whatsapp') }} Começar pelo WhatsApp</a>
-    </div>
   </div>
 </section>
 
 <!-- ============ CONTEÚDOS ============ -->
-<section class="section theme-ivory" aria-labelledby="blog-title">
+<section class="section theme-alt" aria-labelledby="blog-title">
   <div class="container">
     <div class="section-head section-head--row">
       <div data-reveal>
         <span class="eyebrow">Conteúdos jurídicos</span>
-        <h2 class="h2" id="blog-title">Informação clara para decisões mais seguras.</h2>
+        <h2 class="h2" id="blog-title">Informação para decisões mais seguras.</h2>
       </div>
       <a class="link" href="{{ url('/artigos/') }}" data-reveal>Todos os artigos {{ m.icon('arrow') }}</a>
     </div>
@@ -129,30 +149,6 @@
   </div>
 </section>
 
-<!-- ============ SÓCIOS ============ -->
-<section class="section" aria-labelledby="socios-title">
-  <div class="container">
-    <div class="section-head section-head--center" data-reveal>
-      <span class="eyebrow eyebrow--center">Quem cuida do seu caso</span>
-      <h2 class="h2" id="socios-title">Conheça os sócios</h2>
-      <p class="lead">Uma advocacia construída com conhecimento jurídico, dedicação e compromisso com cada cliente.</p>
-    </div>
-    <div class="grid grid-2" style="max-width:920px;margin-inline:auto" data-stagger="140">
-      {% for p in partners %}
-      <a class="partner-card" href="{{ url('/socios/') }}#{{ p.key }}" data-reveal>
-        <div class="partner-card__img">{{ m.img(p.photo, [420, 720], p.name ~ ', ' ~ p.role, sizes='(max-width:640px) 100vw, 460px', w=720, h=960) }}</div>
-        <div class="partner-card__body">
-          <div class="partner-card__role">{{ p.role }}</div>
-          <h3 class="h3">{{ p.name }}</h3>
-          <p>{{ p.summary }}</p>
-          <span class="link">Ver perfil {{ m.icon('arrow') }}</span>
-        </div>
-      </a>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-{{ m.cta_band('Seu problema jurídico merece uma <em>estratégia</em>.', 'Analisamos sua situação e mostramos, com clareza, os caminhos possíveis. ' ~ site.hours_display ~ '.') }}
+{{ m.cta_band('Seu caso merece <em>estratégia</em> desde o primeiro dia.', 'Converse diretamente com os sócios. Analisamos sua situação e mostramos, com clareza, os caminhos possíveis.') }}
 
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="page-hero page-hero--pattern">
-  <div class="page-hero__bg">{{ m.img('area-civil', [800, 1600], '', eager=true, w=1600, h=672) }}</div>
+<section class="page-hero">
+  <img class="page-hero__crest" src="{{ asset('img/opt/crest-208.webp') }}" alt="" width="176" height="208">
   <div class="container">
     {{ m.crumbs([('Início','/'),('Áreas de atuação',None)]) }}
     <span class="eyebrow" data-reveal>Áreas de atuação</span>
@@ -10,26 +10,15 @@
   </div>
 </section>
 
-<section class="section theme-ivory">
+<section class="section">
   <div class="container">
-    <div class="areas-grid" data-stagger="90">
-      {% for a in areas %}
-      <a class="card" href="{{ url('/areas/' ~ a.slug ~ '/') }}" data-reveal>
-        <span class="card__num">0{{ loop.index }}</span>
-        <span class="card__icon">{{ m.icon(a.icon) }}</span>
-        <h2 class="h3">{{ a.name }}</h2>
-        <p>{{ a.card }}</p>
-        <ul class="checklist" style="margin:6px 0 22px">
-          {% for t, d in a.situations[:4] %}<li>{{ m.icon('check') }}<span>{{ t }}</span></li>{% endfor %}
-        </ul>
-        <span class="link">Conhecer a área {{ m.icon('arrow') }}</span>
-      </a>
-      {% endfor %}
-    </div>
+    <ul class="area-list" data-stagger="80">
+      {% for a in areas %}{{ m.area_row(a, loop.index) }}{% endfor %}
+    </ul>
   </div>
 </section>
 
-<section class="section">
+<section class="section theme-alt">
   <div class="container">
     <div class="split">
       <div data-reveal>
@@ -42,10 +31,10 @@
       </div>
     </div>
     <div class="grid grid-4 mt-l" data-stagger="100">
-      <div class="feature" data-reveal style="flex-direction:column"><span class="feature__icon">{{ m.icon('search') }}</span><div><h3 class="h4">Análise individual</h3><p>Cada caso é estudado a partir dos seus documentos e objetivos.</p></div></div>
-      <div class="feature" data-reveal style="flex-direction:column"><span class="feature__icon">{{ m.icon('handshake') }}</span><div><h3 class="h4">Solução eficiente</h3><p>Quando possível, priorizamos acordos rápidos e seguros.</p></div></div>
-      <div class="feature" data-reveal style="flex-direction:column"><span class="feature__icon">{{ m.icon('scale') }}</span><div><h3 class="h4">Atuação firme</h3><p>Na Justiça, defendemos seus interesses com técnica e estratégia.</p></div></div>
-      <div class="feature" data-reveal style="flex-direction:column"><span class="feature__icon">{{ m.icon('chat') }}</span><div><h3 class="h4">Você informado</h3><p>Comunicação clara sobre cada andamento do caso.</p></div></div>
+      <div class="feature" data-reveal><span class="feature__icon">{{ m.icon('search') }}</span><div><h3 class="h4">Análise individual</h3><p>Cada caso é estudado a partir dos seus documentos e objetivos.</p></div></div>
+      <div class="feature" data-reveal><span class="feature__icon">{{ m.icon('handshake') }}</span><div><h3 class="h4">Solução eficiente</h3><p>Quando possível, priorizamos acordos rápidos e seguros.</p></div></div>
+      <div class="feature" data-reveal><span class="feature__icon">{{ m.icon('scale') }}</span><div><h3 class="h4">Atuação firme</h3><p>Na Justiça, defendemos seus interesses com técnica e estratégia.</p></div></div>
+      <div class="feature" data-reveal><span class="feature__icon">{{ m.icon('chat') }}</span><div><h3 class="h4">Você informado</h3><p>Comunicação clara sobre cada andamento do caso.</p></div></div>
     </div>
   </div>
 </section>

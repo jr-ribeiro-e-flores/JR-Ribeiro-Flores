@@ -24,7 +24,7 @@
 <link rel="manifest" href="../site.webmanifest">
 <link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/css/style.css?v=202610060008">
+<link rel="stylesheet" href="../assets/css/style.css?v=202610060105">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/", "name": "In\u00edcio", "position": 1}, {"@type": "ListItem", "item": "https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/socios/", "name": "S\u00f3cios", "position": 2}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "description": "Advogado fundador da Ribeiro \u0026 Flores Advocacia, com atua\u00e7\u00e3o pautada na estrat\u00e9gia jur\u00eddica, na an\u00e1lise t\u00e9cnica e na constru\u00e7\u00e3o de solu\u00e7\u00f5es personalizadas para cada cliente.", "image": "https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/assets/img/opt/josue-720.webp", "jobTitle": "Advogado - S\u00f3cio fundador", "knowsAbout": ["Direito Civil", "Direito Empresarial", "Direito do Consumidor"], "name": "Josu\u00e9 Ribeiro", "sameAs": ["https://www.instagram.com/josue_vrsilva/"], "url": "https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/socios/#josue-ribeiro", "worksFor": {"@id": "https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/#escritorio"}}</script>
@@ -50,7 +50,7 @@
         <li><a class="nav-link" href="../socios/" aria-current="page">Sócios</a></li>
         <li><a class="nav-link" href="../contato/">Contato</a></li>
       </ul>
-      <a class="btn btn--sm nav-cta" href="../contato/">Agendar atendimento</a>
+      <a class="btn btn--sm nav-cta" href="../contato/">Agendar consulta</a>
     </nav>
     <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav"><svg class="ico " aria-hidden="true" focusable="false"><use href="../assets/img/icons.svg#menu"></use></svg></button>
   </div>
@@ -77,7 +77,8 @@
   </div>
 </div>
 <main id="conteudo">
-<section class="page-hero page-hero--pattern">
+<section class="page-hero">
+  <img class="page-hero__crest" src="../assets/img/opt/crest-208.webp" alt="" width="176" height="208">
   <div class="container">
     <nav aria-label="Você está em"><ol class="crumbs">
   <li><a href="../">Início</a></li>
@@ -90,13 +91,13 @@
 <a class="btn btn--ghost btn--sm" href="#josue-ribeiro">Josué Ribeiro</a><a class="btn btn--ghost btn--sm" href="#renata-flores">Renata Flores</a>    </nav>
   </div>
 </section>
-<section class="section theme-ivory" id="josue-ribeiro" aria-labelledby="josue-ribeiro-name">
+<section class="section " id="josue-ribeiro" aria-labelledby="josue-ribeiro-name">
   <div class="container">
     <article class="profile">
       <div class="profile__media">
-        <div class="frame frame--portrait" data-reveal="left">
-          <img src="../assets/img/opt/josue-420.webp"
-     srcset="../assets/img/opt/josue-420.webp 420w, ../assets/img/opt/josue-720.webp 720w"
+        <div data-reveal="left">
+          <img src="../assets/img/opt/josue-bw-420.webp"
+     srcset="../assets/img/opt/josue-bw-420.webp 420w, ../assets/img/opt/josue-bw-720.webp 720w"
      sizes="(max-width:980px) 90vw, 40vw" alt="Josué Ribeiro, Advogado · Sócio fundador da Ribeiro &amp; Flores Advocacia" width="720" height="960"fetchpriority="high" decoding="async">
         </div>
       </div>
@@ -118,13 +119,13 @@
     </article>
   </div>
 </section>
-<section class="section theme-paper" id="renata-flores" aria-labelledby="renata-flores-name">
+<section class="section theme-alt" id="renata-flores" aria-labelledby="renata-flores-name">
   <div class="container">
     <article class="profile profile--rev">
       <div class="profile__media">
-        <div class="frame frame--portrait" data-reveal="right">
-          <img src="../assets/img/opt/renata-420.webp"
-     srcset="../assets/img/opt/renata-420.webp 420w, ../assets/img/opt/renata-720.webp 720w"
+        <div data-reveal="right">
+          <img src="../assets/img/opt/renata-bw-420.webp"
+     srcset="../assets/img/opt/renata-bw-420.webp 420w, ../assets/img/opt/renata-bw-720.webp 720w"
      sizes="(max-width:980px) 90vw, 40vw" alt="Renata Flores, Advogada · Sócia fundadora da Ribeiro &amp; Flores Advocacia" width="720" height="960"loading="lazy" decoding="async">
         </div>
       </div>
@@ -146,7 +147,7 @@
     </article>
   </div>
 </section>
-<section class="section">
+<section class="section theme-dark">
   <div class="container">
     <div class="split">
       <div data-reveal>
@@ -166,10 +167,10 @@
     </div>
   </div>
 </section>
-<section class="section section--tight cta-band" aria-label="Contato">
+<section class="section theme-dark cta-band" aria-label="Contato">
   <div class="container">
     <div data-reveal>
-      <span class="eyebrow">Fale com a gente</span>
+      <span class="eyebrow">Próximo passo</span>
       <h2 class="h2">Uma advocacia feita para <em>entender você</em>.</h2>
       <p class="lead">Converse diretamente com os sócios e transforme desafios jurídicos em estratégias e soluções.</p>
     </div>
@@ -224,6 +225,6 @@
   </div>
 </footer>
 <a class="wa-float" href="https://wa.me/5551995225270?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Ribeiro%20%26%20Flores%20Advocacia%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener" aria-label="Falar com o escritório pelo WhatsApp"><svg class="ico " aria-hidden="true" focusable="false"><use href="../assets/img/icons.svg#whatsapp"></use></svg><span>Fale com um advogado</span></a>
-<script src="../assets/js/script.js?v=202610060008" defer></script>
+<script src="../assets/js/script.js?v=202610060105" defer></script>
 </body>
 </html>

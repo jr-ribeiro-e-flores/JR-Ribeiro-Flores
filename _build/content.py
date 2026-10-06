@@ -68,7 +68,7 @@ PARTNERS = [
         ],
         "education": [],   # ex.: ["Bacharel em Direito — Universidade X (2015)", "Pós-graduação em ..."]
         "experience": [],  # ex.: ["Advocacia trabalhista desde 2016", ...]
-        "areas": ["trabalhista", "previdenciario", "consumidor", "civil", "empresarial"],
+        "areas": ["civil", "empresarial", "consumidor"],
         "highlights": [
             ("Estratégia", "Análise individual de cada caso para definir o caminho jurídico mais adequado."),
             ("Tecnologia", "Atendimento 100% digital, com acompanhamento organizado e ágil."),
@@ -91,7 +91,7 @@ PARTNERS = [
         ],
         "education": [],
         "experience": [],
-        "areas": ["trabalhista", "previdenciario", "consumidor", "civil", "empresarial"],
+        "areas": ["trabalhista", "previdenciario"],
         "highlights": [
             ("Atendimento humanizado", "Escuta atenta e linguagem acessível, sem juridiquês."),
             ("Ética", "Atuação pautada pelo Código de Ética e Disciplina da OAB."),

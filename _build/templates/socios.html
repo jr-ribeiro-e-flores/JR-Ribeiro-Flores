@@ -25,6 +25,7 @@
         <p class="profile__role">{{ p.role }}</p>
         <h2 class="h2" id="{{ p.key }}-name">{{ p.name }}</h2>
         {% if p.oab %}<p class="profile__oab">{{ p.oab }}</p>{% else %}<div style="height:18px"></div>{% endif %}
+        {% if p.instagram %}<a class="profile__social" href="https://www.instagram.com/{{ p.instagram }}/" target="_blank" rel="noopener" aria-label="Instagram de {{ p.name }}">{{ m.icon('instagram') }}<span>@{{ p.instagram }}</span></a>{% endif %}
         <p class="lead">{{ p.summary }}</p>
         {% for para in p.bio %}<p class="muted">{{ para }}</p>{% endfor %}
 

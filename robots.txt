@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /obrigado/
+Disallow: /_build/
+
+Sitemap: https://jr-ribeiro-e-flores.github.io/JR-Ribeiro-Flores/sitemap.xml

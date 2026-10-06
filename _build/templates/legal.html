@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero page-hero--pattern">
+  <div class="container">
+    {{ m.crumbs([('Início','/'),(legal.title,None)]) }}
+    <span class="eyebrow">{{ legal.eyebrow }}</span>
+    <h1 class="display">{{ legal.title }}</h1>
+    <p class="lead">{{ legal.lead }}</p>
+  </div>
+</section>
+<section class="section theme-paper">
+  <div class="container">
+    <div class="legal-wrap">
+      <nav aria-label="Nesta página"><ul class="legal-nav">
+        {% for id, h, _ in legal.sections %}<li><a href="#{{ id }}">{{ h }}</a></li>{% endfor %}
+      </ul></nav>
+      <div class="prose legal" style="max-width:760px">
+        {% for id, h, body in legal.sections %}
+        <h2 id="{{ id }}"{% if loop.first %} style="margin-top:0"{% endif %}>{{ h }}</h2>
+        {{ body|safe }}
+        {% endfor %}
+        <p class="muted" style="margin-top:2.5em;font-size:15px">Última atualização: {{ legal.updated }}.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

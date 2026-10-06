@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero page-hero--pattern">
+  <div class="page-hero__bg">{{ m.img('area-civil', [800, 1600], '', eager=true, w=1600, h=672) }}</div>
+  <div class="container">
+    {{ m.crumbs([('Início','/'),('Áreas de atuação',None)]) }}
+    <span class="eyebrow" data-reveal>Áreas de atuação</span>
+    <h1 class="display" data-reveal>Soluções jurídicas para cada momento da sua vida e do seu negócio.</h1>
+    <p class="lead" data-reveal>Cada situação exige uma análise técnica e uma estratégia personalizada. Atuamos na defesa de pessoas e empresas, com atendimento próximo e soluções eficientes.</p>
+  </div>
+</section>
+
+<section class="section theme-ivory">
+  <div class="container">
+    <div class="areas-grid" data-stagger="90">
+      {% for a in areas %}
+      <a class="card" href="{{ url('/areas/' ~ a.slug ~ '/') }}" data-reveal>
+        <span class="card__num">0{{ loop.index }}</span>
+        <span class="card__icon">{{ m.icon(a.icon) }}</span>
+        <h2 class="h3">{{ a.name }}</h2>
+        <p>{{ a.card }}</p>
+        <ul class="checklist" style="margin:6px 0 22px">
+          {% for t, d in a.situations[:4] %}<li>{{ m.icon('check') }}<span>{{ t }}</span></li>{% endfor %}
+        </ul>
+        <span class="link">Conhecer a área {{ m.icon('arrow') }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div data-reveal>
+        <span class="eyebrow">Nossa forma de atuar</span>
+        <h2 class="h2">Mais do que processos: estratégia.</h2>
+      </div>
+      <div data-reveal>
+        <p class="lead">Buscamos compreender cada situação e desenvolver estratégias alinhadas aos objetivos de quem nos procura.</p>
+        <p class="muted">Nossa advocacia une conhecimento técnico, atendimento humanizado e tecnologia para oferecer uma experiência mais eficiente, transparente e segura, seja na prevenção de conflitos, seja na defesa judicial.</p>
+      </div>
+    </div>
+    <div class="grid grid-4 mt-l" data-stagger="100">
+      <div class="feature" data-reveal style="flex-direction:column"><span class="feature__icon">{{ m.icon('search') }}</span><div><h3 class="h4">Análise individual</h3><p>Cada caso é estudado a partir dos seus documentos e objetivos.</p></div></div>
+      <div class="feature" data-reveal style="flex-direction:column"><span class="feature__icon">{{ m.icon('handshake') }}</span><div><h3 class="h4">Solução eficiente</h3><p>Quando possível, priorizamos acordos rápidos e seguros.</p></div></div>
+      <div class="feature" data-reveal style="flex-direction:column"><span class="feature__icon">{{ m.icon('scale') }}</span><div><h3 class="h4">Atuação firme</h3><p>Na Justiça, defendemos seus interesses com técnica e estratégia.</p></div></div>
+      <div class="feature" data-reveal style="flex-direction:column"><span class="feature__icon">{{ m.icon('chat') }}</span><div><h3 class="h4">Você informado</h3><p>Comunicação clara sobre cada andamento do caso.</p></div></div>
+    </div>
+  </div>
+</section>
+
+{{ m.cta_band('Não encontrou a sua <em>situação</em>?', 'Conte o que aconteceu. Fazemos uma análise inicial e indicamos se e como podemos ajudar.') }}
+{% endblock %}

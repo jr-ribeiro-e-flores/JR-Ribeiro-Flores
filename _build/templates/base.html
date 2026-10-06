@@ -1,0 +1,162 @@
+{% import "macros.html" as m with context %}<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ page.canonical }}">
+{% if page.noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large">{% endif %}
+<meta name="theme-color" content="#0b0b0c">
+<meta name="format-detection" content="telephone=no">
+{% if site.gsc_verification %}<meta name="google-site-verification" content="{{ site.gsc_verification }}">{% endif %}
+<meta property="og:type" content="{{ page.og_type or 'website' }}">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{{ page.og_title or page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ page.canonical }}">
+<meta property="og:image" content="{{ site.url }}/assets/img/opt/{{ page.og_image or 'og-default.jpg' }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+{% if page.article %}<meta property="article:published_time" content="{{ page.article.date }}">
+<meta property="article:section" content="{{ page.article.category_label }}">{% endif %}
+<link rel="icon" href="{{ url('/favicon.ico') }}" sizes="any">
+<link rel="icon" type="image/png" href="{{ asset('img/opt/icon-192.png') }}" sizes="192x192">
+<link rel="apple-touch-icon" href="{{ asset('img/opt/apple-touch-icon.png') }}">
+<link rel="manifest" href="{{ url('/site.webmanifest') }}">
+<link rel="preload" href="{{ asset('fonts/inter-latin-wght-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ asset('fonts/cormorant-garamond-latin-500-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+{% block preload %}{% endblock %}
+<link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ version }}">
+<script>document.documentElement.classList.add("js")</script>
+{% for ld in page.jsonld %}<script type="application/ld+json">{{ ld|tojson }}</script>
+{% endfor %}
+</head>
+<body{% if site.ga_id %} data-ga="{{ site.ga_id }}"{% endif %}>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+{% if page.progress %}<div class="progress" aria-hidden="true"></div>{% endif %}
+
+<header class="site-header{% if page.solid_header %} site-header--solid{% endif %}">
+  <div class="container">
+    <a class="brand" href="{{ url('/') }}" aria-label="{{ site.name }} — página inicial">
+      <img src="{{ asset('img/opt/crest-104.webp') }}" alt="" width="88" height="104">
+      <span class="brand-text"><span class="brand-name">Ribeiro <em>&amp;</em> Flores</span><span class="brand-sub">ADVOCACIA</span></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav-list">
+        {% for item in nav %}
+        {% if item.children %}
+        <li class="has-sub">
+          <a class="nav-link" href="{{ url(item.href) }}"{% if page.section == item.key %} aria-current="page"{% endif %}>{{ item.label }} {{ m.icon('chevron') }}</a>
+          <ul class="subnav">
+            {% for c in item.children %}<li><a href="{{ url(c.href) }}">{{ m.icon(c.icon) }}{{ c.label }}</a></li>{% endfor %}
+          </ul>
+        </li>
+        {% else %}
+        <li><a class="nav-link" href="{{ url(item.href) }}"{% if page.section == item.key %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      <a class="btn btn--sm nav-cta" href="{{ url('/contato/') }}">Agendar atendimento</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">{{ m.icon('menu') }}</button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mobile-nav__top">
+    <a class="brand" href="{{ url('/') }}"><img src="{{ asset('img/opt/crest-104.webp') }}" alt="" width="88" height="104"><span class="brand-text"><span class="brand-name">Ribeiro <em>&amp;</em> Flores</span><span class="brand-sub">ADVOCACIA</span></span></a>
+    <button class="menu-btn menu-close" type="button" aria-label="Fechar menu" style="display:inline-flex">{{ m.icon('close') }}</button>
+  </div>
+  <ul>
+    <li class="mobile-item"><a href="{{ url('/') }}"{% if page.section == 'home' %} aria-current="page"{% endif %}>Início</a></li>
+    {% for item in nav %}
+    {% if item.children %}
+    <li class="mobile-item"><details><summary>{{ item.label }}{{ m.icon('chevron') }}</summary>
+      <ul><li><a href="{{ url(item.href) }}">Todas as áreas</a></li>{% for c in item.children %}<li><a href="{{ url(c.href) }}">{{ c.label }}</a></li>{% endfor %}</ul>
+    </details></li>
+    {% else %}
+    <li class="mobile-item"><a href="{{ url(item.href) }}"{% if page.section == item.key %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+  <div class="mobile-nav__foot mobile-item">
+    <a class="btn btn--block" href="{{ url('/contato/') }}">Agendar atendimento {{ m.icon('arrow') }}</a>
+    <a class="btn btn--ghost btn--block" href="{{ page.wa or wa_default }}" target="_blank" rel="noopener">{{ m.icon('whatsapp') }} Falar pelo WhatsApp</a>
+    <p class="mobile-nav__meta">{{ site.hours_display }} · {{ site.service_area }}</p>
+  </div>
+</div>
+
+<main id="conteudo">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="{{ url('/') }}"><img src="{{ asset('img/opt/crest-104.webp') }}" alt="" width="88" height="104" loading="lazy"><span class="brand-text"><span class="brand-name">Ribeiro <em>&amp;</em> Flores</span><span class="brand-sub">ADVOCACIA</span></span></a>
+        <p>Advocacia estratégica para pessoas e empresas, com atendimento direto com os sócios e online em todo o Brasil.</p>
+        {% if site.instagram or site.linkedin or site.facebook %}
+        <div class="social" style="margin-top:20px">
+          {% if site.instagram %}<a href="{{ site.instagram }}" target="_blank" rel="noopener" aria-label="Instagram" style="border-color:var(--ink-line)">{{ m.icon('instagram') }}</a>{% endif %}
+          {% if site.linkedin %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn" style="border-color:var(--ink-line)">{{ m.icon('linkedin') }}</a>{% endif %}
+          {% if site.facebook %}<a href="{{ site.facebook }}" target="_blank" rel="noopener" aria-label="Facebook" style="border-color:var(--ink-line)">{{ m.icon('facebook') }}</a>{% endif %}
+        </div>
+        {% endif %}
+      </div>
+      <div>
+        <h2>Institucional</h2>
+        <ul>
+          <li><a href="{{ url('/escritorio/') }}">O Escritório</a></li>
+          <li><a href="{{ url('/socios/') }}">Sócios</a></li>
+          <li><a href="{{ url('/artigos/') }}">Artigos</a></li>
+          <li><a href="{{ url('/contato/') }}">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Áreas de atuação</h2>
+        <ul>
+          {% for a in areas %}<li><a href="{{ url('/areas/' ~ a.slug ~ '/') }}">{{ a.name }}</a></li>{% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2>Atendimento</h2>
+        <ul class="footer-contact">
+          <li>{{ m.icon('whatsapp') }}<a href="{{ wa_default }}" target="_blank" rel="noopener">{{ site.phone_display }}</a></li>
+          <li>{{ m.icon('mail') }}<a href="mailto:{{ site.email }}" style="word-break:break-all">{{ site.email }}</a></li>
+          <li>{{ m.icon('clock') }}<span>{{ site.hours_display }}</span></li>
+          <li>{{ m.icon('globe') }}<span>{{ site.service_area }}</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <p class="mb-0">© <span data-year>2026</span> {{ site.name }}. Todos os direitos reservados.</p>
+        <p class="footer-legal">Conteúdo de caráter informativo, em conformidade com o Código de Ética e Disciplina da OAB e o Provimento nº 205/2021. As informações deste site não substituem a análise individual de um advogado.</p>
+      </div>
+      <nav aria-label="Links legais">
+        <a href="{{ url('/privacidade/') }}">Política de Privacidade</a>
+        <a href="{{ url('/termos-de-uso/') }}">Termos de Uso</a>
+        {% if site.ga_id %}<a href="#" data-consent-reset>Preferências de cookies</a>{% endif %}
+      </nav>
+    </div>
+  </div>
+</footer>
+
+{% if not page.hide_wa %}
+<a class="wa-float" href="{{ page.wa or wa_default }}" target="_blank" rel="noopener" aria-label="Falar com o escritório pelo WhatsApp">{{ m.icon('whatsapp') }}<span>Fale com um advogado</span></a>
+{% endif %}
+
+{% if site.ga_id %}
+<div class="consent-bar" role="dialog" aria-label="Aviso de cookies">
+  <strong>Sua privacidade importa</strong>
+  Usamos cookies de análise (Google Analytics) apenas com a sua permissão, para entender como o site é utilizado. Saiba mais na <a href="{{ url('/privacidade/') }}">Política de Privacidade</a>.
+  <div class="btn-row"><button class="btn btn--sm" data-consent="yes">Aceitar</button><button class="btn btn--sm btn--ghost" data-consent="no">Recusar</button></div>
+</div>
+{% endif %}
+<script src="{{ asset('js/script.js') }}?v={{ version }}" defer></script>
+</body>
+</html>

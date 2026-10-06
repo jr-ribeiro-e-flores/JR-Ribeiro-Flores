@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero page-hero--pattern">
+  <div class="page-hero__bg">{{ m.img('hero', [640, 960, 1400], '', eager=true, w=1400, h=1120) }}</div>
+  <div class="container">
+    {{ m.crumbs([('Início','/'),('O Escritório',None)]) }}
+    <span class="eyebrow" data-reveal>O Escritório</span>
+    <h1 class="display" data-reveal>Estratégia, ética e compromisso em cada caso.</h1>
+    <p class="lead" data-reveal>A Ribeiro &amp; Flores Advocacia nasceu com o propósito de oferecer uma advocacia moderna, técnica e próxima, colocando o cliente no centro de cada decisão.</p>
+  </div>
+</section>
+
+<section class="section theme-ivory">
+  <div class="container">
+    <div class="split">
+      <div data-reveal>
+        <span class="eyebrow">Nossa história</span>
+        <h2 class="h2">Nascemos para mudar a forma como as pessoas se relacionam com a <em>advocacia</em>.</h2>
+      </div>
+      <div data-reveal style="--d:120ms">
+        <p class="lead">A Ribeiro &amp; Flores Advocacia foi criada a partir da união de conhecimento jurídico, visão estratégica e o desejo de tornar o Direito mais acessível e compreensível.</p>
+        <p class="muted">Mais do que representar clientes em processos, acreditamos que o papel do advogado é compreender cada situação, identificar riscos, construir estratégias e buscar soluções eficientes, inclusive antes que o problema aconteça.</p>
+        <p class="muted">Nossa atuação se apoia em três pilares: excelência técnica, atendimento humanizado e compromisso com resultados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Nossa filosofia</span>
+      <h2 class="h2">Os pilares do nosso trabalho</h2>
+    </div>
+    <div class="grid grid-3" data-stagger="110">
+      <div class="card" data-reveal><span class="card__icon">{{ m.icon('target') }}</span><h3 class="h3">Estratégia jurídica</h3><p>Cada caso recebe uma análise individualizada, buscando o melhor caminho para alcançar os objetivos do cliente.</p></div>
+      <div class="card" data-reveal><span class="card__icon">{{ m.icon('handshake') }}</span><h3 class="h3">Relacionamento</h3><p>Relações baseadas em confiança, transparência e comunicação clara durante toda a demanda.</p></div>
+      <div class="card" data-reveal><span class="card__icon">{{ m.icon('spark') }}</span><h3 class="h3">Inovação</h3><p>Tecnologia e métodos modernos para um atendimento mais ágil, organizado e eficiente.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-paper">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Como trabalhamos</span>
+      <h2 class="h2">Da primeira conversa à solução</h2>
+      <p class="lead">Começamos pela compreensão completa do problema. A partir dela, desenvolvemos uma estratégia personalizada, avaliando riscos, oportunidades e os melhores caminhos.</p>
+    </div>
+    <ol class="steps" style="list-style:none" data-stagger="120">
+      <li class="step" data-reveal><span class="step__n">01</span><h3 class="h4">Atendimento inicial</h3><p>Escutamos sua situação, analisamos documentos e identificamos os pontos jurídicos relevantes.</p></li>
+      <li class="step" data-reveal><span class="step__n">02</span><h3 class="h4">Análise estratégica</h3><p>Estudamos o caso com profundidade para definir a melhor estratégia.</p></li>
+      <li class="step" data-reveal><span class="step__n">03</span><h3 class="h4">Atuação jurídica</h3><p>Defendemos seus interesses com técnica, responsabilidade e acompanhamento próximo.</p></li>
+      <li class="step" data-reveal><span class="step__n">04</span><h3 class="h4">Transparência</h3><p>Você acompanha cada andamento e entende as decisões tomadas no seu caso.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split split--center">
+      <div class="frame frame--portrait" data-reveal="left" style="max-width:460px">
+        {{ m.img('justice', [420, 720], 'Estátua da Justiça com balança', sizes='(max-width:980px) 90vw, 40vw', w=720, h=960) }}
+      </div>
+      <div>
+        <div data-reveal>
+          <span class="eyebrow">Tecnologia e proximidade</span>
+          <h2 class="h2">O cliente no centro da advocacia.</h2>
+          <p class="lead">Sabemos que cada processo representa uma história, uma preocupação ou um objetivo importante.</p>
+        </div>
+        <div class="grid mt-m" style="gap:30px" data-stagger="100">
+          <div class="feature" data-reveal><span class="feature__icon">{{ m.icon('video') }}</span><div><h3 class="h4">Atendimento 100% online</h3><p>Conversas por vídeo, telefone ou WhatsApp, de qualquer lugar do Brasil.</p></div></div>
+          <div class="feature" data-reveal><span class="feature__icon">{{ m.icon('doc') }}</span><div><h3 class="h4">Documentos digitais</h3><p>Envio por foto ou PDF e organização segura de todas as informações do caso.</p></div></div>
+          <div class="feature" data-reveal><span class="feature__icon">{{ m.icon('compass') }}</span><div><h3 class="h4">Acompanhamento claro</h3><p>Você entende cada etapa da sua demanda, sem linguagem complicada.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight theme-ivory">
+  <div class="container">
+    <div class="split split--center">
+      <div data-reveal><span class="eyebrow">Próximo passo</span><h2 class="h2">Conheça quem conduz o seu caso.</h2></div>
+      <div class="btn-row" data-reveal><a class="btn btn--dark" href="{{ url('/socios/') }}">Conheça os sócios {{ m.icon('arrow') }}</a><a class="btn btn--ghost" href="{{ url('/areas/') }}">Áreas de atuação</a></div>
+    </div>
+  </div>
+</section>
+
+{{ m.cta_band('Compromisso com os seus <em>direitos</em>.', 'Conte com a Ribeiro & Flores Advocacia para encontrar soluções jurídicas seguras e estratégicas.') }}
+{% endblock %}

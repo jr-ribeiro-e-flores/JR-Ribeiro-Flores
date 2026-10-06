@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero page-hero--pattern">
+  <div class="container">
+    {{ m.crumbs([('Início','/'),('Artigos',None)]) }}
+    <span class="eyebrow" data-reveal>Conteúdos jurídicos</span>
+    <h1 class="display" data-reveal>Conhecimento jurídico para decisões mais seguras.</h1>
+    <p class="lead" data-reveal>Informação clara e acessível sobre temas que impactam pessoas e empresas, para você entender seus direitos e saber quando buscar orientação.</p>
+  </div>
+</section>
+
+<section class="section theme-ivory">
+  <div class="container">
+    <div class="blog-tools">
+      <div class="chips" role="group" aria-label="Filtrar por categoria">
+        <button class="chip" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+        {% for k, c in categories.items() if k in used_categories %}<button class="chip" type="button" data-filter="{{ k }}" aria-pressed="false">{{ c.label|replace('Direito ','')|replace('do ','') }}</button>{% endfor %}
+      </div>
+      <label class="search">
+        <span class="sr-only">Buscar artigos</span>
+        {{ m.icon('search') }}
+        <input type="search" id="busca-artigos" placeholder="Buscar artigos" autocomplete="off">
+      </label>
+    </div>
+
+    <div data-featured class="mb-m">{{ m.post_card(articles[0], featured=true, lazy=false) }}</div>
+
+    <div class="grid grid-3" data-posts>
+      {% for p in articles %}
+      <div data-post data-cat="{{ p.category }}" data-search="{{ p.title }} {{ p.excerpt }} {{ p.category_label }} {{ p.keywords }}">{{ m.post_card(p) }}</div>
+      {% endfor %}
+    </div>
+    <p class="empty" role="status">Nenhum artigo encontrado. Tente outra palavra ou <a href="{{ url('/contato/') }}" class="link">envie sua dúvida</a>.</p>
+  </div>
+</section>
+
+{{ m.cta_band('Informação é o primeiro passo para <em>proteger seus direitos</em>.', 'Se a sua dúvida não foi respondida aqui, fale com a gente.', 'Falar com um advogado') }}
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+  <div class="page-hero__bg">{{ m.img('area-' ~ a.key, [800, 1600], '', eager=true, w=1600, h=672) }}</div>
+  <div class="container">
+    {{ m.crumbs([('Início','/'),('Áreas de atuação','/areas/'),(a.name,None)]) }}
+    <span class="eyebrow" data-reveal>Área de atuação</span>
+    <h1 class="display" data-reveal>{{ a.name }}</h1>
+    <p class="lead" data-reveal>{{ a.lead }}</p>
+    <div class="btn-row" data-reveal>
+      <a class="btn" href="{{ url('/contato/') }}?area={{ a.key }}">Solicitar análise do caso {{ m.icon('arrow') }}</a>
+      <a class="btn btn--ghost" href="{{ a.wa }}" target="_blank" rel="noopener">{{ m.icon('whatsapp') }} WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-ivory">
+  <div class="container">
+    <div class="split">
+      <div data-reveal>
+        <span class="eyebrow">Sobre a atuação</span>
+        <h2 class="h2">Entenda como podemos ajudar.</h2>
+      </div>
+      <div data-reveal>
+        <p class="lead">{{ a.intro[0] }}</p>
+        {% for para in a.intro[1:] %}<p class="muted">{{ para }}</p>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-paper" aria-labelledby="sit-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Principais situações atendidas</span>
+      <h2 class="h2" id="sit-title">Em que casos atuamos</h2>
+    </div>
+    <div class="situations" data-stagger="70">
+      {% for t, d in a.situations %}
+      <div class="situation" data-reveal>{{ m.icon('check') }}<div><h3 class="h4">{{ t }}</h3><p>{{ d }}</p></div></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="how-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Como o escritório atua</span>
+      <h2 class="h2" id="how-title">Um caminho claro, do início ao fim.</h2>
+    </div>
+    <ol class="steps" style="list-style:none" data-stagger="120">
+      {% for t, d in a.how %}<li class="step" data-reveal><span class="step__n">0{{ loop.index }}</span><h3 class="h4">{{ t }}</h3><p>{{ d }}</p></li>{% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section theme-ivory" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div data-reveal>
+          <span class="eyebrow">Perguntas frequentes</span>
+          <h2 class="h2" id="faq-title">Dúvidas comuns sobre {{ a.name }}</h2>
+          <p class="lead">As respostas são gerais. Cada caso tem particularidades que podem mudar a solução adequada.</p>
+        </div>
+        <aside class="aside-card mt-m" data-reveal style="position:relative;top:0">
+          <h3 class="h3">{{ a.cta }}</h3>
+          <p>Converse com a nossa equipe e faça uma análise inicial do seu caso.</p>
+          <a class="btn btn--block" href="{{ url('/contato/') }}?area={{ a.key }}">Falar com um advogado {{ m.icon('arrow') }}</a>
+          <ul>
+            <li>{{ m.icon('clock') }} {{ site.hours_display }}</li>
+            <li>{{ m.icon('globe') }} {{ site.service_area }}</li>
+            <li>{{ m.icon('lock') }} Sigilo profissional</li>
+          </ul>
+        </aside>
+      </div>
+      <div data-reveal>{{ m.faq(a.faq) }}</div>
+    </div>
+  </div>
+</section>
+
+{% if related %}
+<section class="section theme-paper" aria-labelledby="rel-title">
+  <div class="container">
+    <div class="section-head section-head--row">
+      <div data-reveal><span class="eyebrow">Conteúdos relacionados</span><h2 class="h2" id="rel-title">Leia também</h2></div>
+      <a class="link" href="{{ url('/artigos/') }}?categoria={{ a.key }}" data-reveal>Mais artigos {{ m.icon('arrow') }}</a>
+    </div>
+    <div class="grid grid-3" data-stagger="100">
+      {% for p in related %}<div data-reveal>{{ m.post_card(p) }}</div>{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="section-head" data-reveal style="margin-bottom:32px"><span class="eyebrow">Outras áreas</span></div>
+    <ul class="tags" style="gap:12px" data-reveal>
+      {% for o in areas if o.key != a.key %}<li><a href="{{ url('/areas/' ~ o.slug ~ '/') }}" style="border-color:var(--ink-line-strong);padding:12px 20px">{{ o.name }}</a></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+{{ m.cta_band(a.cta, 'Atendimento online em todo o Brasil, ' ~ site.hours_display|lower ~ '.', 'Solicitar análise do caso', url('/contato/') ~ '?area=' ~ a.key, a.wa) }}
+{% endblock %}

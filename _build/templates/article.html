@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block preload %}<link rel="preload" as="image" href="{{ asset('img/opt/cover-' ~ p.slug ~ '-1200.webp') }}">{% endblock %}
+{% block content %}
+<article>
+  <header class="article-hero">
+    <div class="container narrow">
+      {{ m.crumbs([('Início','/'),('Artigos','/artigos/'),(p.category_label, '/artigos/?categoria=' ~ p.category)]) }}
+      <span class="eyebrow">{{ p.category_label }}</span>
+      <h1 class="display">{{ p.title }}</h1>
+      <p class="lead">{{ p.excerpt }}</p>
+      <div class="article-meta">
+        <span>{{ m.icon('user') }}Por {{ p.author.name }}</span>
+        <span>{{ m.icon('calendar') }}<time datetime="{{ p.date }}">{{ p.date_display }}</time></span>
+        <span>{{ m.icon('clock') }}{{ p.minutes }} min de leitura</span>
+      </div>
+    </div>
+    <div class="article-cover">
+      <div class="container narrow">
+        <img src="{{ asset('img/opt/cover-' ~ p.slug ~ '-1200.webp') }}" srcset="{{ asset('img/opt/cover-' ~ p.slug ~ '-640.webp') }} 640w, {{ asset('img/opt/cover-' ~ p.slug ~ '-1200.webp') }} 1200w" sizes="(max-width:860px) 100vw, 780px" alt="Imagem ilustrativa do artigo: {{ p.title }}" width="1200" height="675" fetchpriority="high">
+      </div>
+    </div>
+  </header>
+
+  <div class="theme-paper" style="padding:clamp(48px,6vw,72px) 0 var(--section)">
+    <div class="container narrow">
+      <div class="prose">
+{{ p.body|safe }}
+      </div>
+      <div class="note"><strong>Importante:</strong> este conteúdo tem caráter informativo e não substitui a análise individual do seu caso. Cada situação tem particularidades que podem mudar a solução jurídica adequada.</div>
+
+      <div class="author-box">
+        <img src="{{ asset('img/opt/crest-104.webp') }}" alt="" width="64" height="64" loading="lazy">
+        <div><strong>{{ p.author.name }}</strong><span>Ribeiro &amp; Flores Advocacia · Atendimento online em todo o Brasil</span></div>
+      </div>
+      <div class="share">
+        <span>Compartilhar:</span>
+        <a href="https://wa.me/?text={{ (p.title ~ ' ' ~ page.canonical)|urlencode }}" target="_blank" rel="noopener" aria-label="Compartilhar no WhatsApp">{{ m.icon('whatsapp') }}</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.canonical|urlencode }}" target="_blank" rel="noopener" aria-label="Compartilhar no LinkedIn">{{ m.icon('linkedin') }}</a>
+        <button type="button" data-copy aria-label="Copiar link">{{ m.icon('doc') }}</button>
+      </div>
+
+      {% if area %}
+      <aside class="aside-card mt-l" style="position:relative;top:0">
+        <span class="eyebrow">Precisa de ajuda com o seu caso?</span>
+        <h2 class="h3">Fale com um advogado de {{ area.name }}</h2>
+        <p>Converse com a nossa equipe. Atendimento online em todo o Brasil, {{ site.hours_display|lower }}.</p>
+        <div class="btn-row"><a class="btn" href="{{ url('/contato/') }}?area={{ area.key }}">Solicitar análise {{ m.icon('arrow') }}</a><a class="btn btn--ghost" href="{{ url('/areas/' ~ area.slug ~ '/') }}">Sobre a área</a></div>
+      </aside>
+      {% else %}
+      <aside class="aside-card mt-l" style="position:relative;top:0">
+        <span class="eyebrow">Precisa de ajuda com o seu caso?</span>
+        <h2 class="h3">Converse com a nossa equipe</h2>
+        <p>Atendimento online em todo o Brasil, {{ site.hours_display|lower }}.</p>
+        <div class="btn-row"><a class="btn" href="{{ url('/contato/') }}">Solicitar análise {{ m.icon('arrow') }}</a></div>
+      </aside>
+      {% endif %}
+    </div>
+  </div>
+</article>
+
+<section class="section theme-ivory" aria-labelledby="rel-title">
+  <div class="container">
+    <div class="section-head section-head--row">
+      <div data-reveal><span class="eyebrow">Artigos relacionados</span><h2 class="h2" id="rel-title">Continue lendo</h2></div>
+      <a class="link" href="{{ url('/artigos/') }}" data-reveal>Todos os artigos {{ m.icon('arrow') }}</a>
+    </div>
+    <div class="grid grid-3" data-stagger="100">
+      {% for r in related %}<div data-reveal>{{ m.post_card(r) }}</div>{% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

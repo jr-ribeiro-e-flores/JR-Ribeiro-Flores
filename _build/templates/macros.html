@@ -1,0 +1,75 @@
+{% macro icon(name, cls="") -%}
+<svg class="ico {{ cls }}" aria-hidden="true" focusable="false"><use href="{{ asset('img/icons.svg') }}#{{ name }}"></use></svg>
+{%- endmacro %}
+
+{% macro img(name, widths, alt, sizes="100vw", cls="", eager=false, w=None, h=None) -%}
+<img src="{{ asset('img/opt/' ~ name ~ '-' ~ widths[0] ~ '.webp') }}"
+     srcset="{% for x in widths %}{{ asset('img/opt/' ~ name ~ '-' ~ x ~ '.webp') }} {{ x }}w{% if not loop.last %}, {% endif %}{% endfor %}"
+     sizes="{{ sizes }}" alt="{{ alt }}"{% if cls %} class="{{ cls }}"{% endif %}{% if w %} width="{{ w }}" height="{{ h }}"{% endif %}
+     {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+{%- endmacro %}
+
+{% macro area_card(a, n, theme="dark") -%}
+<a class="card" href="{{ url('/areas/' ~ a.slug ~ '/') }}" data-reveal>
+  <span class="card__num">0{{ n }}</span>
+  <span class="card__icon">{{ icon(a.icon) }}</span>
+  <h3 class="h3">{{ a.name }}</h3>
+  <p>{{ a.card }}</p>
+  <span class="link">Saiba mais {{ icon('arrow') }}</span>
+</a>
+{%- endmacro %}
+
+{% macro post_card(p, featured=false, lazy=true) -%}
+<a class="post-card{% if featured %} post-card--featured{% endif %}" href="{{ url('/artigos/' ~ p.slug ~ '/') }}">
+  <div class="post-card__img">
+    <img src="{{ asset('img/opt/cover-' ~ p.slug ~ ('-1200' if featured else '-640') ~ '.webp') }}"
+         srcset="{{ asset('img/opt/cover-' ~ p.slug ~ '-640.webp') }} 640w, {{ asset('img/opt/cover-' ~ p.slug ~ '-1200.webp') }} 1200w"
+         sizes="{{ '(max-width:860px) 100vw, 60vw' if featured else '(max-width:640px) 100vw, (max-width:980px) 50vw, 33vw' }}"
+         alt="" width="640" height="360" {% if lazy %}loading="lazy"{% endif %} decoding="async">
+  </div>
+  <div class="post-card__body">
+    <span class="post-card__cat">{{ p.category_label }}</span>
+    <h3 class="h3">{{ p.title }}</h3>
+    <p>{{ p.excerpt }}</p>
+    <div class="post-card__meta">
+      <span>{{ icon('calendar') }}<time datetime="{{ p.date }}">{{ p.date_display }}</time></span>
+      <span>{{ icon('clock') }}{{ p.minutes }} min de leitura</span>
+    </div>
+  </div>
+</a>
+{%- endmacro %}
+
+{% macro faq(items) -%}
+<div class="faq">
+  {% for q, a in items %}
+  <details{% if loop.first %} open{% endif %}>
+    <summary>{{ q }}{{ icon('plus') }}</summary>
+    <div class="faq__a"><p>{{ a }}</p></div>
+  </details>
+  {% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro cta_band(title, text, primary_label="Agendar atendimento", primary_href=None, wa_href=None) -%}
+<section class="section section--tight cta-band" aria-label="Contato">
+  <div class="container">
+    <div data-reveal>
+      <span class="eyebrow">Fale com a gente</span>
+      <h2 class="h2">{{ title|safe }}</h2>
+      <p class="lead">{{ text }}</p>
+    </div>
+    <div class="btn-row" data-reveal="right">
+      <a class="btn" href="{{ primary_href or url('/contato/') }}">{{ primary_label }} {{ icon('arrow') }}</a>
+      <a class="btn btn--ghost" href="{{ wa_href or wa_default }}" target="_blank" rel="noopener">{{ icon('whatsapp') }} WhatsApp</a>
+    </div>
+  </div>
+</section>
+{%- endmacro %}
+
+{% macro crumbs(items) -%}
+<nav aria-label="Você está em"><ol class="crumbs">
+  {% for label, href in items %}
+  <li>{% if href %}<a href="{{ url(href) }}">{{ label }}</a>{% else %}<span aria-current="page">{{ label }}</span>{% endif %}</li>
+  {% endfor %}
+</ol></nav>
+{%- endmacro %}

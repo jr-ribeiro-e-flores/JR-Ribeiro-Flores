@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero page-hero--pattern">
+  <div class="container">
+    {{ m.crumbs([('Início','/'),('Contato',None)]) }}
+    <span class="eyebrow" data-reveal>Contato</span>
+    <h1 class="display" data-reveal>Vamos conversar sobre o seu caso.</h1>
+    <p class="lead" data-reveal>Conte brevemente o que aconteceu. Retornamos com orientação clara sobre os caminhos possíveis, com sigilo e sem compromisso.</p>
+  </div>
+</section>
+
+<section class="section theme-ivory">
+  <div class="container">
+    <div class="split split--contact">
+      <div data-reveal>
+        <span class="eyebrow">Canais de atendimento</span>
+        <h2 class="h2" style="margin-bottom:28px">Fale com a gente.</h2>
+        <ul class="contact-list">
+          <li><span class="feature__icon">{{ m.icon('whatsapp') }}</span><div><small>WhatsApp</small><a href="{{ wa_default }}" target="_blank" rel="noopener">{{ site.phone_display }}</a><p class="muted mb-0" style="font-size:14.5px">O jeito mais rápido de tirar dúvidas e agendar.</p></div></li>
+          <li><span class="feature__icon">{{ m.icon('phone') }}</span><div><small>Telefone</small><a href="tel:{{ site.phone_e164 }}">{{ site.phone_display }}</a></div></li>
+          <li><span class="feature__icon">{{ m.icon('mail') }}</span><div><small>E-mail</small><a href="mailto:{{ site.email }}">{{ site.email }}</a></div></li>
+          <li><span class="feature__icon">{{ m.icon('clock') }}</span><div><small>Horário de atendimento</small><strong>{{ site.hours_display }}</strong></div></li>
+          <li><span class="feature__icon">{{ m.icon(site.address and 'pin' or 'globe') }}</span><div><small>{{ 'Endereço' if site.address else 'Atendimento' }}</small><strong>{{ site.address or (site.service_area ~ ', 100% online') }}</strong></div></li>
+        </ul>
+        {% if site.instagram or site.linkedin or site.facebook %}
+        <div class="social">
+          {% if site.instagram %}<a href="{{ site.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">{{ m.icon('instagram') }}</a>{% endif %}
+          {% if site.linkedin %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">{{ m.icon('linkedin') }}</a>{% endif %}
+          {% if site.facebook %}<a href="{{ site.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">{{ m.icon('facebook') }}</a>{% endif %}
+        </div>
+        {% endif %}
+        {% if site.map_embed %}<div class="map"><iframe src="{{ site.map_embed }}" loading="lazy" title="Mapa de localização" referrerpolicy="no-referrer-when-downgrade"></iframe></div>{% endif %}
+      </div>
+
+      <div data-reveal="right">
+        <div class="form-card">
+          <form id="form-contato" action="https://formsubmit.co/{{ site.form_email }}" data-ajax="https://formsubmit.co/ajax/{{ site.form_email }}" method="POST" novalidate>
+            <h2 class="h3">Solicite um atendimento</h2>
+            <p class="muted" style="font-size:15.5px;margin-bottom:28px">Preencha os dados abaixo. Nossa equipe retornará o mais breve possível.</p>
+            <input type="hidden" name="_subject" value="Novo atendimento pelo site Ribeiro & Flores">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="{{ site.url }}/obrigado/">
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form-grid">
+              <div class="field full">
+                <label for="nome">Nome completo</label>
+                <input id="nome" name="nome" type="text" autocomplete="name" required minlength="3">
+                <p class="err" id="nome-err">Informe seu nome.</p>
+              </div>
+              <div class="field">
+                <label for="telefone">Telefone / WhatsApp</label>
+                <input id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" required>
+                <p class="err" id="telefone-err">Informe um telefone com DDD.</p>
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+                <p class="err" id="email-err">Informe um e-mail válido.</p>
+              </div>
+              <div class="field full">
+                <label for="area">Área de interesse</label>
+                <select id="area" name="area" required>
+                  <option value="">Selecione uma área</option>
+                  {% for a in areas %}<option data-key="{{ a.key }}" value="{{ a.name }}">{{ a.name }}</option>{% endfor %}
+                  <option data-key="outro" value="Outro assunto">Outro assunto</option>
+                </select>
+                <p class="err" id="area-err">Selecione uma opção.</p>
+              </div>
+              <div class="field full">
+                <label for="mensagem">Conte brevemente o seu caso <span>(opcional)</span></label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Evite enviar dados sensíveis neste primeiro contato."></textarea>
+              </div>
+              <div class="field full">
+                <label class="consent"><input type="checkbox" id="consentimento" name="consentimento" value="Sim" required> <span>Concordo com o uso dos meus dados para retorno do contato, conforme a <a href="{{ url('/privacidade/') }}">Política de Privacidade</a>.</span></label>
+                <p class="err" id="consentimento-err">É necessário concordar para enviarmos o retorno.</p>
+              </div>
+              <div class="full"><button class="btn btn--dark btn--block" type="submit">Enviar solicitação {{ m.icon('arrow') }}</button></div>
+            </div>
+            <p class="form-status" role="alert"></p>
+          </form>
+          <div class="form-success" aria-live="polite">
+            <span class="card__icon">{{ m.icon('check') }}</span>
+            <h2 class="h3">Mensagem enviada com sucesso</h2>
+            <p>Obrigado pelo contato. Nossa equipe vai analisar sua solicitação e retornará em breve pelo telefone ou e-mail informado.</p>
+            <div class="btn-row" style="justify-content:center"><a class="btn" href="{{ wa(wa_sent) }}" target="_blank" rel="noopener">{{ m.icon('whatsapp') }} Adiantar pelo WhatsApp</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center" data-reveal>
+      <span class="eyebrow eyebrow--center">Atendimento em todo o Brasil</span>
+      <h2 class="h2">Como é o atendimento online</h2>
+    </div>
+    <div class="grid grid-3" data-stagger="110">
+      <div class="card" data-reveal><span class="card__icon">{{ m.icon('chat') }}</span><h3 class="h3">Você entra em contato</h3><p>Pelo WhatsApp, e-mail ou formulário, de onde estiver.</p></div>
+      <div class="card" data-reveal><span class="card__icon">{{ m.icon('video') }}</span><h3 class="h3">Conversamos por vídeo</h3><p>Reunião por vídeo ou telefone para entender o seu caso com calma.</p></div>
+      <div class="card" data-reveal><span class="card__icon">{{ m.icon('doc') }}</span><h3 class="h3">Tudo digital</h3><p>Documentos por foto ou PDF e acompanhamento sem deslocamento.</p></div>
+    </div>
+  </div>
+</section>
+{% endblock %}

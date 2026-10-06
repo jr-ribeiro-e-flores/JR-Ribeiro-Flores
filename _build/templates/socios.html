@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero page-hero--pattern">
+  <div class="container">
+    {{ m.crumbs([('Início','/'),('Sócios',None)]) }}
+    <span class="eyebrow" data-reveal>Sócios</span>
+    <h1 class="display" data-reveal>Excelência jurídica construída por pessoas.</h1>
+    <p class="lead" data-reveal>A Ribeiro &amp; Flores Advocacia foi fundada por Josué Ribeiro e Renata Flores, unidos pelo propósito de construir uma advocacia moderna, estratégica e próxima de seus clientes.</p>
+    <nav class="btn-row" aria-label="Perfis" data-reveal>
+      {% for p in partners %}<a class="btn btn--ghost btn--sm" href="#{{ p.key }}">{{ p.name }}</a>{% endfor %}
+    </nav>
+  </div>
+</section>
+
+{% for p in partners %}
+<section class="section {{ 'theme-ivory' if loop.index is odd else 'theme-paper' }}" id="{{ p.key }}" aria-labelledby="{{ p.key }}-name">
+  <div class="container">
+    <article class="profile{% if loop.index is even %} profile--rev{% endif %}">
+      <div class="profile__media">
+        <div class="frame frame--portrait" data-reveal="{{ 'left' if loop.index is odd else 'right' }}">
+          {{ m.img(p.photo, [420, 720], p.name ~ ', ' ~ p.role ~ ' da Ribeiro & Flores Advocacia', sizes='(max-width:980px) 90vw, 40vw', eager=loop.first, w=720, h=960) }}
+        </div>
+      </div>
+      <div data-reveal>
+        <p class="profile__role">{{ p.role }}</p>
+        <h2 class="h2" id="{{ p.key }}-name">{{ p.name }}</h2>
+        {% if p.oab %}<p class="profile__oab">{{ p.oab }}</p>{% else %}<div style="height:18px"></div>{% endif %}
+        <p class="lead">{{ p.summary }}</p>
+        {% for para in p.bio %}<p class="muted">{{ para }}</p>{% endfor %}
+
+        {% if p.education %}
+        <div class="profile__block"><h3>Formação</h3>
+          <ul class="checklist">{% for e in p.education %}<li>{{ m.icon('book') }}<span>{{ e }}</span></li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+
+        {% if p.experience %}
+        <div class="profile__block"><h3>Experiência profissional</h3>
+          <ul class="checklist">{% for e in p.experience %}<li>{{ m.icon('check') }}<span>{{ e }}</span></li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+
+        <div class="profile__block"><h3>Áreas de atuação</h3>
+          <ul class="tags">{% for k in p.areas %}{% set a = area_by_key[k] %}<li><a href="{{ url('/areas/' ~ a.slug ~ '/') }}">{{ a.name }}</a></li>{% endfor %}</ul>
+        </div>
+
+        <div class="profile__block"><h3>Destaques</h3>
+          <div class="highlights">{% for t, d in p.highlights %}<div class="highlight"><strong>{{ t }}</strong><span>{{ d }}</span></div>{% endfor %}</div>
+        </div>
+
+        <div class="btn-row mt-m">
+          <a class="btn btn--dark" href="{{ url('/contato/') }}">Agendar com {{ p.name.split(' ')[0] }} {{ m.icon('arrow') }}</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+{% endfor %}
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div data-reveal>
+        <span class="eyebrow">Nossa trajetória</span>
+        <h2 class="h2">Uma advocacia mais próxima, estratégica e eficiente.</h2>
+      </div>
+      <div data-reveal>
+        <p class="lead">A construção da Ribeiro &amp; Flores nasce da união entre conhecimento jurídico, dedicação e o propósito de oferecer uma advocacia diferente.</p>
+        <p class="muted">Acreditamos que o advogado não deve atuar apenas quando o problema já existe, mas também ajudar a prevenir riscos, apoiar a tomada de decisões e construir soluções seguras.</p>
+        <p class="muted">Nossa atuação é guiada pela busca constante por atualização, aperfeiçoamento técnico e compreensão das necessidades reais de cada cliente.</p>
+      </div>
+    </div>
+    <div class="grid grid-3 mt-l" data-stagger="110">
+      <div class="card" data-reveal><span class="card__icon">{{ m.icon('scale') }}</span><h3 class="h3">Ética</h3><p>Atuação baseada na honestidade, na responsabilidade e no respeito às normas profissionais.</p></div>
+      <div class="card" data-reveal><span class="card__icon">{{ m.icon('handshake') }}</span><h3 class="h3">Compromisso</h3><p>Cada cliente recebe dedicação e acompanhamento em todas as etapas da sua demanda.</p></div>
+      <div class="card" data-reveal><span class="card__icon">{{ m.icon('book') }}</span><h3 class="h3">Conhecimento</h3><p>Estudo constante e atualização para oferecer soluções tecnicamente seguras.</p></div>
+    </div>
+  </div>
+</section>
+
+{{ m.cta_band('Uma advocacia feita para <em>entender você</em>.', 'Converse diretamente com os sócios e transforme desafios jurídicos em estratégias e soluções.', 'Falar com um advogado') }}
+{% endblock %}

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="page-hero page-hero--pattern">
+<section class="page-hero">
+  <img class="page-hero__crest" src="{{ asset('img/opt/crest-208.webp') }}" alt="" width="176" height="208">
   <div class="container">
     {{ m.crumbs([('Início','/'),('Contato',None)]) }}
     <span class="eyebrow" data-reveal>Contato</span>
@@ -9,7 +10,7 @@
   </div>
 </section>
 
-<section class="section theme-ivory">
+<section class="section theme-alt">
   <div class="container">
     <div class="split split--contact">
       <div data-reveal>
@@ -91,7 +92,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section theme-dark">
   <div class="container">
     <div class="section-head section-head--center" data-reveal>
       <span class="eyebrow eyebrow--center">Atendimento em todo o Brasil</span>

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="page-hero page-hero--pattern">
+<section class="page-hero">
+  <img class="page-hero__crest" src="{{ asset('img/opt/crest-208.webp') }}" alt="" width="176" height="208">
   <div class="container">
     {{ m.crumbs([('Início','/'),(legal.title,None)]) }}
     <span class="eyebrow">{{ legal.eyebrow }}</span>
@@ -8,7 +9,7 @@
     <p class="lead">{{ legal.lead }}</p>
   </div>
 </section>
-<section class="section theme-paper">
+<section class="section">
   <div class="container">
     <div class="legal-wrap">
       <nav aria-label="Nesta página"><ul class="legal-nav">

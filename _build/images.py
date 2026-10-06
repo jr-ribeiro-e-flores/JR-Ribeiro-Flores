@@ -104,30 +104,44 @@ def cover_base(key, size):
     return im
 
 
-def make_cover(key, eyebrow, title, size, path, fmt="WEBP", q=78):
-    base = cover_base(key, size).convert("RGBA")
-    base.alpha_composite(gradient_overlay(size, [(0, 235), (0.55, 190), (1, 40)]))
-    base.alpha_composite(vertical_overlay(size, 0, 120))
-    d = ImageDraw.Draw(base)
+def make_cover(key, eyebrow, title, size, path, fmt="WEBP", q=82):
+    """Capa tipográfica: fundo grafite, moldura fina, brasão em marca d'água."""
     w, h = size
-    pad = round(w * 0.07)
-    # filete dourado
-    d.rectangle((pad, round(h * 0.2), pad + 56, round(h * 0.2) + 3), fill=GOLD + (255,))
-    fe = font("inter-600.ttf", round(w * 0.019))
-    d.text((pad, round(h * 0.2) + 22), eyebrow.upper(), font=fe, fill=GOLD + (255,), spacing=4)
-    ft = font("cormorant-garamond-latin-600-normal.ttf", round(w * 0.056))
-    lines = wrap(d, title, ft, w * 0.58)
-    y = round(h * 0.2) + 22 + round(w * 0.045)
+    base = Image.new("RGBA", size, (18, 18, 20, 255))
+    # brilho suave à direita
+    glow = Image.new("L", size, 0)
+    gd = ImageDraw.Draw(glow)
+    gd.ellipse((int(w * .45), int(-h * .4), int(w * 1.5), int(h * 1.2)), fill=60)
+    glow = glow.filter(ImageFilter.GaussianBlur(w // 8))
+    layer = Image.new("RGBA", size, (176, 141, 87, 0)); layer.putalpha(glow.point(lambda v: int(v * .35)))
+    base.alpha_composite(layer)
+    # brasão em marca d'água
+    lh = int(h * .92)
+    lg = _logo_for_cover.resize((round(_logo_for_cover.width * lh / _logo_for_cover.height), lh), Image.LANCZOS)
+    a = lg.split()[3].point(lambda v: int(v * .07))
+    lg.putalpha(a)
+    base.alpha_composite(lg, (w - lg.width + int(w * .06), (h - lh) // 2))
+    d = ImageDraw.Draw(base)
+    pad = round(w * .045)
+    d.rectangle((pad, pad, w - pad, h - pad), outline=(176, 141, 87, 110), width=max(1, w // 900))
+    inner = pad + round(w * .05)
+    fe = font("inter-600.ttf", max(11, round(w * .0165)))
+    d.text((inner, inner + round(h * .04)), eyebrow.upper(), font=fe, fill=(201, 169, 110, 255))
+    ft = font("cormorant-garamond-latin-500-normal.ttf", round(w * .062))
+    lines = wrap(d, title, ft, w * .66)
+    lh_t = round(w * .066)
+    y = h - inner - round(h * .15) - lh_t * len(lines)
     for ln in lines:
-        d.text((pad, y), ln, font=ft, fill=(240, 236, 228, 255))
-        y += round(w * 0.062)
-    fm = font("inter-500.ttf", round(w * 0.016))
-    d.text((pad, h - pad - round(w * 0.016)), "RIBEIRO & FLORES ADVOCACIA", font=fm, fill=(200, 194, 182, 255))
+        d.text((inner, y), ln, font=ft, fill=(240, 236, 228, 255))
+        y += lh_t
+    d.rectangle((inner, h - inner - round(h * .045), inner + round(w * .05), h - inner - round(h * .045) + max(1, w // 600)), fill=(176, 141, 87, 255))
+    fm = font("inter-500.ttf", max(10, round(w * .0135)))
+    d.text((inner + round(w * .065), h - inner - round(h * .045) - round(w * .009)), "RIBEIRO & FLORES ADVOCACIA", font=fm, fill=(190, 184, 172, 255))
     out = base.convert("RGB")
     if fmt == "WEBP":
         out.save(path, "WEBP", quality=q, method=6)
     else:
-        out.save(path, "JPEG", quality=84, optimize=True, progressive=True)
+        out.save(path, "JPEG", quality=86, optimize=True, progressive=True)
 
 
 def make_area_banner(key, path_prefix):
@@ -149,6 +163,23 @@ def portrait(src, box, name):
 josue = portrait("josue-2.jpg", (180, 30, 730, 763), "josue")
 renata = portrait("renata.jpg", (0, 40, 900, 1240), "renata")
 
+
+def bw(im, name):
+    """Retrato em preto e branco editorial, com tons padronizados."""
+    from PIL import ImageOps
+    g = ImageOps.grayscale(im)
+    g = ImageOps.autocontrast(g, cutoff=(0.5, 0.3))
+    g = ImageEnhance.Contrast(g).enhance(1.08)
+    g = ImageEnhance.Brightness(g).enhance(0.97)
+    # leve tom quente (papel fotográfico)
+    toned = ImageOps.colorize(g, black=(14, 13, 12), white=(246, 243, 236), mid=(128, 124, 118))
+    for w in (720, 420):
+        webp(toned, name, w, q=82)
+
+
+bw(josue, "josue-bw")
+bw(renata, "renata-bw")
+
 # Recorte vertical da estátua da Justiça (usado em seções institucionais)
 _j = hero.crop((735, 110, 1185, 710)).resize((720, 960), Image.LANCZOS)
 _j = ImageEnhance.Brightness(_j).enhance(1.05)
@@ -169,6 +200,7 @@ for y in range(logo.height):
             px[x, y] = (r, g, b, int(a * max(0, min(1, (235 - lum) / 65)) if lum < 235 else 0))
 bbox = logo.getbbox()
 logo = logo.crop(bbox)
+_logo_for_cover = logo
 for h in (104, 208):
     w = round(logo.width * h / logo.height)
     lg = logo.resize((w, h), Image.LANCZOS)
@@ -194,17 +226,7 @@ ico = Image.open(OUT / "favicon-48.png")
 ico.save(ROOT / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
 
 # ---------------------------------------------------------------- OG padrão
-og = cover_base("advocacia", (1200, 630)).convert("RGBA")
-og.alpha_composite(gradient_overlay((1200, 630), [(0, 240), (0.6, 200), (1, 60)]))
-d = ImageDraw.Draw(og)
-lg = logo.resize((round(logo.width * 150 / logo.height), 150), Image.LANCZOS)
-og.alpha_composite(lg, (84, 120))
-d.text((84, 300), "Ribeiro & Flores", font=font("cormorant-garamond-latin-600-normal.ttf", 76), fill=(240, 236, 228, 255))
-d.text((88, 392), "ADVOCACIA", font=font("inter-600.ttf", 22), fill=GOLD + (255,))
-d.text((84, 450), "Trabalhista · Previdenciário · Consumidor · Civil · Empresarial",
-       font=font("inter-500.ttf", 22), fill=(200, 194, 182, 255))
-d.text((84, 490), "Atendimento online em todo o Brasil", font=font("inter-500.ttf", 22), fill=(200, 194, 182, 255))
-og.convert("RGB").save(OUT / "og-default.jpg", "JPEG", quality=84, optimize=True, progressive=True)
+make_cover(None, "Advocacia · Atendimento em todo o Brasil", "Ribeiro & Flores Advocacia", (1200, 630), OUT / "og-default.jpg", fmt="JPEG")
 
 # ---------------------------------------------------------------- capas (chamadas pelo build)
 if __name__ == "__main__":

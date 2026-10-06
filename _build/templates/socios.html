@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="page-hero page-hero--pattern">
+<section class="page-hero">
+  <img class="page-hero__crest" src="{{ asset('img/opt/crest-208.webp') }}" alt="" width="176" height="208">
   <div class="container">
     {{ m.crumbs([('Início','/'),('Sócios',None)]) }}
     <span class="eyebrow" data-reveal>Sócios</span>
@@ -13,12 +14,12 @@
 </section>
 
 {% for p in partners %}
-<section class="section {{ 'theme-ivory' if loop.index is odd else 'theme-paper' }}" id="{{ p.key }}" aria-labelledby="{{ p.key }}-name">
+<section class="section {{ '' if loop.index is odd else 'theme-alt' }}" id="{{ p.key }}" aria-labelledby="{{ p.key }}-name">
   <div class="container">
     <article class="profile{% if loop.index is even %} profile--rev{% endif %}">
       <div class="profile__media">
-        <div class="frame frame--portrait" data-reveal="{{ 'left' if loop.index is odd else 'right' }}">
-          {{ m.img(p.photo, [420, 720], p.name ~ ', ' ~ p.role ~ ' da Ribeiro & Flores Advocacia', sizes='(max-width:980px) 90vw, 40vw', eager=loop.first, w=720, h=960) }}
+        <div data-reveal="{{ 'left' if loop.index is odd else 'right' }}">
+          {{ m.img(p.photo ~ '-bw', [420, 720], p.name ~ ', ' ~ p.role ~ ' da Ribeiro & Flores Advocacia', sizes='(max-width:980px) 90vw, 40vw', eager=loop.first, w=720, h=960) }}
         </div>
       </div>
       <div data-reveal>
@@ -58,7 +59,7 @@
 </section>
 {% endfor %}
 
-<section class="section">
+<section class="section theme-dark">
   <div class="container">
     <div class="split">
       <div data-reveal>

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="page-hero page-hero--pattern">
+<section class="page-hero">
+  <img class="page-hero__crest" src="{{ asset('img/opt/crest-208.webp') }}" alt="" width="176" height="208">
   <div class="container">
     {{ m.crumbs([('Início','/'),('Artigos',None)]) }}
     <span class="eyebrow" data-reveal>Conteúdos jurídicos</span>
@@ -9,7 +10,7 @@
   </div>
 </section>
 
-<section class="section theme-ivory">
+<section class="section theme-alt">
   <div class="container">
     <div class="blog-tools">
       <div class="chips" role="group" aria-label="Filtrar por categoria">
